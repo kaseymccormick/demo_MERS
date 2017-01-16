@@ -1,0 +1,43 @@
+{"users":[
+  {
+    "id": 1,
+    "firstName": "Sally",
+    "lastName": "Brimington",
+    "cellPhoneNumber": 3070065501
+  },
+  {
+    "id": 2,
+    "firstName": "Frank",
+    "lastName": "Jeers",
+    "cellPhoneNumber": 3010065501
+  },
+  {
+    "id": 3,
+    "firstName": "Ariana",
+    "lastName": "Foresythe",
+    "cellPhoneNumber": 3071165501
+  },
+  {
+    "id": 4,
+    "firstName": "Antwone",
+    "lastName": "Fisher",
+    "cellPhoneNumber": 3070335101
+  }],
+"organizations":[
+{
+"id": 1,
+"DBA": "Trustee Title"
+},
+{
+"id": 2,
+"DBA": "Arngnan Pest"
+},
+{
+"id": 3,
+"DBA": "Orange Circle"
+},
+{
+"id": 4,
+"DBA": "Prime Bank"
+}
+]}
