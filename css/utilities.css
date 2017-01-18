@@ -1,17 +1,108 @@
 /*---------------------------
     TOC
+    - Normalization
+    - Color
     - Grid
     - Type
-    - postition
-    - margin
-    - padding
+    - Postition
+    - Margin
+    - Padding
 ----------------------------*/
+/*---------------------------
+    Normalization
+----------------------------*/
+body{
+    margin:0;
+}
+/*---------------------------
+    Color
+----------------------------*/
+.white-background{
+    background-color: white;
+}
+
 /*---------------------------
     Grid
 ----------------------------*/
+.grid{
+
+}
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+[class*='col-'] {
+    float: left;
+}
+.col-1-1, .col-7-7{
+    width:100%;
+    display: block;
+}
+.col-1-2 {
+    width: 50%;
+}
+.col-1-7{
+    width: calc((100%/7) - 1%);
+}
+.col-2-7{
+    width: calc(((100%/7)*2) - 1%);
+    background: blue;
+}
+.col-3-7{
+    width: calc(((100%/7)*3) - 1%);
+    background: purple;
+}
+.col-4-7{
+    width: calc(((100%/7)*4) - 1%);
+    background: teal;
+}
+.col-5-7{
+    width: calc(((100%/7)*5) - 1%);
+    background: orange;
+}
+.col-6-7{
+    width: calc(((100%/7)*6) - 1%);
+    background: yellow;
+}
+[class*='col-'] {
+    padding-right: 10px;
+}
+[class*='col-']:last-of-type {
+    padding-right: 0;
+}
+.grid-pad {
+    padding: 20px 0 20px 20px;
+}
+.grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+}
 /*---------------------------
     Type
 ----------------------------*/
+.no-list-style{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.left-aligned-list li{
+    float: left;
+    padding: 2px;
+}
+.left-aligned-list li:first-child{
+     padding-left: 2px;
+ }
+.center-text-align{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+footer a{
+    text-decoration: none;
+    color: #888;
+}
 /*---------------------------
     Position
 ----------------------------*/
