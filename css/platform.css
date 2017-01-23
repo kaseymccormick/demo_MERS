@@ -1,0 +1,63 @@
+/******___This file will not be needed as it recreates platform functionality___*****/
+/*--------------------------
+ Included in this css file:
+ Page layout
+ other little
+ card layout
+
+---------------------------*/
+/*--------------------------
+Page Layout
+---------------------------*/
+body{
+   background-color: #cccccc;
+    font-family: 'Lato', sans-serif;
+}
+.page{
+    background-color: #f5f5f5;
+    width:97%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top:20px;
+    padding-bottom: 40px;
+
+}
+/*--------------------------
+other little
+---------------------------*/
+.search{
+    text-align: center;
+    padding: 40px 0;
+}
+.search input{
+    width:550px;
+    max-width:  calc(100% - 176px);
+    min-height: 40px;
+    border-radius: 2px;
+    border:solid 1px #cccccc;
+}
+button{
+    background-color: #339933;
+    color:white;
+    font-size: 14px;
+    border:none;
+    padding:10px;
+    font-weight: lighter;
+
+}
+/*--------------------------
+card Layout
+---------------------------*/
+.cards{
+    max-width: 70%;
+    margin:0 auto;
+}
+.cards__card{
+    float:left;
+    padding:5px;
+}
+.cards__card img{
+    max-width:260px;
+}
+.cards{
+}

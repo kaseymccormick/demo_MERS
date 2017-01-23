@@ -1,0 +1,43 @@
+/******___This file will not be needed as it recreates platform functionality___*****/
+/*--------------------------
+ Navigation
+ - top
+ - left
+ - bottom
+---------------------------*/
+/*--------------------------
+Top
+---------------------------*/
+.header{
+    height: 60px;
+    background-color: white;
+}
+.padding-bottom-10{
+    padding-bottom: 10px;
+}
+
+#logo {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    width: 124px;
+    height: 52px;
+    background: url(https://d2rnem5shez54u.cloudfront.net/images/general_ui/ats_secured_logo.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;}
+/*--------------------------
+Left
+---------------------------*/
+.left-navigation{
+    background-color: #888;
+}
+.right-text-align{
+    text-align: right;
+}
+/*--------------------------
+Bottom/footer
+---------------------------*/
+footer{
+    background-color: white;
+    margin-top:15px;
+}
