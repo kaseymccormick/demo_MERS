@@ -72,18 +72,546 @@
             </ul>
             <div id="full-tab-content" class="tab-content grid grid-pad">
                 <div class="page-content__report-section">
-                    <div class="collapse-bar report-section__header">
+                    <div class="report-section__content__column col-1-2">
+                        <ul class="no-list-style">
+                            <h3>Asset Numbers</h3>
+                            <li>Asset Number Type:<span> </span></li>
+                            <li>Asset Number:<span> </span></li>
+                            <li>Asset group number:<span> </span></li>
+                        </ul>
+                    </div>
+                    <div class="report-section__content__column col-1-2">
+                        <ul class="no-list-style">
+                            <h3>Reporting period</h3>
+                            <li>Begin date:<span> xx/xx/xxxx</span></li>
+                            <li>End date:<span> xx/xx/xxxx</span></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-1-1">
+                    <div class="collapse-bar report-section__header  ">
                         <h4>General information about the residential mortgage <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
                     </div>
-                    <div class="report-section__content grid grid-pad invisible">
-                        <ul>
-                            <li>line item</li>
-                            <li>line item</li>
-                            <li>line item</li>
-                            <li>line item</li>
-                            <li>line item</li>
-                            <li>line item</li>
+                    </div>
+                    <div class="report-section__content__column col-1-2">
+                        <ul class="no-list-style">
+                            <h3>Origination</h3>
+                            <li>Original loan purpose:<span> </span></li>
+                            <li>Originator: <span> </span></li>
+                            <li>Originator loan amount: <span>$xx,xxx </span></li>
+                            <li>Original loan maturity date: <span>xx/xx/xxxx </span></li>
+                            <li>Original amortization term: <span> </span></li>
+                            <li>Original interest rate: <span> </span></li>
+                            <li>Accrual type: <span></span></li>
+                            <li>Original interest rate type: <span></span></li>
+                            <li>Original interest only term: <span></span></li>
+                            <li>Underwriting indicator: <span></span></li>
+                            <li>Original lien position: <span></span></li>
+                            <h3>Information related to junior liens</h3>
+                            <li>Most recent junior loan balance: <span></span></li>
+                            <li>Date of most recent junior loan balance: <span>xx/xx/xxx</span></li>
                         </ul>
+                    </div>
+                    <div class="report-section__content__column col-1-2">
+                        <ul class="no-list-style">
+                            <h5>Information related to non first mortgages</h5>
+                            <li>Most recent senior loan amount <span></span></li>
+                            <li>Date of most recent senior loan amount <span>xx/xx/xxxx</span> </li>
+                            <li>Loan type of most senior lien <span></span> </li>
+                            <li>Hybrid period of most senior lien <span></span> </li>
+                            <li>Negative amortization limit of most senior lien <span></span> </li>
+                            <li>Origination date of most senior lien <span></span> </li>
+                            <li>Prepayment penalty indicator <span></span> </li>
+                            <li>Negative amortization indicator <span></span> </li>
+                            <li>Modification indicator <span></span> </li>
+                            <li>Number of modifications <span></span> </li>
+                            <li>Mortgage insurance requirement indicator <span></span> </li>
+                            <li>Balloon indicator <span></span> </li>
+                            <li>Covered high cost loan indicator <span></span> </li>
+                            <li>Servicer placed hazard insurance <span></span> </li>
+                            <li>Refinance cash out amount <span></span> </li>
+                            <li>Total origination and discount points <span></span> </li>
+                            <li>Broker <span></span> </li>
+                            <li>channel <span></span> </li>
+                            <li>NMLS company number <span></span> </li>
+                            <li>Buy down period  <span></span> </li>
+                            <li>Loan delinquency advance days count <span></span>  </li>
+                        </ul>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to negative amortization <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>negative amortization limit</li>
+                                <li>initial negative amortization recast period</li>
+                                <li>subsequent negative amortization recast period</li>
+                                <li>negative amortization balance amount</li>
+                                <li>inital fixed payment period</li>
+                                <li>initial periodic payment cap</li>
+                                <li>subsequent periodic payment cap</li>
+                                <li>initial minimum payment reset period</li>
+                                <li>subsequent minimum payment reset period</li>
+                                <li>minimum payment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to the property<i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> geographic location <span></span> </li>
+                                <li> occupancy status <span></span> </li>
+                                <li> most recent occupancy status <span></span> </li>
+                                <li> property type <span></span> </li>
+                                <li> most recent property value <span></span> </li>
+                                <li> most recent property valuation type<span></span> </li>
+                                <li> most recent property valuation date<span></span> </li>
+                                <li> most recent avm model name <span></span> </li>
+                                <li> most recent avm confidence score <span></span> </li>
+                                <li> original combined loan-to-value <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to the obligor <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> original number of obligors <span></span> </li>
+                                <li> original obligor credit score <span></span> </li>
+                                <li> original obligor credit score type <span></span> </li>
+                                <li> most recent obligor credit score <span></span> </li>
+                                <li> most recent obligor credit score type <span></span> </li>
+                                <li> date of most recent obligor credit score <span></span> </li>
+                                <li> obligor income verification level <span></span> </li>
+                                <li> 4506-T indicator <span></span> </li>
+                                <li> originator front edn debt to income <span></span> </li>
+                                <li> orignitaro back end dti <span></span> </li>
+                                <li> obligor employement verification <span></span> </li>
+                                <li> length of employment obligor <span></span> </li>
+                                <li> obligor asset verification <span></span> </li>
+                                <li> original pleged assetsqualification method <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to mortgage insurance <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>mortgage insurace company name <span></span> </li>
+                                <li>mortgage insurance coverage <span></span> </li>
+                                <li>pool insurance company <span></span> </li>
+                                <li>pool insurance stop loss percent <span></span> </li>
+                                <li>mortgage insurance coverage plan type <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to activity on the loan <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> remaining term to maturity <span></span> </li>
+                                <li> modification indicator reporting period <span></span> </li>
+                                <li> next payment due date <span></span> </li>
+                                <li> advancing method <span></span> </li>
+                                <li> servicing advance methodology <span></span> </li>
+                                <li> stop principal and interest advance date <span></span> </li>
+                                <li> reporting period begining loan balance <span></span> </li>
+                                <li> reporting period begining shceduled loan balance <span></span> </li>
+                                <li> next reporting period payment amount due <span></span> </li>
+                                <li> reporting period interest rate <span></span> </li>
+                                <li> next interest rate <span></span> </li>
+                                <li> servicing fee percentage <span></span> </li>
+                                <li> servicing fee flat fee <span></span> </li>
+                                <li> other assessed but uncollected servicer fees <span></span> </li>
+                                <li> other loan level servicing fees retained by the servicer <span></span> </li>
+                                <li> scheduled interest amount <span></span> </li>
+                                <li> other interest adjustments <span></span> </li>
+                                <li> scheduled principal amount <span></span> </li>
+                                <li> other principal adjustments <span></span> </li>
+                                <li> report period ending actual balance <span></span> </li>
+                                <li> reporting period ending scheduled balance <span></span> </li>
+                                <li> reporting period scheduled payment amount <span></span> </li>
+                                <li> total actual amount paid <span></span> </li>
+                                <li> actual interest collected <span></span> </li>
+                                <li> actual principal collected <span></span> </li>
+                                <li> actual other amounts collected <span></span> </li>
+                                <li> paid through date <span></span> </li>
+                                <li> interest paid through date <span></span> </li>
+                                <li> paid in full amount <span></span> </li>
+                                </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> information related to servicer advances <span></span> </li>
+                                <li> servicer advanced amount principal <span></span> </li>
+                                <li> servicer advanced amounts repaid principal <span></span> </li>
+                                <li> servicer advances cumulative principal <span></span> </li>
+                                <li> servicer advanced amount interest <span></span> </li>
+                                <li> servicer advanced amounts repaid interest <span></span> </li>
+                                <li> servicer advances cumulative interest <span></span> </li>
+                                <li> servicer advanced amount taxes and insurance <span></span> </li>
+                                <li> servicer advanced amount repaid taxes and insurance <span></span> </li>
+                                <li> servicer advances cumulative taxes and insurance <span></span> </li>
+                                <li> servicer advanced amount corporate <span></span> </li>
+                                <li> servicer advanced amount repaid corporate <span></span> </li>
+                                <li> servicer advances cumulative corporate <span></span> </li>
+                                <li> zero balance loans <span></span> </li>
+                                <li> zero balance effective date <span></span> </li>
+                                <li> zero balance code <span></span> </li>
+                                <li> most recent 12 month pay history <span></span> </li>
+                                <li> number of payments past due <span></span> </li>
+                                <li> information related to activity on arm loans <span></span> </li>
+                                <li> rate at next reset <span></span> </li>
+                                <li> next payment change date <span></span> </li>
+                                <li> next interest rate change date <span></span> </li>
+                                <li> payment at next rest <span></span> </li>
+                                <li> exercised arm conversion option indicator <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to servicer <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> primary servicer <span></span> </li>
+                                <li> most recent servicing transfer received date <span></span> </li>
+                                <li> master servicer <span></span> </li>
+                                <li> special servicer <span></span> </li>
+                                <li> subservicer <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Asset subject to demand <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> indicate subject of demand: <span></span></li>
+                                <li> status of asset subject to demand: <span></span></li>
+                                <li> repurchase amount: <span></span></li>
+                                <li> demand resolution date: <span></span></li>
+                                <li> repurchaser: <span></span></li>
+                                <li> repurchase or replacement reason: <span></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to loans that have been charged off <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>charged off principal amount: <span></span></li>
+                                <li>charged off interest amount: <span></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Lost mitigation type indicator<i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>indicate type of loss mitigation servicer is pursuing with obligator</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to loan modifications<i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+
+                                <li> most recent loan modification event type <span></span> </li>
+                                <li> effective date of the most recent loan modification <span></span> </li>
+                                <li> post modification maturity date <span></span> </li>
+                                <li> post modification interest rate type <span></span> </li>
+                                <li> post modification amortization type <span></span> </li>
+                                <li> post modification interest rate <span></span> </li>
+                                <li> post modification first payment date <span></span> </li>
+                                <li> post modification loan balance <span></span> </li>
+                                <li> post modification principal and interst payment <span></span> </li>
+                                <li> total capitalized amount <span></span> </li>
+                                <li> income verification indicator at modification <span></span> </li>
+                                <li> modification front end dti <span></span> </li>
+                                <li> modification back end dti <span></span> </li>
+                                <li> total deferred amount <span></span> </li>
+                                <li> forgiven principal amount cumulative <span></span> </li>
+                                <li> forgiven principal amount reporting period <span></span> </li>
+                                <li> forgiven interest amount cumulative <span></span> </li>
+                                <li> forgiven interest amount reporting period <span></span> </li>
+                                <li> actual ending balance total debt owed <span></span> </li>
+                                <li> scheduled ending balance total debt owed <span></span> </li>
+                                <li> information related to ARM loan modifications <span></span> </li>
+                                <li> scheduled ending balance total debt owed <span></span> </li>
+                                <li> information related to arm loan modifications <span></span> </li>
+                                <li> post modification arm indicator <span></span> </li>
+                                </ul>
+                            </div>
+                            <div class="col-1-2 report-section__content__column">
+                                <ul class="no-list-style">
+                                <li> post modification arm index <span></span> </li>
+                                <li> post modification margin <span></span> </li>
+                                <li> post modification interest reset period if changed <span></span> </li>
+                                <li> post modification next reset date <span></span> </li>
+                                <li> post modification index lookback <span></span> </li>
+                                <li> post modification arm round indicator <span></span> </li>
+                                <li> post modification arm round percentage <span></span> </li>
+                                <li> post modification initial minimum payment <span></span> </li>
+                                <li> post modification next payment adjustment date <span></span> </li>
+                                <li> post modification arm payment recast frequency <span></span> </li>
+                                <li> post modification lifetime rate floor <span></span> </li>
+                                <li> post modification lifetime rate ceiling <span></span> </li>
+                                <li> post modification initial interest rate increase <span></span> </li>
+                                <li> post modification initial interest rate decrease <span></span> </li>
+                                <li> post modification subsequent interest rate increase <span></span> </li>
+                                <li> post modification subsequent interest rate decrease <span></span> </li>
+                                <li> post modification payment cap <span></span> </li>
+                                <li> post modification payment method after recast <span></span> </li>
+                                <li> post modification arm interest rate teaser period <span></span> </li>
+                                <li> post modification payment teaser period <span></span> </li>
+                                <li> post modification arm negative amortization indicator <span></span> </li>
+                                <li> post modification arm negative amortization <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to loan modifications involving interest only periods <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>post modification interest only term: <span></span></li>
+                                <li>post modification interest only last payment date: <span></span></li>
+                                <li>post modification balloon payment amount: <span></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to step loans <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li> post modification interest rate step indicator <span></span> </li>
+                                <li> post modification step interest rate <span></span> </li>
+                                <li> post modification step date <span></span> </li>
+                                <li> post modification step principal and interest <span></span> </li>
+                                <li> post modification number of steps <span></span> </li>
+                                <li> post modification maximum future rate under step agreemnet <span></span> </li>
+                                <li> post modification date of maximum rate under step agreement <span></span> </li>
+                                <li> non interest bearing principal deferred amount cumulative <span></span> </li>
+                                <li> non interest bearing principal deferred amount reporting period <span></span> </li>
+                                <li> recovery of deferred principal reporting period <span></span> </li>
+                                <li> non interest bearing deferred paid in full amount <span></span> </li>
+                                <li> non interest bearing deferred interest and fees amount reporting period <span></span> </li>
+                                <li> non interest bearing deferred interest fees amount cumulative <span></span> </li>
+                                <li> recovery of deferred interest and fees reporting period <span></span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to forbearance or trial modification <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>most recent forebarance plan or trial modification start date</li>
+                                <li>most recent forbearance plan or trial modification scheduled end date</li>
+                                <li>most recent trial modification violated date</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to repayment plan<i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Most recent repayment plan start date</li>
+                                <li>most recent repayment plan scheduled end date</li>
+                                <li>most recent repayment plan violated date</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to short sales <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                            <li>short sale accepted offer amount: <span>$xx,xxx</span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to loss mitigation exit <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Most recent loss mitigation exit date: <span>xx/xx/yyyy</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Most recent loss mitigation exit code: <span>code</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>information related to loans in the foreclosure process<i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Attorney referal date: <span>xx/xx/xxxx</span></li>
+                                <li>Foreclosure delay reason: <span>code</span></li>
+                                </ul>
+                            </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Foreclosure exit date: <span>xx/xx/xxxx</span></li>
+                                <li>Foreclosure exit reason: <span></span></li>
+                                <li>NOI date: <span>xx/xx/xxxx</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid col-1-1">
+                        <div class="collapse-bar report-section__header">
+                            <h4>Information related to REO <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Most recent accepted REO offer amount: <span>$xx,xxx</span></li>
+                                <li>Most recent accepted REO offer date: <span>xx/xx/xxxx</span></li>
+                                <li>Gross liquidation proceeds: <span></span></li>
+                                <li>Net sales proceeds: <span>$xx,xxx</span></li>
+                                <li>Reporting period loss amount passed to issuing entity: <span></span></li>
+                            </ul>
+                            </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style ">
+                                <li>Cumulative total loss amount passed to issuing entity:</li>
+                                <li>Subsequent recovery amount: <span></span></li>
+                                <li>Eviction indicator: <span></span></li>
+                                <li>REO exit date: <span></span></li>
+                                <li>REO exit reason: <span></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to losses <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>UPB at liquidation</li>
+                                <li>servicing fees claimed</li>
+                                <li>servicer advanced amounts reimburse principal</li>
+                                <li>servicer advanced amounts reimbursed interest</li>
+                                <li>Servicer advanced amount reimbursed taxes and insurance</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Servicer advanced amount reimbursed corporate</li>
+                                <li>REO management fees</li>
+                                <li>Cash for keys/cash for deed</li>
+                                <li>Performance incentive fees</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to mortgage insurance claims <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                        <ul class="no-list-style">
+                            <li>Mi claim filed date: <span>xx/xx/xxxx</span></li>
+                            <li>MI claim amount: <span>$xx,xxxx</span></li>
+                            <li>MI claim paid date: <span>xx/xx/xxxx</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-1-2 report-section__content__column">
+                        <ul class="no-list-style">
+                            <li>MI claim paid amount: <span> $xx,xxx</span></li>
+                            <li>MI claim denied/rescinded date: <span>xx/xx/xxxx</span></li>
+                            <li>Marketable title transferred date: <span>xx/xx/xxxx</span></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="col-1-1">
+                        <div class="collapse-bar report-section__header  ">
+                            <h4>Information related to delinquent loans <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Non pay status: <span><em>code</em></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-1-2 report-section__content__column">
+                            <ul class="no-list-style">
+                                <li>Reporting action code: <span><em>code</em></span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

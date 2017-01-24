@@ -135,6 +135,7 @@ card Layout
 }
 .report-section__header {
     background: #EAF4F3;
+    width: 99%;
 }
 .report-section__content__column{
     font-size:14px;
@@ -145,10 +146,10 @@ card Layout
     font-size: 16px;
     margin:0;
     padding:0;
-    line-height: 1em;
+    line-height: 2em;
 }
 .report-section__content__column ul li span{
-    color: rgb(0, 0, 0);
-    color: rgba(0, 0, 0, 0.55);
+    /*color: rgb(0, 0, 0);*/
+    color: rgba(0, 0, 0, 0.35);
 }
 
