@@ -69,6 +69,10 @@ Left
     margin-top: 1px;
     border-top-left-radius: 8px;
 }
+#left_navigation_bottom {
+    margin-top: -1px;
+    border-bottom-left-radius: 8px;
+}
 
 #left_navigation_top, #left_navigation_bottom {
     position: relative;
