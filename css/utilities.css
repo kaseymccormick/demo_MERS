@@ -20,6 +20,9 @@ body{
 .white-background{
     background-color: white;
 }
+.white-text{
+    color: #fff;
+}
 
 /*---------------------------
     Grid
@@ -47,23 +50,23 @@ body{
 }
 .col-2-7{
     width: calc(((100%/7)*2) - 1%);
-    background: blue;
+
 }
 .col-3-7{
     width: calc(((100%/7)*3) - 1%);
-    background: purple;
+
 }
 .col-4-7{
     width: calc(((100%/7)*4) - 1%);
-    background: teal;
+
 }
 .col-5-7{
     width: calc(((100%/7)*5) - 1%);
-    background: orange;
+
 }
 .col-6-7{
     width: calc(((100%/7)*6) - 1%);
-    background: yellow;
+
 }
 [class*='col-'] {
     padding-right: 10px;
@@ -77,9 +80,11 @@ body{
 .grid-pad > [class*='col-']:last-of-type {
     padding-right: 20px;
 }
+
 /*---------------------------
     Type
 ----------------------------*/
+
 .no-list-style{
     list-style-type: none;
     margin: 0;
@@ -121,3 +126,6 @@ footer a{
 /*---------------------------
     Padding
 ----------------------------*/
+.padding-right-20{
+    padding-right:20px;
+}

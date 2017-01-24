@@ -22,6 +22,19 @@ body{
     padding-bottom: 40px;
 
 }
+.page__content{
+    width: 97%;
+    margin:5px auto;
+    padding-top: 20px;
+
+}
+.page__content__title {
+    background: #0f857c;
+    padding: 30px 30px 10px;
+}
+h1, h2{
+    font-weight: 300;
+}
 /*--------------------------
 other little
 ---------------------------*/
@@ -61,3 +74,81 @@ card Layout
 }
 .cards{
 }
+/*page */
+/*----------------------------
+   tab
+-----------------------------*/
+.tab{
+    max-height:40px;
+    background-color: #0F857C;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0 0 30px;
+}
+.tab-container {
+    opacity: .9;
+    width: 100%;
+    background-color:#ffffff;
+}
+.tab-content {
+    display: none;
+    border-top: none;
+}
+.tab li{
+    float: left;
+}
+.tab li a {
+    border-radius: 7px 7px 0 0;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 17px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+/* Create an active/current tablink class */
+.tab li a:focus,
+.active {
+    background-color: #fff;
+    color: black !important;
+}
+/*needed to mainly overwrite shared layout*/
+#full-tab-content {
+    background-color: #fff;
+    display: block;
+
+}
+
+/*----------------------------
+   report header and section(s)
+-----------------------------*/
+.report-header{
+    background: #0f857c;
+    padding:30px 30px 10px;
+}
+.report-section{
+    border:1px solid #cccccc;
+    margin-top: -1px;
+    letter-spacing: normal;
+}
+.report-section__header {
+    background: #EAF4F3;
+}
+.report-section__content__column{
+    font-size:14px;
+}
+.report-section__content__column ul li {
+    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    margin:0;
+    padding:0;
+    line-height: 1em;
+}
+.report-section__content__column ul li span{
+    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.55);
+}
+
