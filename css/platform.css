@@ -166,4 +166,7 @@ card Layout
 h4{
     margin-bottom:-30px;
 }
+.invisible{
+    display: none;
+}
 

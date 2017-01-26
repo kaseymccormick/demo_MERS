@@ -5,7 +5,10 @@
     <title>ATS Secured</title><!--font awesome-->
 
     <script src="https://use.fontawesome.com/177c6c789c.js">
-    </script><!--css-->
+    </script>
+
+    <script src="main.js"></script>
+    <!--css-->
     <link href="css/platform.css" rel="stylesheet">
     <link href="css/improvements.css" rel="stylesheet">
     <link href="css/utilities.css" rel="stylesheet">
@@ -82,20 +85,20 @@
             </div>
             <div class="page__content__tabs tab-container">
                 <ul class="tab">
-                    <li>
-                        <a class="tab-links" id="full">REG AB</a>
+                    <li >
+                        <a onclick="showTab()" class="tab-links" id="full">REG AB</a>
                     </li>
-                    <li>
-                        <a class="tab-links active" id="custom">Custom REG AB</a>
+                    <li >
+                        <a onclick="showTab()" class="tab-links active" id="custom">Custom REG AB</a>
                     </li>
-                    <li>
-                        <a class="tab-links" id="run-reports">Custom REG AB's Created</a>
+                    <li >
+                        <a onclick="showTab()" class="tab-links" id="list">Custom REG AB's Created</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="full-tab-content">
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
-                        <div class="col-1-1 grid grid-pad">
+                        <div onclick="expandDetail()" class="col-1-1 grid grid-pad">
                             <ul class="no-list-style report-section__content__column col-1-2">
                                 <li style="list-style: none; display: inline">
                                     <h3>Asset Numbers</h3>
@@ -610,29 +613,34 @@
                         </div>
                         <div class="col-1-1 ccc-border-1 grid grid-pad padding-right-neg20">
 
-                            <h4 class="collapse-bar report-section__header ">Information related to
-                                delinquent loans <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information related to
+                                delinquent loans <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
 
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style col-1-2 report-section__content__column invisible">
                                 <li><input type="checkbox"> Non pay status:</li>
                             </ul>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style col-1-2 report-section__content__column invisible">
                                 <li><input type="checkbox"> Reporting action code:</li>
                             </ul>
 
                         </div>
+                        <div class="col-1-1 ">
+                            <button class="float-right">Run Report</button>
+                        </div>
                     </div>
 
                 </div>
-                <div class="tab-content grid grid-pad" id="custom-tab-content">
+                <div id="custom-tab-content" class="tab-content grid grid-pad" >
                     Custom REG AB
                 </div>
-                <div class="tab-content grid grid-pad" id="run-reports-content">
-                    Custom REG AB's Created
+                <div id="list-tab-content" class="tab-content grid grid-pad" >
+                    <div class="col-1-1">
+                    <p>DID it work</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -656,23 +664,54 @@
 </footer>
 
 </html>
+
 <script>
+    function showInfo(){
+
+    }
     function showTab(event) {
         var i;
-        console.log("got here")
+
         var tabContent = document.getElementsByClassName('tab-content');
         for (i = 0; i < tabContent.length; i++) {
             tabContent[i].style.display = 'none';
+
         }
 
         // Get all elements with class='tab-links' and remove the class 'active'
         var tabLinks = document.getElementsByClassName('tab-links');
         for (i = 0; i < tabLinks.length; i++) {
             tabLinks[i].className = tabLinks[i].className.replace(' active', '');
+
         }
 
         // Show the current tab, and add an 'active' class to the link that opened the tab
         document.getElementById(event.target.id + '-tab-content').style.display = 'inline-block';
         event.currentTarget.className += ' active';
     }
+    function  expandDetail(event) {
+        let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
+        let minusCircleClass = 'fa fa-minus-circle float-right ';
+        let quadClass = 'fa fa-th-large float-right padding-right-20px';
+
+        if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('down') > -1) {
+            event.target.children.item(0).className = plusCircleClass;
+console.log("changing to plus, first condition")
+        } else if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('down') === -1) {
+            event.target.children.item(0).className = minusCircleClass;
+            console.log("changing to minus, second condition")
+        } else if (event.target.className.indexOf('down') > -1) {
+            event.target.className = plusCircleClass;
+            console.log("changing to plus, third condition")
+        } else {
+            //            if it' doesn't follow suit just show minus circle
+            event.target.className = minusCircleClass;
+
+        }
+
+        event.target.parentElement.className += ' expanded';
+        this.isInvisible = !this.isInvisible;
+        this.$parent.expandDetail(event);
+    }
+
 </script>
