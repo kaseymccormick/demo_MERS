@@ -14,6 +14,12 @@
 body{
     margin:0;
 }
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 /*---------------------------
     Color
 ----------------------------*/
@@ -42,11 +48,11 @@ body{
     float: left;
 }
 .col-1-1, .col-7-7{
-    width:100%;
+    width:96%;
     display: block;
 }
 .col-1-2 {
-    width: 49%;
+    width: 47.6%;
 }
 .col-1-7{
     width: calc((100%/7) - 1%);
@@ -72,18 +78,18 @@ body{
 
 }
 [class*='col-'] {
-    padding-right: 10px;
+   margin-right: 8px;
 }
+
+.grid-pad {
+    padding: 15px 0 15px 15px;
+}
+/*.grid-pad > [class*='col-']:last-of-type {*/
+    /*padding-right: 20px;*/
+/*}*/
 [class*='col-']:last-of-type {
     padding-right: 0;
 }
-.grid-pad {
-    padding: 20px 0 20px 20px;
-}
-.grid-pad > [class*='col-']:last-of-type {
-    padding-right: 20px;
-}
-
 /*---------------------------
     Type
 ----------------------------*/
@@ -137,6 +143,9 @@ h4{
 ----------------------------*/
 .padding-right-20{
     padding-right:20px;
+}
+.padding-right-neg20{
+    margin-right:-20px;
 }
 /*---------------------------
     border

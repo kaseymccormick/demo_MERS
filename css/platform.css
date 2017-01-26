@@ -135,12 +135,19 @@ card Layout
 }
 .report-section__header {
     background: #EAF4F3;
-    width: 99%;
+    position: relative;
+    top: -36px;
+    left: -15px;
+    width: 101.5%;
+}
+.col-1-2 > .report-section__header {
+    top: -34px;
+    width: 102.9%;
 }
 .report-section__content__column{
     font-size:14px;
 }
-.report-section__content__column ul li {
+.report-section__content__column ul li, .report-section__content__column li {
     color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, 0.85);
     font-size: 16px;
@@ -151,5 +158,12 @@ card Layout
 .report-section__content__column ul li span{
     /*color: rgb(0, 0, 0);*/
     color: rgba(0, 0, 0, 0.35);
+}
+.section{
+    margin-top:30px;
+
+}
+h4{
+    margin-bottom:-30px;
 }
 
