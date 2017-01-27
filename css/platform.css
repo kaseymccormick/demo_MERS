@@ -147,6 +147,7 @@ card Layout
 .report-section__content__column{
     font-size:14px;
 }
+
 .report-section__content__column ul li, .report-section__content__column li {
     color: rgb(0, 0, 0);
     color: rgba(0, 0, 0, 0.85);
@@ -161,7 +162,6 @@ card Layout
 }
 .section{
     margin-top:30px;
-
 }
 h4{
     margin-bottom:-30px;
@@ -170,6 +170,6 @@ h4{
     display: none;
 }
 .expanded{
-    display: inline-block;
+    display: block;
 }
 

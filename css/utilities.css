@@ -138,6 +138,9 @@ h4{
 .margin-top-20{
     margin-top:20px;
 }
+.margin-bottom-neg30 {
+    margin-bottom: -30px;
+}
 /*---------------------------
     Padding
 ----------------------------*/
@@ -147,9 +150,21 @@ h4{
 .padding-right-neg20{
     margin-right:-20px;
 }
+.padding-bottom-30{
+    padding-bottom: 30px;
+}
 /*---------------------------
     border
 ----------------------------*/
 .ccc-border-1{
     /*border:solid 1px #ccc;*/
+}
+/*---------------------------
+    columns
+----------------------------*/
+.two-column {
+    min-height: 100px; /*your fixed height*/
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2; /*3 in those rules is just placeholder -- can be anything*/
 }

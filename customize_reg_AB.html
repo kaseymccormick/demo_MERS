@@ -117,12 +117,12 @@
                             </ul>
                         </div>
                         <!--general mortgage info-->
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">General information about the residential
-                                mortgage <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-
-                            <ul class="no-list-style report-section__content__column col-1-2">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">General information about the residential
+                                mortgage <i class="fa fa-plus-circle float-right "></i></h4>
+                            <div class="invisible">
+                            <ul class="no-list-style report-section__content__column col-1-2 ">
                                 <h3>Origination</h3>
                                 <li><input type="checkbox">Original loan purpose:ß</li>
                                 <li><input type="checkbox">Originator:</li>
@@ -135,16 +135,14 @@
                                 <li><input type="checkbox">Original interest only term:</li>
                                 <li><input type="checkbox">Underwriting indicator:</li>
                                 <li><input type="checkbox">Original lien position:</li>
-
                                 <h3>Information related to junior liens</h3>
-
                                 <li><input type="checkbox">Most recent junior loan balance:</li>
                                 <li><input type="checkbox">Date of most recent junior loan balance:</li>
                             </ul>
 
                             <ul class="no-list-style report-section__content__column col-1-2">
                                 <li style="list-style: none; display: inline">
-                                    <h3>Information related to non first mortgages<input type="checkbox">All</h3>
+                                    <h3>Information related to non first mortgages</h3>
                                 </li>
                                 <li><input type="checkbox">Most recent senior loan amount</li>
                                 <li><input type="checkbox">Date of most recent senior loan amount</li>
@@ -168,15 +166,15 @@
                                 <li><input type="checkbox">Buy down period</li>
                                 <li><input type="checkbox">Loan delinquency advance days count</li>
                             </ul>
-
+                            </div>
                         </div>
                         <!--TODO figure out this arrangement-->
                         <!--negative amortization-->
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">Information related to negative amortization
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to negative amortization
                                 <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-                            <ul class="no-list-style report-section__content__column ">
+                                        class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style report-section__content__column  two-column invisible ">
                                 <li><input type="checkbox">negative amortization limit</li>
                                 <li><input type="checkbox">initial negative amortization recast period</li>
                                 <li><input type="checkbox">subsequent negative amortization recast period</li>
@@ -190,10 +188,10 @@
                             </ul>
                         </div>
                         <!--property information-->
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">Information related to the property<i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-                            <ul class="no-list-style">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to the property<i
+                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style invisible two-column" >
                                 <li><input type="checkbox"> geographic location</li>
                                 <li><input type="checkbox"> occupancy status</li>
                                 <li><input type="checkbox"> most recent occupancy status</li>
@@ -208,12 +206,12 @@
                         </div>
                         <!--end TODO-->
                         <!--obligor start-->
-                        <div class="col-1-1 ccc-border-1 grid grid-pad ">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
 
-                            <h4 class="collapse-bar report-section__header">Information related to the obligor <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to the obligor <i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> original number of obligors</li>
                                 <li><input type="checkbox"> original obligor credit score</li>
                                 <li><input type="checkbox"> original obligor credit score type</li>
@@ -221,10 +219,7 @@
                                 <li><input type="checkbox"> most recent obligor credit score type</li>
                                 <li><input type="checkbox"> date of most recent obligor credit score</li>
                                 <li><input type="checkbox"> obligor income verification level</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
-                                <li><input type="checkbox"> 4506-T indicator</li>
+                               <li><input type="checkbox"> 4506-T indicator</li>
                                 <li><input type="checkbox"> originator front edn debt to income</li>
                                 <li><input type="checkbox"> orignitaro back end dti</li>
                                 <li><input type="checkbox"> obligor employement verification</li>
@@ -236,32 +231,28 @@
                         </div>
 
                         <!--insurance start-->
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to mortgage insurance <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class= "collapse-bar report-section__header">Information related to mortgage insurance <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class=" invisible no-list-style two-column report-section__content__column">
                                 <li><input type="checkbox"> mortgage insurace company name</li>
                                 <li><input type="checkbox"> mortgage insurance coverage</li>
                                 <li><input type="checkbox"> pool insurance company</li>
-                            </ul>
-
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
-                                <li><input type="checkbox"> pool insurance stop loss percent</li>
+                               <li><input type="checkbox"> pool insurance stop loss percent</li>
                                 <li><input type="checkbox"> mortgage insurance coverage plan type</li>
                             </ul>
                         </div>
 
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to activity on the loan
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to activity on the loan
                                 <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                                        class="fa fa-plus-circle float-right"></i></h4>
 
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class=" invisible no-list-style two-column report-section__content__column">
                                 <li><input type="checkbox"> remaining term to maturity</li>
                                 <li><input type="checkbox"> modification indicator reporting period</li>
                                 <li><input type="checkbox"> next payment due date</li>
@@ -290,9 +281,6 @@
                                 <li><input type="checkbox"> actual principal collected</li>
                                 <li><input type="checkbox"> actual other amounts collected</li>
                                 <li><input type="checkbox"> paid through date</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
                                 <li><input type="checkbox"> interest paid through date</li>
                                 <li><input type="checkbox"> paid in full amount</li>
                                 <li><input type="checkbox"> information related to servicer advances</li>
@@ -322,12 +310,12 @@
                             </ul>
                         </div>
 
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to servicer <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information related to servicer <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul  class="no-list-style invisible two-column">
                                 <li><input type="checkbox">primary servicer</li>
                                 <li><input type="checkbox">most recent servicing transfer received date</li>
                                 <li><input type="checkbox">master servicer</li>
@@ -335,12 +323,12 @@
                                 <li><input type="checkbox">subservicer</li>
                             </ul>
                         </div>
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Asset subject to demand <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject to demand <i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul class="no-list-style invisible two-column">
                                 <li><input type="checkbox"> indicate subject of demand:</li>
                                 <li><input type="checkbox"> status of asset subject to demand:</li>
                                 <li><input type="checkbox"> repurchase amount:</li>
@@ -350,35 +338,35 @@
                             </ul>
                         </div>
 
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to loans that have been
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loans that have been
                                 charged off <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul class="no-list-style invisible two-column">
                                 <li><input type="checkbox"> charged off principal amount:</li>
                                 <li><input type="checkbox"> charged off interest amount:</li>
                             </ul>
                         </div>
-                        <div class="col-1-2 report-section__content__column ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Lost mitigation type indicator<i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)"class="collapse-bar report-section__header">Lost mitigation type indicator<i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul class="no-list-style invisible">
                                 <li><input type="checkbox">indicate type of loss mitigation servicer is pursuing
                                     with obligator
                                 </li>
                             </ul>
 
                         </div>
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to loan modifications<i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loan modifications<i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> most recent loan modification event type</li>
                                 <li><input type="checkbox"> effective date of the most recent loan modification</li>
                                 <li><input type="checkbox"> post modification maturity date</li>
@@ -403,10 +391,7 @@
                                 <li><input type="checkbox"> scheduled ending balance total debt owed</li>
                                 <li><input type="checkbox"> information related to arm loan modifications</li>
                                 <li><input type="checkbox"> post modification arm indicator</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
-                                <li><input type="checkbox"> post modification arm index</li>
+                               <li><input type="checkbox"> post modification arm index</li>
                                 <li><input type="checkbox"> post modification margin</li>
                                 <li><input type="checkbox"> post modification interest reset period if changed</li>
                                 <li><input type="checkbox"> post modification next reset date</li>
@@ -432,25 +417,20 @@
                             </ul>
                         </div>
 
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to loan modifications
-                                involving interest only periods <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loan modifications
+                                involving interest only periods <i class="fa fa-plus-circle float-right "></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> post modification interest only term:</li>
                                 <li><input type="checkbox"> post modification interest only last payment date:</li>
                                 <li><input type="checkbox"> post modification balloon payment amount:</li>
                             </ul>
-
                         </div>
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">Information related to step loans <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> post modification interest rate step indicator</li>
                                 <li><input type="checkbox"> post modification step interest rate</li>
                                 <li><input type="checkbox"> post modification step date</li>
@@ -462,11 +442,7 @@
                                 <li><input type="checkbox"> post modification date of maximum rate under step
                                     agreement
                                 </li>
-                            </ul>
-
-
-                            <ul class="no-list-style col-1-2 report-section__content__column                            ">
-                                <li><input type="checkbox"> non interest bearing principal deferred amount
+                               <li><input type="checkbox"> non interest bearing principal deferred amount
                                     cumulative
                                 </li>
                                 <li><input type="checkbox"> non interest bearing principal deferred amount reporting
@@ -485,13 +461,12 @@
                             </ul>
 
                         </div>
-                        <div class="col-1-2 report-section__content__column grid grid-pad ">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 class="collapse-bar report-section__header">Information related to forbearance or trial
-                                modification <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to forbearance or trial
+                                modification <i class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> most recent forebarance plan or trial modification start
                                     date
                                 </li>
@@ -501,12 +476,12 @@
                                 <li><input type="checkbox"> most recent trial modification violated date</li>
                             </ul>
                         </div>
-                        <div class="col-1-2 report-section__content__column grid grid-pad ">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 class="collapse-bar report-section__header">Information related to repayment plan<i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to repayment plan<i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style report-section__content__column">
+                            <ul class="no-list-style report-section__content__column invisible two-column">
                                 <li><input type="checkbox"> Most recent repayment plan start date</li>
                                 <li><input type="checkbox"> most recent repayment plan scheduled end date</li>
                                 <li><input type="checkbox"> most recent repayment plan violated date</li>
@@ -514,57 +489,50 @@
                         </div>
 
 
-                        <div class="col-1-2 report-section__content__column grid grid-pad ">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 class="collapse-bar report-section__header">Information related to short sales <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to short sales <i
+                                    class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul class="no-list-style invisible">
                                 <li><input type="checkbox"> short sale accepted offer amount:</li>
                             </ul>
                         </div>
-                        <div class="col-1-2 report-section__content__column grid grid-pad ">
-                            <h4 class="collapse-bar report-section__header">Information related to loss mitigation exit
-                                <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loss mitigation exit
+                                <i class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style">
+                            <ul class="no-list-style invisible two-column">
                                 <li><input type="checkbox"> Most recent loss mitigation exit date:</li>
                                 <li><input type="checkbox"> Most recent loss mitigation exit code:</li>
                             </ul>
                         </div>
 
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">information related to loans in the
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">information related to loans in the
                                 foreclosure process<i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> Attorney referal date:</li>
                                 <li><input type="checkbox"> Foreclosure delay reason:</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
-                                <li><input type="checkbox"> Foreclosure exit date:</li>
+                               <li><input type="checkbox"> Foreclosure exit date:</li>
                                 <li><input type="checkbox"> Foreclosure exit reason:</li>
                                 <li><input type="checkbox"> NOI date:</li>
                             </ul>
 
                         </div>
-                        <div class="grid col-1-1 ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">Information related to REO <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                        <div class="grid col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4  onclick="expandDetail(event)" onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to REO <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> Most recent accepted REO offer amount:</li>
                                 <li><input type="checkbox"> Most recent accepted REO offer date:</li>
                                 <li><input type="checkbox"> Gross liquidation proceeds:</li>
                                 <li><input type="checkbox"> Net sales proceeds:</li>
                                 <li><input type="checkbox"> Reporting period loss amount passed to issuing entity:
                                 </li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
-                                <li><input type="checkbox"> Cumulative total loss amount passed to issuing entity:
+                               <li><input type="checkbox"> Cumulative total loss amount passed to issuing entity:
                                 </li>
                                 <li><input type="checkbox"> Subsequent recovery amount:</li>
                                 <li><input type="checkbox"> Eviction indicator:</li>
@@ -572,19 +540,15 @@
                                 <li><input type="checkbox"> REO exit reason:</li>
                             </ul>
                         </div>
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
-                            <h4 class="collapse-bar report-section__header">Information related to losses <i
-                                    class="fa fa-plus-circle float-right padding-right-20"></i></h4>
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to losses <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> UPB at liquidation</li>
                                 <li><input type="checkbox"> servicing fees claimed</li>
                                 <li><input type="checkbox"> servicer advanced amounts reimburse principal</li>
                                 <li><input type="checkbox"> servicer advanced amounts reimbursed interest</li>
-                                <li><input type="checkbox"> Servicer advanced amount reimbursed taxes and insurance
-                                </li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                                <li><input type="checkbox"> Servicer advanced amount reimbursed taxes and insurance</li>
                                 <li><input type="checkbox"> Servicer advanced amount reimbursed corporate</li>
                                 <li><input type="checkbox"> REO management fees</li>
                                 <li><input type="checkbox"> Cash for keys/cash for deed</li>
@@ -592,38 +556,33 @@
                             </ul>
 
                         </div>
-                        <div class="col-1-1 ccc-border-1 grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 class="collapse-bar report-section__header">Information related to mortgage insurance
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to mortgage insurance
                                 claims <i
-                                        class="fa fa-plus-circle float-right padding-right-20"></i></h4>
+                                        class="fa fa-plus-circle float-right"></i></h4>
 
-                            <ul class="no-list-style col-1-2 report-section__content__column">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> Mi claim filed date:</li>
                                 <li><input type="checkbox"> MI claim amount:</li>
                                 <li><input type="checkbox"> MI claim paid date:</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column">
                                 <li><input type="checkbox"> MI claim paid amount:</li>
                                 <li><input type="checkbox"> MI claim denied/rescinded date:</li>
                                 <li><input type="checkbox"> Marketable title transferred date:</li>
                             </ul>
 
                         </div>
-                        <div class="col-1-1 ccc-border-1 grid grid-pad padding-right-neg20">
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information
                                 related to
                                 delinquent loans <i class="fa fa-plus-circle float-right "></i></h4>
 
 
-                            <ul class="no-list-style col-1-2 report-section__content__column invisible">
+                            <ul class="no-list-style two-column report-section__content__column invisible">
                                 <li><input type="checkbox"> Non pay status:</li>
-                            </ul>
-
-                            <ul class="no-list-style col-1-2 report-section__content__column invisible">
-                                <li><input type="checkbox"> Reporting action code:</li>
+                               <li><input type="checkbox"> Reporting action code:</li>
                             </ul>
 
                         </div>
@@ -694,38 +653,23 @@
         let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
         let timesCircleClass = 'fa fa-times-circle float-right padding-right-20px';
 
-//        console.log(event.target.className + 'event target class name');
-//        console.log(event.target.tagName + 'event target .tagname');
-//        console.log(event.target.className.indexOf('minus') + ' event target class name index');
-
         if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('times') > -1) {
             event.target.children.item(0).className = plusCircleClass;
-//            console.log("changing to plus, first condition");
+            event.target.nextElementSibling.classList.remove("expanded");
+            event.target.parentNode.classList.remove("padding-bottom-30")
 
         } else if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('times') === -1) {
             event.target.children.item(0).className = timesCircleClass;
-//            console.log("changing to minus, second condition");
+            event.target.nextElementSibling.className += ' expanded';
+            event.target.parentNode.classList.add("padding-bottom-30")
 
         } else if (event.target.className.indexOf('times') > -1) {
             event.target.className = plusCircleClass;
-
-//            console.log("changing to plus, third condition");
         } else {
             //if it' doesn't follow suit just show minus circle
             event.target.className = timesCircleClass;
-
         }
 
-//        need to modify this to apply to how i organized the code
-        console.log(event.target.childNodes);
-        console.log(event.target);
-        console.log(event.target.nextElementSibling);
-        console.log(event.target.nextElementSibling.className);
-        console.log(event.target.childNodes.className);
-        event.target.
-        event.target.nextElementSibling.className += ' expanded';
-
-// need to use this https://plainjs.com/javascript/traversing/get-siblings-of-an-element-40/
     }
 
 </script>
