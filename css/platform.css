@@ -169,4 +169,7 @@ h4{
 .invisible{
     display: none;
 }
+.expanded{
+    display: inline-block;
+}
 

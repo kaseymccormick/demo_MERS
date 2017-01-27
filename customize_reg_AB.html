@@ -85,13 +85,13 @@
             </div>
             <div class="page__content__tabs tab-container">
                 <ul class="tab">
-                    <li >
+                    <li>
                         <a onclick="showTab()" class="tab-links" id="full">REG AB</a>
                     </li>
-                    <li >
+                    <li>
                         <a onclick="showTab()" class="tab-links active" id="custom">Custom REG AB</a>
                     </li>
-                    <li >
+                    <li>
                         <a onclick="showTab()" class="tab-links" id="list">Custom REG AB's Created</a>
                     </li>
                 </ul>
@@ -466,22 +466,22 @@
 
 
                             <ul class="no-list-style col-1-2 report-section__content__column                            ">
-                            <li><input type="checkbox"> non interest bearing principal deferred amount
-                                cumulative
-                            </li>
-                            <li><input type="checkbox"> non interest bearing principal deferred amount reporting
-                                period
-                            </li>
-                            <li><input type="checkbox"> recovery of deferred principal reporting period</li>
-                            <li><input type="checkbox"> non interest bearing deferred paid in full amount</li>
-                            <li><input type="checkbox"> non interest bearing deferred interest and fees amount
-                                reporting period
-                            </li>
-                            <li><input type="checkbox"> non interest bearing deferred interest fees amount
-                                cumulative
-                            </li>
-                            <li><input type="checkbox"> recovery of deferred interest and fees reporting period
-                            </li>
+                                <li><input type="checkbox"> non interest bearing principal deferred amount
+                                    cumulative
+                                </li>
+                                <li><input type="checkbox"> non interest bearing principal deferred amount reporting
+                                    period
+                                </li>
+                                <li><input type="checkbox"> recovery of deferred principal reporting period</li>
+                                <li><input type="checkbox"> non interest bearing deferred paid in full amount</li>
+                                <li><input type="checkbox"> non interest bearing deferred interest and fees amount
+                                    reporting period
+                                </li>
+                                <li><input type="checkbox"> non interest bearing deferred interest fees amount
+                                    cumulative
+                                </li>
+                                <li><input type="checkbox"> recovery of deferred interest and fees reporting period
+                                </li>
                             </ul>
 
                         </div>
@@ -613,7 +613,8 @@
                         </div>
                         <div class="col-1-1 ccc-border-1 grid grid-pad padding-right-neg20">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information related to
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information
+                                related to
                                 delinquent loans <i class="fa fa-plus-circle float-right padding-right-20"></i></h4>
 
 
@@ -632,12 +633,12 @@
                     </div>
 
                 </div>
-                <div id="custom-tab-content" class="tab-content grid grid-pad" >
+                <div id="custom-tab-content" class="tab-content grid grid-pad">
                     Custom REG AB
                 </div>
-                <div id="list-tab-content" class="tab-content grid grid-pad" >
+                <div id="list-tab-content" class="tab-content grid grid-pad">
                     <div class="col-1-1">
-                    <p>DID it work</p>
+                        <p>DID it work</p>
                     </div>
                 </div>
 
@@ -666,7 +667,7 @@
 </html>
 
 <script>
-    function showInfo(){
+    function showInfo() {
 
     }
     function showTab(event) {
@@ -689,29 +690,43 @@
         document.getElementById(event.target.id + '-tab-content').style.display = 'inline-block';
         event.currentTarget.className += ' active';
     }
-    function  expandDetail(event) {
+    function expandDetail(event) {
         let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
         let minusCircleClass = 'fa fa-minus-circle float-right ';
         let quadClass = 'fa fa-th-large float-right padding-right-20px';
 
-        if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('down') > -1) {
+//        console.log(event.target.className + 'event target class name');
+//        console.log(event.target.tagName + 'event target .tagname');
+//        console.log(event.target.className.indexOf('minus') + ' event target class name index');
+
+        if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('minus') > -1) {
             event.target.children.item(0).className = plusCircleClass;
-console.log("changing to plus, first condition")
-        } else if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('down') === -1) {
+//            console.log("changing to plus, first condition");
+
+        } else if (event.target.tagName === 'H4' && event.target.children.item(0).className.indexOf('minus') === -1) {
             event.target.children.item(0).className = minusCircleClass;
-            console.log("changing to minus, second condition")
-        } else if (event.target.className.indexOf('down') > -1) {
+//            console.log("changing to minus, second condition");
+
+        } else if (event.target.className.indexOf('minus') > -1) {
             event.target.className = plusCircleClass;
-            console.log("changing to plus, third condition")
+
+//            console.log("changing to plus, third condition");
         } else {
-            //            if it' doesn't follow suit just show minus circle
+            //if it' doesn't follow suit just show minus circle
             event.target.className = minusCircleClass;
 
         }
 
-        event.target.parentElement.className += ' expanded';
-        this.isInvisible = !this.isInvisible;
-        this.$parent.expandDetail(event);
+//        need to modify this to apply to how i organized the code
+        console.log(event.target.childNodes);
+        console.log(event.target);
+        console.log(event.target.nextElementSibling);
+        console.log(event.target.nextElementSibling.className);
+        console.log(event.target.childNodes.className);
+        event.target.
+        event.target.nextElementSibling.className += ' expanded';
+        event.target.childNodes.className -= ' invisible';
+// need to use this https://plainjs.com/javascript/traversing/get-siblings-of-an-element-40/
     }
 
 </script>
