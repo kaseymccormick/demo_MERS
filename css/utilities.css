@@ -120,6 +120,13 @@ footer a{
 h4{
     padding: 10px 20px;
 }
+.link-text{
+    text-decoration: underline;
+    color:dodgerblue;
+    line-height: 1.5em;
+    font-style:italic;
+
+}
 /*---------------------------
     Position
 ----------------------------*/
@@ -168,3 +175,4 @@ h4{
     -moz-column-count: 2;
     column-count: 2; /*3 in those rules is just placeholder -- can be anything*/
 }
+

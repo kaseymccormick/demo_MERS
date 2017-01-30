@@ -7,7 +7,7 @@
     <script src="https://use.fontawesome.com/177c6c789c.js">
     </script>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     <!--css-->
     <link href="css/platform.css" rel="stylesheet">
     <link href="css/improvements.css" rel="stylesheet">
@@ -86,16 +86,19 @@
             <div class="page__content__tabs tab-container">
                 <ul class="tab">
                     <li>
-                        <a onclick="showTab()" class="tab-links active" id="full">REG AB</a>
+                        <a onclick="showTab(event)" class="tab-links active" id="full">REG AB</a>
                     </li>
                     <li>
-                        <a onclick="showTab()" class="tab-links " id="custom">Custom REG AB</a>
+                        <a onclick="showTab(event)" class="tab-links " id="custom">Custom REG AB</a>
                     </li>
                     <li>
-                        <a onclick="showTab()" class="tab-links" id="list">Custom REG AB's Created</a>
+                        <a onclick="showTab(event)" class="tab-links" id="list">Custom REG AB's Created</a>
+                    </li>
+                    <li class="invisible">
+                        <a onclick="showTab(event)" class="tab-links invisible" id="view">View Custom Report</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="full-tab-content">
+                <div id="full-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
                         <div onclick="expandDetail()" class="col-1-1 grid grid-pad">
@@ -119,7 +122,8 @@
                         <!--general mortgage info-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">  General information about the residential
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
+                                information about the residential
                                 mortgage <i class="fa fa-plus-circle float-right "></i></h4>
                             <div class="invisible">
                                 <ul class="no-list-style report-section__content__column col-1-2 ">
@@ -171,7 +175,8 @@
                         <!--TODO figure out this arrangement-->
                         <!--negative amortization-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to negative amortization
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to negative amortization
                                 <i
                                         class="fa fa-plus-circle float-right"></i></h4>
                             <ul class="no-list-style report-section__content__column  two-column invisible ">
@@ -189,43 +194,45 @@
                         </div>
                         <!--property information-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to the property<i
-                                    class="fa fa-plus-circle float-right"></i></h4>
-                            <ul class="no-list-style invisible two-column" >
-                                <li>  Geographic location:</li>
-                                <li>  Occupancy status:</li>
-                                <li>  Most recent occupancy status:</li>
-                                <li>  Property type:</li>
-                                <li>  Most recent property value:</li>
-                                <li>  Most recent property valuation type:</li>
-                                <li>  Most recent property valuation date:</li>
-                                <li>  Most recent avm model name:</li>
-                                <li>  Most recent avm confidence score:</li>
-                                <li>  Original combined loan-to-value:</li>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to the property<i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style invisible two-column">
+                                <li> Geographic location:</li>
+                                <li> Occupancy status:</li>
+                                <li> Most recent occupancy status:</li>
+                                <li> Property type:</li>
+                                <li> Most recent property value:</li>
+                                <li> Most recent property valuation type:</li>
+                                <li> Most recent property valuation date:</li>
+                                <li> Most recent avm model name:</li>
+                                <li> Most recent avm confidence score:</li>
+                                <li> Original combined loan-to-value:</li>
                             </ul>
                         </div>
                         <!--end TODO-->
                         <!--obligor start-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to the obligor <i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to the obligor <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  original number of obligors: </li>
-                                <li>  original obligor credit score: </li>
-                                <li>  original obligor credit score type: </li>
-                                <li>  most recent obligor credit score: </li>
-                                <li>  most recent obligor credit score type: </li>
-                                <li>  date of most recent obligor credit score: </li>
-                                <li>  obligor income verification level: </li>
-                                <li>  4506-T indicator: </li>
-                                <li>  originator front edn debt to income: </li>
-                                <li>  orignitaro back end dti: </li>
-                                <li>  obligor employement verification: </li>
-                                <li>  length of employment obligor: </li>
-                                <li>  obligor asset verification: </li>
-                                <li>  original pleged assetsqualification method: </li>
+                                <li> original number of obligors:</li>
+                                <li> original obligor credit score:</li>
+                                <li> original obligor credit score type:</li>
+                                <li> most recent obligor credit score:</li>
+                                <li> most recent obligor credit score type:</li>
+                                <li> date of most recent obligor credit score:</li>
+                                <li> obligor income verification level:</li>
+                                <li> 4506-T indicator:</li>
+                                <li> originator front edn debt to income:</li>
+                                <li> orignitaro back end dti:</li>
+                                <li> obligor employement verification:</li>
+                                <li> length of employment obligor:</li>
+                                <li> obligor asset verification:</li>
+                                <li> original pleged assetsqualification method:</li>
                             </ul>
 
                         </div>
@@ -233,89 +240,92 @@
                         <!--insurance start-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class= "collapse-bar report-section__header">Information related to mortgage insurance <i
-                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to mortgage insurance <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
 
                             <ul class=" invisible no-list-style two-column report-section__content__column">
-                                <li>  mortgage insurace company name: </li>
-                                <li>  mortgage insurance coverage: </li>
-                                <li>  pool insurance company: </li>
-                                <li>  pool insurance stop loss percent: </li>
-                                <li>  mortgage insurance coverage plan type: </li>
+                                <li> mortgage insurace company name:</li>
+                                <li> mortgage insurance coverage:</li>
+                                <li> pool insurance company:</li>
+                                <li> pool insurance stop loss percent:</li>
+                                <li> mortgage insurance coverage plan type:</li>
                             </ul>
                         </div>
 
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to activity on the loan
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to activity on the loan
                                 <i
                                         class="fa fa-plus-circle float-right"></i></h4>
 
 
                             <ul class=" invisible no-list-style two-column report-section__content__column">
-                                <li>  remaining term to maturity: </li>
-                                <li>  modification indicator reporting period: </li>
-                                <li>  next payment due date: </li>
-                                <li>  advancing method: </li>
-                                <li>  servicing advance methodology: </li>
-                                <li>  stop principal and interest advance date: </li>
-                                <li>  reporting period begining loan balance: </li>
-                                <li>  reporting period begining shceduled loan balance: </li>
-                                <li>  next reporting period payment amount due: </li>
-                                <li>  reporting period interest rate: </li>
-                                <li>  next interest rate: </li>
-                                <li>  servicing fee percentage: </li>
-                                <li>  servicing fee flat fee: </li>
-                                <li>  other assessed but uncollected servicer fees: </li>
-                                <li>  other loan level servicing fees retained by the servicer:
+                                <li> remaining term to maturity:</li>
+                                <li> modification indicator reporting period:</li>
+                                <li> next payment due date:</li>
+                                <li> advancing method:</li>
+                                <li> servicing advance methodology:</li>
+                                <li> stop principal and interest advance date:</li>
+                                <li> reporting period begining loan balance:</li>
+                                <li> reporting period begining shceduled loan balance:</li>
+                                <li> next reporting period payment amount due:</li>
+                                <li> reporting period interest rate:</li>
+                                <li> next interest rate:</li>
+                                <li> servicing fee percentage:</li>
+                                <li> servicing fee flat fee:</li>
+                                <li> other assessed but uncollected servicer fees:</li>
+                                <li> other loan level servicing fees retained by the servicer:
                                 </li>
-                                <li>  scheduled interest amount: </li>
-                                <li>  other interest adjustments: </li>
-                                <li>  scheduled principal amount: </li>
-                                <li>  other principal adjustments: </li>
-                                <li>  report period ending actual balance: </li>
-                                <li>  reporting period ending scheduled balance: </li>
-                                <li>  reporting period scheduled payment amount: </li>
-                                <li>  total actual amount paid: </li>
-                                <li>  actual interest collected: </li>
-                                <li>  actual principal collected: </li>
-                                <li>  actual other amounts collected: </li>
-                                <li>  paid through date: </li>
-                                <li>  interest paid through date: </li>
-                                <li>  paid in full amount: </li>
-                                <li>  information related to servicer advances: </li>
-                                <li>  servicer advanced amount principal: </li>
-                                <li>  servicer advanced amounts repaid principal: </li>
-                                <li>  servicer advances cumulative principal: </li>
-                                <li>  servicer advanced amount interest: </li>
-                                <li>  servicer advanced amounts repaid interest: </li>
-                                <li>  servicer advances cumulative interest: </li>
-                                <li>  servicer advanced amount taxes and insurance: </li>
-                                <li>  servicer advanced amount repaid taxes and insurance: </li>
-                                <li>  servicer advances cumulative taxes and insurance: </li>
-                                <li>  servicer advanced amount corporate: </li>
-                                <li>  servicer advanced amount repaid corporate: </li>
-                                <li>  servicer advances cumulative corporate: </li>
-                                <li>  zero balance loans: </li>
-                                <li>  zero balance effective date: </li>
-                                <li>  zero balance code: </li>
-                                <li>  most recent 12 month pay history: </li>
-                                <li>  number of payments past due: </li>
-                                <li>  information related to activity on arm loans: </li>
-                                <li>  rate at next reset: </li>
-                                <li>  next payment change date: </li>
-                                <li>  next interest rate change date: </li>
-                                <li>  payment at next rest: </li>
-                                <li>  exercised arm conversion option indicator: </li>
+                                <li> scheduled interest amount:</li>
+                                <li> other interest adjustments:</li>
+                                <li> scheduled principal amount:</li>
+                                <li> other principal adjustments:</li>
+                                <li> report period ending actual balance:</li>
+                                <li> reporting period ending scheduled balance:</li>
+                                <li> reporting period scheduled payment amount:</li>
+                                <li> total actual amount paid:</li>
+                                <li> actual interest collected:</li>
+                                <li> actual principal collected:</li>
+                                <li> actual other amounts collected:</li>
+                                <li> paid through date:</li>
+                                <li> interest paid through date:</li>
+                                <li> paid in full amount:</li>
+                                <li> information related to servicer advances:</li>
+                                <li> servicer advanced amount principal:</li>
+                                <li> servicer advanced amounts repaid principal:</li>
+                                <li> servicer advances cumulative principal:</li>
+                                <li> servicer advanced amount interest:</li>
+                                <li> servicer advanced amounts repaid interest:</li>
+                                <li> servicer advances cumulative interest:</li>
+                                <li> servicer advanced amount taxes and insurance:</li>
+                                <li> servicer advanced amount repaid taxes and insurance:</li>
+                                <li> servicer advances cumulative taxes and insurance:</li>
+                                <li> servicer advanced amount corporate:</li>
+                                <li> servicer advanced amount repaid corporate:</li>
+                                <li> servicer advances cumulative corporate:</li>
+                                <li> zero balance loans:</li>
+                                <li> zero balance effective date:</li>
+                                <li> zero balance code:</li>
+                                <li> most recent 12 month pay history:</li>
+                                <li> number of payments past due:</li>
+                                <li> information related to activity on arm loans:</li>
+                                <li> rate at next reset:</li>
+                                <li> next payment change date:</li>
+                                <li> next interest rate change date:</li>
+                                <li> payment at next rest:</li>
+                                <li> exercised arm conversion option indicator:</li>
                             </ul>
                         </div>
 
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information related to servicer <i
-                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information
+                                related to servicer <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
 
-                            <ul  class="no-list-style invisible two-column">
+                            <ul class="no-list-style invisible two-column">
                                 <li> primary servicer</li>
                                 <li> most recent servicing transfer received date</li>
                                 <li> master servicer</li>
@@ -325,34 +335,37 @@
                         </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject to demand <i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject
+                                to demand <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style invisible two-column">
-                                <li>  indicate subject of demand:</li>
-                                <li>  status of asset subject to demand:</li>
-                                <li>  repurchase amount:</li>
-                                <li>  demand resolution date:</li>
-                                <li>  repurchaser:</li>
-                                <li>  repurchase or replacement reason:</li>
+                                <li> indicate subject of demand:</li>
+                                <li> status of asset subject to demand:</li>
+                                <li> repurchase amount:</li>
+                                <li> demand resolution date:</li>
+                                <li> repurchaser:</li>
+                                <li> repurchase or replacement reason:</li>
                             </ul>
                         </div>
 
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loans that have been
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loans that have been
                                 charged off <i
                                         class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style invisible two-column">
-                                <li>  charged off principal amount:</li>
-                                <li>  charged off interest amount:</li>
+                                <li> charged off principal amount:</li>
+                                <li> charged off interest amount:</li>
                             </ul>
                         </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)"class="collapse-bar report-section__header">Lost mitigation type indicator<i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
+                                mitigation type indicator<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style invisible">
                                 <li> indicate type of loss mitigation servicer is pursuing
@@ -363,196 +376,206 @@
                         </div>
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loan modifications<i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loan modifications<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  most recent loan modification event type</li>
-                                <li>  effective date of the most recent loan modification</li>
-                                <li>  post modification maturity date</li>
-                                <li>  post modification interest rate type</li>
-                                <li>  post modification amortization type</li>
-                                <li>  post modification interest rate</li>
-                                <li>  post modification first payment date</li>
-                                <li>  post modification loan balance</li>
-                                <li>  post modification principal and interst payment</li>
-                                <li>  total capitalized amount</li>
-                                <li>  income verification indicator at modification</li>
-                                <li>  modification front end dti</li>
-                                <li>  modification back end dti</li>
-                                <li>  total deferred amount</li>
-                                <li>  forgiven principal amount cumulative</li>
-                                <li>  forgiven principal amount reporting period</li>
-                                <li>  forgiven interest amount cumulative</li>
-                                <li>  forgiven interest amount reporting period &gt;</li>
-                                <li>  actual ending balance total debt owed</li>
-                                <li>  scheduled ending balance total debt owed</li>
-                                <li>  information related to ARM loan modifications</li>
-                                <li>  scheduled ending balance total debt owed</li>
-                                <li>  information related to arm loan modifications</li>
-                                <li>  post modification arm indicator</li>
-                                <li>  post modification arm index</li>
-                                <li>  post modification margin</li>
-                                <li>  post modification interest reset period if changed</li>
-                                <li>  post modification next reset date</li>
-                                <li>  post modification index lookback</li>
-                                <li>  post modification arm round indicator</li>
-                                <li>  post modification arm round percentage</li>
-                                <li>  post modification initial minimum payment</li>
-                                <li>  post modification next payment adjustment date</li>
-                                <li>  post modification arm payment recast frequency</li>
-                                <li>  post modification lifetime rate floor</li>
-                                <li>  post modification lifetime rate ceiling</li>
-                                <li>  post modification initial interest rate increase</li>
-                                <li>  post modification initial interest rate decrease</li>
-                                <li>  post modification subsequent interest rate increase</li>
-                                <li>  post modification subsequent interest rate decrease</li>
-                                <li>  post modification payment cap</li>
-                                <li>  post modification payment method after recast</li>
-                                <li>  post modification arm interest rate teaser period</li>
-                                <li>  post modification payment teaser period</li>
-                                <li>  post modification arm negative amortization indicator
+                                <li> most recent loan modification event type</li>
+                                <li> effective date of the most recent loan modification</li>
+                                <li> post modification maturity date</li>
+                                <li> post modification interest rate type</li>
+                                <li> post modification amortization type</li>
+                                <li> post modification interest rate</li>
+                                <li> post modification first payment date</li>
+                                <li> post modification loan balance</li>
+                                <li> post modification principal and interst payment</li>
+                                <li> total capitalized amount</li>
+                                <li> income verification indicator at modification</li>
+                                <li> modification front end dti</li>
+                                <li> modification back end dti</li>
+                                <li> total deferred amount</li>
+                                <li> forgiven principal amount cumulative</li>
+                                <li> forgiven principal amount reporting period</li>
+                                <li> forgiven interest amount cumulative</li>
+                                <li> forgiven interest amount reporting period &gt;</li>
+                                <li> actual ending balance total debt owed</li>
+                                <li> scheduled ending balance total debt owed</li>
+                                <li> information related to ARM loan modifications</li>
+                                <li> scheduled ending balance total debt owed</li>
+                                <li> information related to arm loan modifications</li>
+                                <li> post modification arm indicator</li>
+                                <li> post modification arm index</li>
+                                <li> post modification margin</li>
+                                <li> post modification interest reset period if changed</li>
+                                <li> post modification next reset date</li>
+                                <li> post modification index lookback</li>
+                                <li> post modification arm round indicator</li>
+                                <li> post modification arm round percentage</li>
+                                <li> post modification initial minimum payment</li>
+                                <li> post modification next payment adjustment date</li>
+                                <li> post modification arm payment recast frequency</li>
+                                <li> post modification lifetime rate floor</li>
+                                <li> post modification lifetime rate ceiling</li>
+                                <li> post modification initial interest rate increase</li>
+                                <li> post modification initial interest rate decrease</li>
+                                <li> post modification subsequent interest rate increase</li>
+                                <li> post modification subsequent interest rate decrease</li>
+                                <li> post modification payment cap</li>
+                                <li> post modification payment method after recast</li>
+                                <li> post modification arm interest rate teaser period</li>
+                                <li> post modification payment teaser period</li>
+                                <li> post modification arm negative amortization indicator
                                 </li>
-                                <li>  post modification arm negative amortization</li>
+                                <li> post modification arm negative amortization</li>
                             </ul>
                         </div>
 
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loan modifications
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loan modifications
                                 involving interest only periods <i class="fa fa-plus-circle float-right "></i></h4>
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  post modification interest only term:</li>
-                                <li>  post modification interest only last payment date:</li>
-                                <li>  post modification balloon payment amount:</li>
+                                <li> post modification interest only term:</li>
+                                <li> post modification interest only last payment date:</li>
+                                <li> post modification balloon payment amount:</li>
                             </ul>
                         </div>
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  post modification interest rate step indicator</li>
-                                <li>  post modification step interest rate</li>
-                                <li>  post modification step date</li>
-                                <li>  post modification step principal and interest</li>
-                                <li>  post modification number of steps</li>
-                                <li>  post modification maximum future rate under step
+                                <li> post modification interest rate step indicator</li>
+                                <li> post modification step interest rate</li>
+                                <li> post modification step date</li>
+                                <li> post modification step principal and interest</li>
+                                <li> post modification number of steps</li>
+                                <li> post modification maximum future rate under step
                                     agreemnet
                                 </li>
-                                <li>  post modification date of maximum rate under step
+                                <li> post modification date of maximum rate under step
                                     agreement
                                 </li>
-                                <li>  non interest bearing principal deferred amount
+                                <li> non interest bearing principal deferred amount
                                     cumulative
                                 </li>
-                                <li>  non interest bearing principal deferred amount reporting
+                                <li> non interest bearing principal deferred amount reporting
                                     period
                                 </li>
-                                <li>  recovery of deferred principal reporting period</li>
-                                <li>  non interest bearing deferred paid in full amount</li>
-                                <li>  non interest bearing deferred interest and fees amount
+                                <li> recovery of deferred principal reporting period</li>
+                                <li> non interest bearing deferred paid in full amount</li>
+                                <li> non interest bearing deferred interest and fees amount
                                     reporting period
                                 </li>
-                                <li>  non interest bearing deferred interest fees amount
+                                <li> non interest bearing deferred interest fees amount
                                     cumulative
                                 </li>
-                                <li>  recovery of deferred interest and fees reporting period
+                                <li> recovery of deferred interest and fees reporting period
                                 </li>
                             </ul>
 
                         </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to forbearance or trial
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to forbearance or trial
                                 modification <i class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  most recent forebarance plan or trial modification start
+                                <li> most recent forebarance plan or trial modification start
                                     date
                                 </li>
-                                <li>  most recent forbearance plan or trial modification
+                                <li> most recent forbearance plan or trial modification
                                     scheduled end date
                                 </li>
-                                <li>  most recent trial modification violated date</li>
+                                <li> most recent trial modification violated date</li>
                             </ul>
                         </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to repayment plan<i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to repayment plan<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style report-section__content__column invisible two-column">
-                                <li>  Most recent repayment plan start date</li>
-                                <li>  most recent repayment plan scheduled end date</li>
-                                <li>  most recent repayment plan violated date</li>
+                                <li> Most recent repayment plan start date</li>
+                                <li> most recent repayment plan scheduled end date</li>
+                                <li> most recent repayment plan violated date</li>
                             </ul>
                         </div>
 
 
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to short sales <i
-                                    class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to short sales <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style invisible">
-                                <li>  short sale accepted offer amount:</li>
+                                <li> short sale accepted offer amount:</li>
                             </ul>
                         </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loss mitigation exit
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loss mitigation exit
                                 <i class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style invisible two-column">
-                                <li>  Most recent loss mitigation exit date:</li>
-                                <li>  Most recent loss mitigation exit code:</li>
+                                <li> Most recent loss mitigation exit date:</li>
+                                <li> Most recent loss mitigation exit code:</li>
                             </ul>
                         </div>
 
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">information related to loans in the
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">information
+                                related to loans in the
                                 foreclosure process<i
                                         class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  Attorney referal date:</li>
-                                <li>  Foreclosure delay reason:</li>
-                                <li>  Foreclosure exit date:</li>
-                                <li>  Foreclosure exit reason:</li>
-                                <li>  NOI date:</li>
+                                <li> Attorney referal date:</li>
+                                <li> Foreclosure delay reason:</li>
+                                <li> Foreclosure exit date:</li>
+                                <li> Foreclosure exit reason:</li>
+                                <li> NOI date:</li>
                             </ul>
 
                         </div>
                         <div class="grid col-1-1 margin-bottom-neg30   grid grid-pad">
-                            <h4  onclick="expandDetail(event)" onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to REO <i
+                            <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
+                                class="collapse-bar report-section__header">Information related to REO <i
                                     class="fa fa-plus-circle float-right"></i></h4>
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  Most recent accepted REO offer amount:</li>
-                                <li>  Most recent accepted REO offer date:</li>
-                                <li>  Gross liquidation proceeds:</li>
-                                <li>  Net sales proceeds:</li>
-                                <li>  Reporting period loss amount passed to issuing entity:
+                                <li> Most recent accepted REO offer amount:</li>
+                                <li> Most recent accepted REO offer date:</li>
+                                <li> Gross liquidation proceeds:</li>
+                                <li> Net sales proceeds:</li>
+                                <li> Reporting period loss amount passed to issuing entity:
                                 </li>
-                                <li>  Cumulative total loss amount passed to issuing entity:
+                                <li> Cumulative total loss amount passed to issuing entity:
                                 </li>
-                                <li>  Subsequent recovery amount:</li>
-                                <li>  Eviction indicator:</li>
-                                <li>  REO exit date:</li>
-                                <li>  REO exit reason:</li>
+                                <li> Subsequent recovery amount:</li>
+                                <li> Eviction indicator:</li>
+                                <li> REO exit date:</li>
+                                <li> REO exit reason:</li>
                             </ul>
                         </div>
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to losses <i
-                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to losses <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  UPB at liquidation</li>
-                                <li>  servicing fees claimed</li>
-                                <li>  servicer advanced amounts reimburse principal</li>
-                                <li>  servicer advanced amounts reimbursed interest</li>
-                                <li>  Servicer advanced amount reimbursed taxes and insurance</li>
-                                <li>  Servicer advanced amount reimbursed corporate</li>
-                                <li>  REO management fees</li>
-                                <li>  Cash for keys/cash for deed</li>
-                                <li>  Performance incentive fees</li>
+                                <li> UPB at liquidation</li>
+                                <li> servicing fees claimed</li>
+                                <li> servicer advanced amounts reimburse principal</li>
+                                <li> servicer advanced amounts reimbursed interest</li>
+                                <li> Servicer advanced amount reimbursed taxes and insurance</li>
+                                <li> Servicer advanced amount reimbursed corporate</li>
+                                <li> REO management fees</li>
+                                <li> Cash for keys/cash for deed</li>
+                                <li> Performance incentive fees</li>
                             </ul>
 
                         </div>
@@ -564,12 +587,12 @@
                                         class="fa fa-plus-circle float-right"></i></h4>
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  Mi claim filed date:</li>
-                                <li>  MI claim amount:</li>
-                                <li>  MI claim paid date:</li>
-                                <li>  MI claim paid amount:</li>
-                                <li>  MI claim denied/rescinded date:</li>
-                                <li>  Marketable title transferred date:</li>
+                                <li> Mi claim filed date:</li>
+                                <li> MI claim amount:</li>
+                                <li> MI claim paid date:</li>
+                                <li> MI claim paid amount:</li>
+                                <li> MI claim denied/rescinded date:</li>
+                                <li> Marketable title transferred date:</li>
                             </ul>
 
                         </div>
@@ -581,8 +604,529 @@
 
 
                             <ul class="no-list-style two-column report-section__content__column invisible">
-                                <li>  Non pay status:</li>
-                                <li>  Reporting action code:</li>
+                                <li> Non pay status:</li>
+                                <li> Reporting action code:</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 ">
+
+                            <a class=" float-right button" href="custom_list.html">Run Report</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- CUSTOMIZE REG AB SELECTION-->
+
+                <div id="custom-tab-content" class="tab-content grid grid-pad">
+
+                    <div class="page-content__report-section grid grid-pad">
+                        <!--asset numbers and dates-->
+                        <div onclick="expandDetail()" class="col-1-1 grid grid-pad">
+                            <ul class="no-list-style report-section__content__column col-1-2">
+                                <li style="list-style: none; display: inline">
+                                    <h3>Asset Numbers</h3>
+                                </li>
+                                <li>Asset Number Type:</li>
+                                <li>Asset Number:</li>
+                                <li>Asset group number:</li>
+                            </ul>
+
+                            <ul class="no-list-style report-section__content__column col-1-2">
+                                <li style="list-style: none; display: inline">
+                                    <h3>Reporting period</h3>
+                                </li>
+                                <li>Begin date:</li>
+                                <li>End date:</li>
+                            </ul>
+                        </div>
+                        <!--general mortgage info-->
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
+                                information about the residential
+                                mortgage <i class="fa fa-plus-circle float-right "></i></h4>
+                            <div class="invisible">
+                                <ul class="no-list-style report-section__content__column col-1-2 ">
+                                    <h3>Origination</h3>
+                                    <li><input type="checkbox">Original loan purpose:ß</li>
+                                    <li><input type="checkbox">Originator:</li>
+                                    <li><input type="checkbox">Originator loan amount:</li>
+                                    <li><input type="checkbox">Original loan maturity date:</li>
+                                    <li><input type="checkbox">Original amortization term:</li>
+                                    <li><input type="checkbox">Original interest rate:</li>
+                                    <li><input type="checkbox">Accrual type:</li>
+                                    <li><input type="checkbox">Original interest rate type:</li>
+                                    <li><input type="checkbox">Original interest only term:</li>
+                                    <li><input type="checkbox">Underwriting indicator:</li>
+                                    <li><input type="checkbox">Original lien position:</li>
+                                    <h3>Information related to junior liens</h3>
+                                    <li><input type="checkbox">Most recent junior loan balance:</li>
+                                    <li><input type="checkbox">Date of most recent junior loan balance:</li>
+                                </ul>
+
+                                <ul class="no-list-style report-section__content__column col-1-2">
+                                    <li style="list-style: none; display: inline">
+                                        <h3>Information related to non first mortgages</h3>
+                                    </li>
+                                    <li><input type="checkbox">Most recent senior loan amount</li>
+                                    <li><input type="checkbox">Date of most recent senior loan amount</li>
+                                    <li><input type="checkbox">Loan type of most senior lien</li>
+                                    <li><input type="checkbox">Hybrid period of most senior lien</li>
+                                    <li><input type="checkbox">Negative amortization limit of most senior lien</li>
+                                    <li><input type="checkbox">Origination date of most senior lien</li>
+                                    <li><input type="checkbox">Prepayment penalty indicator</li>
+                                    <li><input type="checkbox">Negative amortization indicator</li>
+                                    <li><input type="checkbox">Modification indicator</li>
+                                    <li><input type="checkbox">Number of modifications</li>
+                                    <li><input type="checkbox">Mortgage insurance requirement indicator</li>
+                                    <li><input type="checkbox">Balloon indicator</li>
+                                    <li><input type="checkbox">Covered high cost loan indicator</li>
+                                    <li><input type="checkbox">Servicer placed hazard insurance</li>
+                                    <li><input type="checkbox">Refinance cash out amount</li>
+                                    <li><input type="checkbox">Total origination and discount points</li>
+                                    <li><input type="checkbox">Broker</li>
+                                    <li><input type="checkbox">channel</li>
+                                    <li><input type="checkbox">NMLS company number</li>
+                                    <li><input type="checkbox">Buy down period</li>
+                                    <li><input type="checkbox">Loan delinquency advance days count</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--TODO figure out this arrangement-->
+                        <!--negative amortization-->
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to negative amortization
+                                <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style report-section__content__column  two-column invisible ">
+                                <li><input type="checkbox">negative amortization limit</li>
+                                <li><input type="checkbox">initial negative amortization recast period</li>
+                                <li><input type="checkbox">subsequent negative amortization recast period</li>
+                                <li><input type="checkbox">negative amortization balance amount</li>
+                                <li><input type="checkbox">inital fixed payment period</li>
+                                <li><input type="checkbox">initial periodic payment cap</li>
+                                <li><input type="checkbox">subsequent periodic payment cap</li>
+                                <li><input type="checkbox">initial minimum payment reset period</li>
+                                <li><input type="checkbox">subsequent minimum payment reset period</li>
+                                <li><input type="checkbox">minimum payment</li>
+                            </ul>
+                        </div>
+                        <!--property information-->
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to the property<i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style invisible two-column">
+                                <li><input type="checkbox"> geographic location</li>
+                                <li><input type="checkbox"> occupancy status</li>
+                                <li><input type="checkbox"> most recent occupancy status</li>
+                                <li><input type="checkbox"> property type</li>
+                                <li><input type="checkbox"> most recent property value</li>
+                                <li><input type="checkbox"> most recent property valuation type</li>
+                                <li><input type="checkbox"> most recent property valuation date</li>
+                                <li><input type="checkbox"> most recent avm model name</li>
+                                <li><input type="checkbox"> most recent avm confidence score</li>
+                                <li><input type="checkbox"> original combined loan-to-value</li>
+                            </ul>
+                        </div>
+                        <!--end TODO-->
+                        <!--obligor start-->
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to the obligor <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> original number of obligors</li>
+                                <li><input type="checkbox"> original obligor credit score</li>
+                                <li><input type="checkbox"> original obligor credit score type</li>
+                                <li><input type="checkbox"> most recent obligor credit score</li>
+                                <li><input type="checkbox"> most recent obligor credit score type</li>
+                                <li><input type="checkbox"> date of most recent obligor credit score</li>
+                                <li><input type="checkbox"> obligor income verification level</li>
+                                <li><input type="checkbox"> 4506-T indicator</li>
+                                <li><input type="checkbox"> originator front edn debt to income</li>
+                                <li><input type="checkbox"> orignitaro back end dti</li>
+                                <li><input type="checkbox"> obligor employement verification</li>
+                                <li><input type="checkbox"> length of employment obligor</li>
+                                <li><input type="checkbox"> obligor asset verification</li>
+                                <li><input type="checkbox"> original pleged assetsqualification method</li>
+                            </ul>
+
+                        </div>
+
+                        <!--insurance start-->
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to mortgage insurance <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul class=" invisible no-list-style two-column report-section__content__column">
+                                <li><input type="checkbox"> mortgage insurace company name</li>
+                                <li><input type="checkbox"> mortgage insurance coverage</li>
+                                <li><input type="checkbox"> pool insurance company</li>
+                                <li><input type="checkbox"> pool insurance stop loss percent</li>
+                                <li><input type="checkbox"> mortgage insurance coverage plan type</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to activity on the loan
+                                <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+
+                            <ul class=" invisible no-list-style two-column report-section__content__column">
+                                <li><input type="checkbox"> remaining term to maturity</li>
+                                <li><input type="checkbox"> modification indicator reporting period</li>
+                                <li><input type="checkbox"> next payment due date</li>
+                                <li><input type="checkbox"> advancing method</li>
+                                <li><input type="checkbox"> servicing advance methodology</li>
+                                <li><input type="checkbox"> stop principal and interest advance date</li>
+                                <li><input type="checkbox"> reporting period begining loan balance</li>
+                                <li><input type="checkbox"> reporting period begining shceduled loan balance</li>
+                                <li><input type="checkbox"> next reporting period payment amount due</li>
+                                <li><input type="checkbox"> reporting period interest rate</li>
+                                <li><input type="checkbox"> next interest rate</li>
+                                <li><input type="checkbox"> servicing fee percentage</li>
+                                <li><input type="checkbox"> servicing fee flat fee</li>
+                                <li><input type="checkbox"> other assessed but uncollected servicer fees</li>
+                                <li><input type="checkbox"> other loan level servicing fees retained by the servicer
+                                </li>
+                                <li><input type="checkbox"> scheduled interest amount</li>
+                                <li><input type="checkbox"> other interest adjustments</li>
+                                <li><input type="checkbox"> scheduled principal amount</li>
+                                <li><input type="checkbox"> other principal adjustments</li>
+                                <li><input type="checkbox"> report period ending actual balance</li>
+                                <li><input type="checkbox"> reporting period ending scheduled balance</li>
+                                <li><input type="checkbox"> reporting period scheduled payment amount</li>
+                                <li><input type="checkbox"> total actual amount paid</li>
+                                <li><input type="checkbox"> actual interest collected</li>
+                                <li><input type="checkbox"> actual principal collected</li>
+                                <li><input type="checkbox"> actual other amounts collected</li>
+                                <li><input type="checkbox"> paid through date</li>
+                                <li><input type="checkbox"> interest paid through date</li>
+                                <li><input type="checkbox"> paid in full amount</li>
+                                <li><input type="checkbox"> information related to servicer advances</li>
+                                <li><input type="checkbox"> servicer advanced amount principal</li>
+                                <li><input type="checkbox"> servicer advanced amounts repaid principal</li>
+                                <li><input type="checkbox"> servicer advances cumulative principal</li>
+                                <li><input type="checkbox"> servicer advanced amount interest</li>
+                                <li><input type="checkbox"> servicer advanced amounts repaid interest</li>
+                                <li><input type="checkbox"> servicer advances cumulative interest</li>
+                                <li><input type="checkbox"> servicer advanced amount taxes and insurance</li>
+                                <li><input type="checkbox"> servicer advanced amount repaid taxes and insurance</li>
+                                <li><input type="checkbox"> servicer advances cumulative taxes and insurance</li>
+                                <li><input type="checkbox"> servicer advanced amount corporate</li>
+                                <li><input type="checkbox"> servicer advanced amount repaid corporate</li>
+                                <li><input type="checkbox"> servicer advances cumulative corporate</li>
+                                <li><input type="checkbox"> zero balance loans</li>
+                                <li><input type="checkbox"> zero balance effective date</li>
+                                <li><input type="checkbox"> zero balance code</li>
+                                <li><input type="checkbox"> most recent 12 month pay history</li>
+                                <li><input type="checkbox"> number of payments past due</li>
+                                <li><input type="checkbox"> information related to activity on arm loans</li>
+                                <li><input type="checkbox"> rate at next reset</li>
+                                <li><input type="checkbox"> next payment change date</li>
+                                <li><input type="checkbox"> next interest rate change date</li>
+                                <li><input type="checkbox"> payment at next rest</li>
+                                <li><input type="checkbox"> exercised arm conversion option indicator</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information
+                                related to servicer <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul class="no-list-style invisible two-column">
+                                <li><input type="checkbox">primary servicer</li>
+                                <li><input type="checkbox">most recent servicing transfer received date</li>
+                                <li><input type="checkbox">master servicer</li>
+                                <li><input type="checkbox">special servicer</li>
+                                <li><input type="checkbox">subservicer</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject
+                                to demand <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style invisible two-column">
+                                <li><input type="checkbox"> indicate subject of demand:</li>
+                                <li><input type="checkbox"> status of asset subject to demand:</li>
+                                <li><input type="checkbox"> repurchase amount:</li>
+                                <li><input type="checkbox"> demand resolution date:</li>
+                                <li><input type="checkbox"> repurchaser:</li>
+                                <li><input type="checkbox"> repurchase or replacement reason:</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loans that have been
+                                charged off <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style invisible two-column">
+                                <li><input type="checkbox"> charged off principal amount:</li>
+                                <li><input type="checkbox"> charged off interest amount:</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
+                                mitigation type indicator<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style invisible">
+                                <li><input type="checkbox">indicate type of loss mitigation servicer is pursuing
+                                    with obligator
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loan modifications<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> most recent loan modification event type</li>
+                                <li><input type="checkbox"> effective date of the most recent loan modification</li>
+                                <li><input type="checkbox"> post modification maturity date</li>
+                                <li><input type="checkbox"> post modification interest rate type</li>
+                                <li><input type="checkbox"> post modification amortization type</li>
+                                <li><input type="checkbox"> post modification interest rate</li>
+                                <li><input type="checkbox"> post modification first payment date</li>
+                                <li><input type="checkbox"> post modification loan balance</li>
+                                <li><input type="checkbox"> post modification principal and interst payment</li>
+                                <li><input type="checkbox"> total capitalized amount</li>
+                                <li><input type="checkbox"> income verification indicator at modification</li>
+                                <li><input type="checkbox"> modification front end dti</li>
+                                <li><input type="checkbox"> modification back end dti</li>
+                                <li><input type="checkbox"> total deferred amount</li>
+                                <li><input type="checkbox"> forgiven principal amount cumulative</li>
+                                <li><input type="checkbox"> forgiven principal amount reporting period</li>
+                                <li><input type="checkbox"> forgiven interest amount cumulative</li>
+                                <li><input type="checkbox"> forgiven interest amount reporting period &gt;</li>
+                                <li><input type="checkbox"> actual ending balance total debt owed</li>
+                                <li><input type="checkbox"> scheduled ending balance total debt owed</li>
+                                <li><input type="checkbox"> information related to ARM loan modifications</li>
+                                <li><input type="checkbox"> scheduled ending balance total debt owed</li>
+                                <li><input type="checkbox"> information related to arm loan modifications</li>
+                                <li><input type="checkbox"> post modification arm indicator</li>
+                                <li><input type="checkbox"> post modification arm index</li>
+                                <li><input type="checkbox"> post modification margin</li>
+                                <li><input type="checkbox"> post modification interest reset period if changed</li>
+                                <li><input type="checkbox"> post modification next reset date</li>
+                                <li><input type="checkbox"> post modification index lookback</li>
+                                <li><input type="checkbox"> post modification arm round indicator</li>
+                                <li><input type="checkbox"> post modification arm round percentage</li>
+                                <li><input type="checkbox"> post modification initial minimum payment</li>
+                                <li><input type="checkbox"> post modification next payment adjustment date</li>
+                                <li><input type="checkbox"> post modification arm payment recast frequency</li>
+                                <li><input type="checkbox"> post modification lifetime rate floor</li>
+                                <li><input type="checkbox"> post modification lifetime rate ceiling</li>
+                                <li><input type="checkbox"> post modification initial interest rate increase</li>
+                                <li><input type="checkbox"> post modification initial interest rate decrease</li>
+                                <li><input type="checkbox"> post modification subsequent interest rate increase</li>
+                                <li><input type="checkbox"> post modification subsequent interest rate decrease</li>
+                                <li><input type="checkbox"> post modification payment cap</li>
+                                <li><input type="checkbox"> post modification payment method after recast</li>
+                                <li><input type="checkbox"> post modification arm interest rate teaser period</li>
+                                <li><input type="checkbox"> post modification payment teaser period</li>
+                                <li><input type="checkbox"> post modification arm negative amortization indicator
+                                </li>
+                                <li><input type="checkbox"> post modification arm negative amortization</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loan modifications
+                                involving interest only periods <i class="fa fa-plus-circle float-right "></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> post modification interest only term:</li>
+                                <li><input type="checkbox"> post modification interest only last payment date:</li>
+                                <li><input type="checkbox"> post modification balloon payment amount:</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> post modification interest rate step indicator</li>
+                                <li><input type="checkbox"> post modification step interest rate</li>
+                                <li><input type="checkbox"> post modification step date</li>
+                                <li><input type="checkbox"> post modification step principal and interest</li>
+                                <li><input type="checkbox"> post modification number of steps</li>
+                                <li><input type="checkbox"> post modification maximum future rate under step
+                                    agreemnet
+                                </li>
+                                <li><input type="checkbox"> post modification date of maximum rate under step
+                                    agreement
+                                </li>
+                                <li><input type="checkbox"> non interest bearing principal deferred amount
+                                    cumulative
+                                </li>
+                                <li><input type="checkbox"> non interest bearing principal deferred amount reporting
+                                    period
+                                </li>
+                                <li><input type="checkbox"> recovery of deferred principal reporting period</li>
+                                <li><input type="checkbox"> non interest bearing deferred paid in full amount</li>
+                                <li><input type="checkbox"> non interest bearing deferred interest and fees amount
+                                    reporting period
+                                </li>
+                                <li><input type="checkbox"> non interest bearing deferred interest fees amount
+                                    cumulative
+                                </li>
+                                <li><input type="checkbox"> recovery of deferred interest and fees reporting period
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to forbearance or trial
+                                modification <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> most recent forebarance plan or trial modification start
+                                    date
+                                </li>
+                                <li><input type="checkbox"> most recent forbearance plan or trial modification
+                                    scheduled end date
+                                </li>
+                                <li><input type="checkbox"> most recent trial modification violated date</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to repayment plan<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style report-section__content__column invisible two-column">
+                                <li><input type="checkbox"> Most recent repayment plan start date</li>
+                                <li><input type="checkbox"> most recent repayment plan scheduled end date</li>
+                                <li><input type="checkbox"> most recent repayment plan violated date</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to short sales <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style invisible">
+                                <li><input type="checkbox"> short sale accepted offer amount:</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to loss mitigation exit
+                                <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style invisible two-column">
+                                <li><input type="checkbox"> Most recent loss mitigation exit date:</li>
+                                <li><input type="checkbox"> Most recent loss mitigation exit code:</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">information
+                                related to loans in the
+                                foreclosure process<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> Attorney referal date:</li>
+                                <li><input type="checkbox"> Foreclosure delay reason:</li>
+                                <li><input type="checkbox"> Foreclosure exit date:</li>
+                                <li><input type="checkbox"> Foreclosure exit reason:</li>
+                                <li><input type="checkbox"> NOI date:</li>
+                            </ul>
+
+                        </div>
+                        <div class="grid col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
+                                class="collapse-bar report-section__header">Information related to REO <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> Most recent accepted REO offer amount:</li>
+                                <li><input type="checkbox"> Most recent accepted REO offer date:</li>
+                                <li><input type="checkbox"> Gross liquidation proceeds:</li>
+                                <li><input type="checkbox"> Net sales proceeds:</li>
+                                <li><input type="checkbox"> Reporting period loss amount passed to issuing entity:
+                                </li>
+                                <li><input type="checkbox"> Cumulative total loss amount passed to issuing entity:
+                                </li>
+                                <li><input type="checkbox"> Subsequent recovery amount:</li>
+                                <li><input type="checkbox"> Eviction indicator:</li>
+                                <li><input type="checkbox"> REO exit date:</li>
+                                <li><input type="checkbox"> REO exit reason:</li>
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to losses <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> UPB at liquidation</li>
+                                <li><input type="checkbox"> servicing fees claimed</li>
+                                <li><input type="checkbox"> servicer advanced amounts reimburse principal</li>
+                                <li><input type="checkbox"> servicer advanced amounts reimbursed interest</li>
+                                <li><input type="checkbox"> Servicer advanced amount reimbursed taxes and insurance</li>
+                                <li><input type="checkbox"> Servicer advanced amount reimbursed corporate</li>
+                                <li><input type="checkbox"> REO management fees</li>
+                                <li><input type="checkbox"> Cash for keys/cash for deed</li>
+                                <li><input type="checkbox"> Performance incentive fees</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                                related to mortgage insurance
+                                claims <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> Mi claim filed date:</li>
+                                <li><input type="checkbox"> MI claim amount:</li>
+                                <li><input type="checkbox"> MI claim paid date:</li>
+                                <li><input type="checkbox"> MI claim paid amount:</li>
+                                <li><input type="checkbox"> MI claim denied/rescinded date:</li>
+                                <li><input type="checkbox"> Marketable title transferred date:</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information
+                                related to
+                                delinquent loans <i class="fa fa-plus-circle float-right "></i></h4>
+
+
+                            <ul class="no-list-style two-column report-section__content__column invisible">
+                                <li><input type="checkbox"> Non pay status:</li>
+                                <li><input type="checkbox"> Reporting action code:</li>
                             </ul>
 
                         </div>
@@ -591,19 +1135,39 @@
                         </div>
                     </div>
 
+
                 </div>
-                <div id="custom-tab-content" class="tab-content grid grid-pad">
-                    Custom REG AB
-                </div>
+                <!--END Customization settings page-->
+                <!--START List of Custom Reports-->
                 <div id="list-tab-content" class="tab-content grid grid-pad">
-                    <div class="col-1-1">
-                        <p>DID it work</p>
+                    <div class="page-content__report-section grid grid-pad">
+                        <ul class="no-list-style">
+                            <li><a class="link-text" href="custom_report.html">Custom REG AB for #88716 - 1/30/2017</a>
+                            </li>
+                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/10/2016</a></li>
+                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/01/2016</a></li>
+                        </ul>
                     </div>
                 </div>
 
+                <!--END list of custom Reports-->
+                <!--START custom report view-->
+                <div id="view-tab-content" class="tab-content grid grid-pad">
+                    <div class="page-content__report-section grid grid-pad">
+                        <ul class="no-list-style">
+                            <li><a class="link-text" href="custom_report.html">Custom REG AB for #88716 - 1/30/2017</a>
+                            </li>
+                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/10/2016</a></li>
+                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/01/2016</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <!--END custom report view-->
+
         </div>
     </div>
+</div>
 </div>
 </div>
 
@@ -631,23 +1195,23 @@
     }
     function showTab(event) {
         var i;
-
+        console.log(event)
         var tabContent = document.getElementsByClassName('tab-content');
         for (i = 0; i < tabContent.length; i++) {
             tabContent[i].style.display = 'none';
-
         }
 
         // Get all elements with class='tab-links' and remove the class 'active'
         var tabLinks = document.getElementsByClassName('tab-links');
         for (i = 0; i < tabLinks.length; i++) {
             tabLinks[i].className = tabLinks[i].className.replace(' active', '');
-
         }
 
-        // Show the current tab, and add an 'active' class to the link that opened the tab
+        // Show the current tab, and add an 'active' class to the link that opened the tab error line 653
+
         document.getElementById(event.target.id + '-tab-content').style.display = 'inline-block';
         event.currentTarget.className += ' active';
+
     }
     function expandDetail(event) {
         let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
@@ -671,125 +1235,107 @@
         }
 
     }
-//    ---------------Data test
-//    need to add all of the labels and filler data
-//    need to iterate over each section and show it on the page label and content correctly
-//    possibly put this data set information in a seperate js file and pull it in
-//    format data the key's to cap each word
+    //    ---------------Data test
+    //    need to add all of the labels and filler data
+    //    need to iterate over each section and show it on the page label and content correctly
+    //    possibly put this data set information in a seperate js file and pull it in
+    //    format data the key's to cap each word
     const regABform = {
         assetNumbers: {
             numberType: 'MERS',
             number: '44323',
-            groupNumber: '4419873'},
+            groupNumber: '4419873'
+        },
         reportingPeriod: {
-            begin:'09/26/2017',
-            end: '11/31/2017'},
-        generalInformation:{
-            origination:{
-                purpose:'unknown',
-                originator:'unknown',
-                amount:'$345,000',
-                maturityDate:'11/36/2040'},
-            juniorLiens:{
-                balance:'$22,998'},
-            firstMortgages:{
-                loanAmount:'$340,000'}
+            begin: '09/26/2017',
+            end: '11/31/2017'
+        },
+        generalInformation: {
+            origination: {
+                purpose: 'unknown',
+                originator: 'unknown',
+                amount: '$345,000',
+                maturityDate: '11/36/2040'
+            },
+            juniorLiens: {
+                balance: '$22,998'
+            },
+            firstMortgages: {
+                loanAmount: '$340,000'
+            }
         },
         negativeAmortization: {
-            limit:'',
-            recastPeriod:'',
-            subsequent:'',
-            negative:'',
-            fixedPaymentPeriod:'',
-            periodic:'',
-            paymentCap:'',
-            resetPeriod:'',
-            paymentResetPeriod:'',
-            minimumPayment:''
+            limit: '',
+            recastPeriod: '',
+            subsequent: '',
+            negative: '',
+            fixedPaymentPeriod: '',
+            periodic: '',
+            paymentCap: '',
+            resetPeriod: '',
+            paymentResetPeriod: '',
+            minimumPayment: ''
         },
-        propertyInformation:{
-            geograpicLocation:'',
-            occupancyStatus:'',
-            mostRecentOccupancyStatus:'',
-            propertyType:'',
-            mostRecentPropertyValue:'',
-            mostRecentPropertyValuationType:'',
-            mostRecentPropertyValuationDate:'',
-            mostRecentAvmModelName:'',
-            mostRecentAVMConfidenceScore:'',
-            originalCombinedLoanToValue:''
+        propertyInformation: {
+            geograpicLocation: '',
+            occupancyStatus: '',
+            mostRecentOccupancyStatus: '',
+            propertyType: '',
+            mostRecentPropertyValue: '',
+            mostRecentPropertyValuationType: '',
+            mostRecentPropertyValuationDate: '',
+            mostRecentAvmModelName: '',
+            mostRecentAVMConfidenceScore: '',
+            originalCombinedLoanToValue: ''
         },
-        obligorInformation:{
-
+        obligorInformation: {},
+        mortgageInsurance: {},
+        loanActivity: {},
+        servicerInformation: {},
+        assetSubjectToDemand: {},
+        chargedOffInformaiton: {},
+        lostMitigationTypeIndicator: {},
+        informationRelatedToLoanModifications: {},
+        periodInformation: {},
+        stepLoansInformation: {},
+        modificationInformation: {},
+        repaymentPlanInformation: {},
+        shortSalesInformation: {
+            offerAmount: ''
         },
-        mortgageInsurance:{
-
+        mitigationExitInformation: {
+            exitDate: '',
+            exitCode: ''
         },
-        loanActivity:{
-
+        foreclosureProcessInformation: {
+            date: ''
         },
-        servicerInformation:{
-
+        relatedToREOInformation: {
+            amount: ''
         },
-        assetSubjectToDemand:{
-
+        lossesInformation: {
+            thing: ''
         },
-        chargedOffInformaiton:{
-
+        insuranceClaimsInformation: {
+            filedDate: '',
+            claimAmount: '',
+            paidDate: '',
+            paidAmount: '',
+            rescindedDate: '',
+            transferredDate: ''
         },
-        lostMitigationTypeIndicator:{
-
-        },
-        informationRelatedToLoanModifications:{
-
-        },
-        periodInformation:{
-
-        },
-        stepLoansInformation:{
-
-        },
-        modificationInformation:{
-
-        },
-        repaymentPlanInformation:{
-
-        },
-        shortSalesInformation:{
-            offerAmount:''
-        },
-        mitigationExitInformation:{
-            exitDate:'',
-            exitCode:''
-        },
-        foreclosureProcessInformation:{
-            date:''
-        },
-        relatedToREOInformation:{
-            amount:''
-        },
-        lossesInformation:{
-            thing:''
-        },
-        insuranceClaimsInformation:{
-            filedDate:'',
-            claimAmount:'',
-            paidDate:'',
-            paidAmount:'',
-            rescindedDate:'',
-            transferredDate:''
-        },
-        delinquentLoansInformation:{
-            nonPayStatus:'',
-            reportingActionCode:''
+        delinquentLoansInformation: {
+            nonPayStatus: '',
+            reportingActionCode: ''
         }
     };
 
-function numberInformation() {
-    for(var i in regABform.assetNumbers) {
+    function numberInformation() {
+        for (var i in regABform.assetNumbers) {
 //        i can get each item to iterate in console, but not when i do return instead of console log
-        console.log( i, regABform.assetNumbers[i]);
+            console.log(i, regABform.assetNumbers[i]);
+        }
     }
-};
+    ;
 
 </script>

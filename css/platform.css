@@ -50,7 +50,7 @@ other little
     border-radius: 2px;
     border:solid 1px #cccccc;
 }
-button{
+.button{
     background-color: #339933;
     color:white;
     font-size: 14px;
@@ -94,6 +94,7 @@ card Layout
 .tab-content {
     display: none;
     border-top: none;
+    min-height: 320px;
 }
 .tab li{
     float: left;
