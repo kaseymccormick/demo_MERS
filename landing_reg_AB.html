@@ -10,7 +10,6 @@
     <script src="js/main.js"></script>
     <!--css-->
     <link href="css/platform.css" rel="stylesheet">
-    <link href="css/improvements.css" rel="stylesheet">
     <link href="css/utilities.css" rel="stylesheet">
     <link href="css/navigation.css" rel="stylesheet"><!--font family-->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,900" rel="stylesheet">
@@ -95,26 +94,24 @@
                         <a onclick="showTab(event)" class="tab-links" id="list">Custom REG AB's Created</a>
                     </li>
                     <li class="invisible">
-                        <a onclick="showTab(event)" class="tab-links invisible" id="view">View Custom Report</a>
+                        <a onclick="showTab(event)" class="tab-links" id="view">View Custom Report</a>
                     </li>
+
                 </ul>
+
+                <!--START standard AB-->
                 <div id="full-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
                         <div onclick="expandDetail()" class="col-1-1 grid grid-pad">
-                            <ul class="no-list-style report-section__content__column col-1-2">
-                                <li style="list-style: none; display: inline">
-                                    <h3>Asset Numbers</h3>
-                                </li>
+                            <h3>Asset Numbers</h3>
+                            <ul id="assetNumbers" class="no-list-style report-section__content__column col-1-2">
                                 <li>Asset Number Type:</li>
                                 <li>Asset Number:</li>
                                 <li>Asset group number:</li>
                             </ul>
-
-                            <ul class="no-list-style report-section__content__column col-1-2">
-                                <li style="list-style: none; display: inline">
-                                    <h3>Reporting period</h3>
-                                </li>
+                            <h3>Reporting period</h3>
+                            <ul id="reportingPeriod" class="no-list-style report-section__content__column col-1-2">
                                 <li>Begin date:</li>
                                 <li>End date:</li>
                             </ul>
@@ -126,7 +123,7 @@
                                 information about the residential
                                 mortgage <i class="fa fa-plus-circle float-right "></i></h4>
                             <div class="invisible">
-                                <ul class="no-list-style report-section__content__column col-1-2 ">
+                                <ul id ="generalInformation" class="no-list-style report-section__content__column col-1-2 ">
                                     <h3>Origination</h3>
                                     <li> Original loan purpose:</li>
                                     <li> Originator:</li>
@@ -177,9 +174,8 @@
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to negative amortization
-                                <i
-                                        class="fa fa-plus-circle float-right"></i></h4>
-                            <ul class="no-list-style report-section__content__column  two-column invisible ">
+                                <i class="fa fa-plus-circle float-right"></i> </h4>
+                            <ul id="amortizationInformation" class="no-list-style report-section__content__column  two-column invisible ">
                                 <li> Negative amortization limit:</li>
                                 <li> Initial negative amortization recast period:</li>
                                 <li> Subsequent negative amortization recast period:</li>
@@ -195,8 +191,7 @@
                         <!--property information-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
-                                related to the property<i
-                                        class="fa fa-plus-circle float-right"></i></h4>
+                                related to the property <i class="fa fa-plus-circle float-right"></i> </h4>
                             <ul class="no-list-style invisible two-column">
                                 <li> Geographic location:</li>
                                 <li> Occupancy status:</li>
@@ -616,8 +611,9 @@
                     </div>
 
                 </div>
-                <!-- CUSTOMIZE REG AB SELECTION-->
+                <!--END standard AB-->
 
+                <!-- START CUSTOMIZE REG AB SELECTION-->
                 <div id="custom-tab-content" class="tab-content grid grid-pad">
 
                     <div class="page-content__report-section grid grid-pad">
@@ -1138,6 +1134,7 @@
 
                 </div>
                 <!--END Customization settings page-->
+
                 <!--START List of Custom Reports-->
                 <div id="list-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
@@ -1149,21 +1146,22 @@
                         </ul>
                     </div>
                 </div>
-
                 <!--END list of custom Reports-->
+
                 <!--START custom report view-->
                 <div id="view-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <ul class="no-list-style">
                             <li><a class="link-text" href="delete_soon/custom_report.html">Custom REG AB for #88716 - 1/30/2017</a>
                             </li>
-                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/10/2016</a></li>
+                            <li><a class="link-text" href="" >Custom REG AB for #88716 - 12/10/2016</a></li>
                             <li><a class="link-text" href="">Custom REG AB for #88716 - 12/01/2016</a></li>
                         </ul>
                     </div>
                 </div>
+                <!--END custom report view-->
             </div>
-            <!--END custom report view-->
+
 
         </div>
     </div>
@@ -1195,7 +1193,7 @@
     }
     function showTab(event) {
         var i;
-        console.log(event)
+
         var tabContent = document.getElementsByClassName('tab-content');
         for (i = 0; i < tabContent.length; i++) {
             tabContent[i].style.display = 'none';
@@ -1227,7 +1225,7 @@
             event.target.nextElementSibling.className += ' expanded';
             event.target.parentNode.classList.add("padding-bottom-30")
 
-        } else if (event.target.className.indexOf('times') > -1) {
+        } else if (event.target.tagName.indexOf('times') > -1) {
             event.target.className = plusCircleClass;
         } else {
             //if it' doesn't follow suit just show minus circle
@@ -1235,6 +1233,27 @@
         }
 
     }
+
+//    const dogs =[
+//        { name: 'snickers', age: 2},
+//        { name: 'kado', age: 7},
+//        { name: 'tucker', age: 12}
+//    ];
+//
+//    //    array of dogs and get a list item for each one
+//    const markup = `
+//
+//    <ul class="dogs">
+//        ${dogs.map(dog => `
+//          <li>
+//            ${dog.name}
+//            is
+//            ${dog.age * 7}
+//          </li>`).join('')}
+//    </ul>
+//    `;
+
+//    document.body.innerHTML = markup
     //    ---------------Data test
     //    need to add all of the labels and filler data
     //    need to iterate over each section and show it on the page label and content correctly
@@ -1265,16 +1284,16 @@
             }
         },
         negativeAmortization: {
-            limit: '',
-            recastPeriod: '',
-            subsequent: '',
-            negative: '',
-            fixedPaymentPeriod: '',
-            periodic: '',
-            paymentCap: '',
-            resetPeriod: '',
-            paymentResetPeriod: '',
-            minimumPayment: ''
+            limit: '$20,000',
+            recastPeriod: 'unknown',
+            subsequent: 'unknown',
+            negative: 'unknown',
+            fixedPaymentPeriod: 'unknown',
+            periodic: 'unknown',
+            paymentCap: 'unknown',
+            resetPeriod: 'unknown',
+            paymentResetPeriod: 'unknown',
+            minimumPayment: 'unknown'
         },
         propertyInformation: {
             geograpicLocation: '',
@@ -1331,11 +1350,28 @@
     };
 
     function numberInformation() {
+        var out = '';
+
         for (var i in regABform.assetNumbers) {
-//        i can get each item to iterate in console, but not when i do return instead of console log
-            console.log(i, regABform.assetNumbers[i]);
+            out += "<li> <b>" + i + "</b>" + regABform.assetNumbers[i] + "</li>"
         }
+        document.getElementById("assetNumbers").innerHTML = out;
     }
-    ;
+    function reportingInformation() {
+        var out = '';
+
+        for (var i in regABform.reportingPeriod) {
+            out += "<li> <b>" + i + "</b>" + regABform.reportingPeriod[i] + "</li>"
+        }
+        document.getElementById("reportingPeriod").innerHTML = out;
+    }
+    function amortizationInformation(){
+        var out = '';
+
+        for (var i in regABform.negativeAmortization) {
+            out += "<li> <b>" + i + "</b>" + regABform.negativeAmortization[i] + "</li>"
+        }
+        document.getElementById("amortizationInformation").innerHTML = out;
+    }
 
 </script>

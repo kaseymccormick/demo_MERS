@@ -117,15 +117,16 @@ footer a{
     text-decoration: none;
     color: #888;
 }
-h4{
-    padding: 10px 20px;
-}
+
 .link-text{
     text-decoration: underline;
     color:dodgerblue;
     line-height: 1.5em;
     font-style:italic;
 
+}
+.fa{
+    font-size: initial; !important;
 }
 /*---------------------------
     Position
