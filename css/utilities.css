@@ -176,4 +176,7 @@ footer a{
     -moz-column-count: 2;
     column-count: 2; /*3 in those rules is just placeholder -- can be anything*/
 }
+.report-section__content__column li{
+    text-transform: capitalize;
+}
 
