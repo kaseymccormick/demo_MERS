@@ -8,6 +8,7 @@
     </script>
 
     <script src="js/data.js"></script>
+    <script src="js/data_functions.js"></script>
     <!--css-->
     <link href="css/platform.css" rel="stylesheet">
     <link href="css/utilities.css" rel="stylesheet">
@@ -130,7 +131,6 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--TODO figure out this arrangement-->
                         <!--negative amortization-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -148,7 +148,6 @@
 
                             </ul>
                         </div>
-                        <!--end TODO-->
                         <!--obligor start-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
@@ -378,17 +377,16 @@
                                 mortgage <i class="fa fa-plus-circle float-right "></i></h4>
                             <div class="invisible">
                                 <h3>Origination</h3>
-                                <ul id="labelsOrigination" class="no-list-style report-section__content__column col-1-2 ">
-
-                                    </ul>
-                                    <h3>Information related to junior liens</h3>
-                                <ul id="labelsJuniorLien" class="no-list-style  col-1-2">
-
+                                <ul id="labelsOrigination"
+                                    class="no-list-style col-1-2 report-section__content__column">
+                                </ul>
+                                <h3>Information related to junior liens</h3>
+                                <ul id="labelsJuniorLien" class="no-list-style report-section__content__column">
                                 </ul>
                                 <h3>Information related to non first mortgages</h3>
 
-                                <ul id="labelsMortgage" class="no-list-style report-section__content__column col-1-2">
-                                       </ul>
+                                <ul id="labelsMortgage" class="no-list-style col-1-2 report-section__content__column">
+                                </ul>
                             </div>
                         </div>
                         <!--TODO figure out this arrangement-->
@@ -398,7 +396,8 @@
                                 related to negative amortization
                                 <i
                                         class="fa fa-plus-circle float-right"></i></h4>
-                            <ul id="labelsAmortization" class="no-list-style report-section__content__column  two-column invisible ">
+                            <ul id="labelsAmortization"
+                                class="no-list-style report-section__content__column  two-column invisible ">
                             </ul>
                         </div>
                         <!--property information-->
@@ -417,7 +416,8 @@
                                 related to the obligor <i
                                         class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul id="labelsObligor" class="no-list-style two-column report-section__content__column invisible">
+                            <ul id="labelsObligor"
+                                class="no-list-style two-column report-section__content__column invisible">
                             </ul>
 
                         </div>
@@ -429,7 +429,8 @@
                                 related to mortgage insurance <i
                                         class="fa fa-plus-circle float-right"></i></h4>
 
-                            <ul id="labelsMortgageInsurance" class=" invisible no-list-style two-column report-section__content__column">
+                            <ul id="labelsMortgageInsurance"
+                                class=" invisible no-list-style two-column report-section__content__column">
                             </ul>
                         </div>
 
@@ -597,7 +598,8 @@
                         </div>
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information related to delinquent loans <i class="fa fa-plus-circle float-right "></i></h4>
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information
+                                related to delinquent loans <i class="fa fa-plus-circle float-right "></i></h4>
 
 
                             <ul id="labelsDelinquent"
