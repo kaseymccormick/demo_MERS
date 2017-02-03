@@ -154,7 +154,6 @@ card Layout
     color: rgba(0, 0, 0, 0.85);
     font-size: 16px;
     margin:0;
-    padding:0;
     line-height: 2em;
 }
 .report-section__content__column ul li span{
@@ -175,4 +174,5 @@ h4{
 .expanded{
     display: block;
 }
+
 

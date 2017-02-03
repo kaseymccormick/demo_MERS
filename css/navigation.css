@@ -78,11 +78,14 @@ Left
 /*--------------------------
 Bottom/footer
 ---------------------------*/
-footer{
+.bottom-nav{
     background-color: white;
     margin-top:15px;
     height:40px;
+    position: inherit;
+
 }
+
 .bottom-nav ul li{
     float:left;
     border-left:1px solid #cccccc;
@@ -93,4 +96,7 @@ footer{
 }
 .bottom-nav .fa, .header-navigation .fa, .header-navigation img{
     color: #3e3e3e;
+}
+.bottom-nav{
+
 }

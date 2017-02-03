@@ -2,7 +2,7 @@
 function numberInformation() {
     var out = '';
     for (var i in regABform.assetNumbers) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.assetNumbers[i] + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " +regABform.assetNumbers[i] + "</li>"
     }
     document.getElementById("assetNumbers").innerHTML = out;
 }
@@ -17,7 +17,7 @@ function labelsNumbers() {
 function reportingInformation() {
     var out = '';
     for (var i in regABform.reportingPeriod) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.reportingPeriod[i] + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.reportingPeriod[i] + "</li>"
     }
     document.getElementById("reportingPeriod").innerHTML = out;
 }
@@ -31,7 +31,7 @@ function labelsReporting() {
 function originationInformation() {
     var out = '';
     for (var i in regABform.generalInformation.origination) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.generalInformation.origination[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.generalInformation.origination[i].toLowerCase() + "</li>"
     }
     document.getElementById("origination").innerHTML = out;
 }
@@ -46,7 +46,7 @@ function labelsOrigination() {
 function juniorLienInformation() {
     var out = '';
     for (var i in regABform.generalInformation.juniorLiens) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.generalInformation.juniorLiens[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.generalInformation.juniorLiens[i].toLowerCase() + "</li>"
     }
     document.getElementById("juniorLiens").innerHTML = out;
 }
@@ -61,7 +61,7 @@ function labelsJuniorLien() {
 function mortgageInformation() {
     var out = '';
     for (var i in regABform.generalInformation.firstMortgages) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.generalInformation.firstMortgages[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.generalInformation.firstMortgages[i].toLowerCase() + "</li>"
     }
     document.getElementById("mortgageInformation").innerHTML = out;
 }
@@ -77,7 +77,7 @@ function labelsMortgage() {
 function amortizationInformation() {
     var out = '';
     for (var i in regABform.negativeAmortization) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.negativeAmortization[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.negativeAmortization[i].toLowerCase() + "</li>"
     }
     document.getElementById("amortizationInformation").innerHTML = out;
 }
@@ -92,7 +92,7 @@ function labelsAmortization() {
 function propertyInformation() {
     var out = '';
     for (var i in regABform.propertyInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.propertyInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.propertyInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("propertyInformation").innerHTML = out;
 
@@ -108,7 +108,7 @@ function labelsProperty() {
 function obligorInformation() {
     var out = '';
     for (var i in regABform.obligorInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.obligorInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.obligorInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("obligorInformation").innerHTML = out;
 
@@ -123,7 +123,7 @@ function labelsObligor() {
 function mortgageInsurance() {
     var out = '';
     for (var i in regABform.mortgageInsurance) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.mortgageInsurance[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.mortgageInsurance[i].toLowerCase() + "</li>"
     }
     document.getElementById("mortgageInsurance").innerHTML = out;
 }
@@ -137,7 +137,7 @@ function labelsMortgageInsurance() {
 function loanActivity() {
     var out = '';
     for (var i in regABform.loanActivity) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.loanActivity[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.loanActivity[i].toLowerCase() + "</li>"
     }
     document.getElementById("loanActivity").innerHTML = out;
 }
@@ -151,7 +151,7 @@ function labalsLoanActivity() {
 function servicerInformation() {
     var out = '';
     for (var i in regABform.servicerInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.servicerInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.servicerInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("servicerInformation").innerHTML = out;
 }
@@ -165,7 +165,7 @@ function labelsServicer() {
 function assetSubjectToDemand() {
     var out = '';
     for (var i in regABform.assetSubjectToDemand) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.assetSubjectToDemand[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.assetSubjectToDemand[i].toLowerCase() + "</li>"
     }
     document.getElementById("assetDemand").innerHTML = out;
 }
@@ -181,7 +181,7 @@ function labelsAsset() {
 function chargedOffInformation() {
     var out = '';
     for (var i in regABform.chargedOffInformaiton) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.chargedOffInformaiton[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.chargedOffInformaiton[i].toLowerCase() + "</li>"
     }
     document.getElementById("chargedOff").innerHTML = out;
 }
@@ -195,7 +195,7 @@ function labelsCharged() {
 function lostIndicator() {
     var out = '';
     for (var i in regABform.lostIndicator) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.lostIndicator[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.lostIndicator[i].toLowerCase() + "</li>"
     }
     document.getElementById("lostIndicator").innerHTML = out;
 
@@ -211,7 +211,7 @@ function labelsLost() {
 function loanModificationsInformation() {
     var out = '';
     for (var i in regABform.loanModificationsInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.loanModificationsInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.loanModificationsInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("loanModificationsInformation").innerHTML = out;
 }
@@ -226,7 +226,7 @@ function labelsLoanModifications() {
 function periodInformation() {
     var out = '';
     for (var i in regABform.periodInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.periodInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.periodInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("periodInformation").innerHTML = out;
 }
@@ -240,7 +240,7 @@ function labelsPeriod() {
 function stepLoansInformation() {
     var out = '';
     for (var i in regABform.stepLoansInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.stepLoansInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.stepLoansInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("stepLoans").innerHTML = out;
 }
@@ -254,7 +254,7 @@ function labelsStepLoans() {
 function trialModificationInformation() {
     var out = '';
     for (var i in regABform.modificationInformation) {
-        out += "<li> <span>" + i + "</span>" + regABform.modificationInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.modificationInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("trialModificationInformation").innerHTML = out;
 }
@@ -268,7 +268,7 @@ function labelsTrial() {
 function repaymentPlanInformation() {
     var out = '';
     for (var i in regABform.repaymentPlanInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.repaymentPlanInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.repaymentPlanInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("repaymentPlanInformation").innerHTML = out;
 }
@@ -282,7 +282,7 @@ function labelsRepayment() {
 function shortSalesInformation() {
     var out = '';
     for (var i in regABform.shortSalesInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.shortSalesInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.shortSalesInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("shortSalesInformation").innerHTML = out;
 }
@@ -296,7 +296,7 @@ function labelsShort() {
 function mitigationExitInformation() {
     var out = '';
     for (var i in regABform.mitigationExitInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.mitigationExitInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.mitigationExitInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("mitigationExitInformation").innerHTML = out;
 }
@@ -310,13 +310,10 @@ function labelsMitigation() {
 function foreclosureInformation() {
     var out = '';
     for (var i in regABform.foreclosureInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.foreclosureInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.foreclosureInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("foreclosureInformation").innerHTML = out;
-
-
 }
-
 function labelsForeclosure() {
     var out = '';
     for (var i in regABform.foreclosureInformation) {
@@ -324,11 +321,10 @@ function labelsForeclosure() {
     }
     document.getElementById("labelsForeclosure").innerHTML = out;
 }
-
 function relatedToREOInformation() {
     var out = '';
     for (var i in regABform.relatedToREOInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.relatedToREOInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.relatedToREOInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("relatedREOInformation").innerHTML = out;
 
@@ -344,7 +340,7 @@ function labelsRelated() {
 function lossesInformation() {
     var out = '';
     for (var i in regABform.lossesInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.lossesInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.lossesInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("lossesInformation").innerHTML = out;
 }
@@ -358,7 +354,7 @@ function labelsLosses() {
 function insuranceClaimsInformation() {
     var out = '';
     for (var i in regABform.insuranceClaimsInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.insuranceClaimsInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.insuranceClaimsInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("insuranceClaimsInformation").innerHTML = out;
 }
@@ -372,7 +368,7 @@ function labelInsuranceClaims() {
 function delinquentLoansInformation() {
     var out = '';
     for (var i in regABform.delinquentLoansInformation) {
-        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span>" + regABform.delinquentLoansInformation[i].toLowerCase() + "</li>"
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.delinquentLoansInformation[i].toLowerCase() + "</li>"
     }
     document.getElementById("delinquentLoansInformation").innerHTML = out;
 }

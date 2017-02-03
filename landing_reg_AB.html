@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,900" rel="stylesheet">
 </head>
 
-<!--TODO componentize this-->
 <div class="header">
     <a href="/demo_MERS/index.html">
         <div id="logo"></div>
@@ -27,7 +26,6 @@
     </ul>
 </div><!--end TODO-->
 <div class="live-area grid">
-    <!--todo componentize the left nav-->
     <div class="left-navigation col-1-7">
         <ul class="no-list-style right-text-align left-navigation__list" id="left_navigation">
             <li>
@@ -95,7 +93,7 @@
                         <a onclick="showTab(event)" class="tab-links" id="list">Custom REG AB's Created</a>
                     </li>
                     <li class="invisible">
-                        <a onclick="showTab(event)" class="tab-links" id="view">View Custom Report</a>
+                        <a onclick="showTab(event)" class="tab-links" id="custom-view">View Custom Report</a>
                     </li>
 
                 </ul>
@@ -104,11 +102,12 @@
                 <div id="full-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
-                        <div onclick="expandDetail()" class="col-1-1 grid report-section__content__column grid-pad">
+                        <div class="col-1-2 grid report-section__content__column grid-pad">
                             <h3>Asset Numbers</h3>
                             <ul id="assetNumbers" class="no-list-style  col-1-2">
                             </ul>
-
+</div>
+                        <div class="col-1-2 grid report-section__content__column grid-pad">
                             <h3>Reporting period</h3>
                             <ul id="reportingPeriod" class="no-list-style col-1-2">
                             </ul>
@@ -357,16 +356,15 @@
 
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
-                        <div onclick="expandDetail()" class="col-1-1 report-section__content__column grid grid-pad">
+                        <div class="col-1-2 report-section__content__column grid grid-pad">
                             <h3>Asset Numbers</h3>
                             <ul id="labelsNumbers" class="no-list-style  col-1-2">
-
-
                             </ul>
+                        </div>
+
+                        <div class="col-1-2 report-section__content__column grid grid-pad">
                             <h3>Reporting period</h3>
-
                             <ul id="labelsReporting" class="no-list-style report-section__content__column col-1-2">
-
                             </ul>
                         </div>
                         <!--general mortgage info-->
@@ -621,11 +619,9 @@
                 <div id="list-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <ul class="no-list-style">
-                            <li><a class="link-text" href="delete_soon/custom_report.html">Custom REG AB for #88716 -
+                            <li><a onclick="showInvisibleTab(event)" id="view" class="link-text">Custom REG AB for #88716 -
                                 1/30/2017</a>
                             </li>
-                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/10/2016</a></li>
-                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/01/2016</a></li>
                         </ul>
                     </div>
                 </div>
@@ -635,11 +631,9 @@
                 <div id="view-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <ul class="no-list-style">
-                            <li><a class="link-text" href="delete_soon/custom_report.html">Custom REG AB for #88716 -
-                                1/30/2017</a>
+                            <li>Custom report data shows up here
                             </li>
-                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/10/2016</a></li>
-                            <li><a class="link-text" href="">Custom REG AB for #88716 - 12/01/2016</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -657,7 +651,7 @@
 
 <!--TODO Componentize this -->
 <footer>
-    <div class="bottom-nav">
+    <div class="bottom-nav ">
         <ul class="no-list-style">
             <li><i class="fa fa-pencil fa-2x"></i></li>
             <li><i class="fa fa-envelope fa-2x"></i></li>
@@ -676,6 +670,7 @@
 
     }
     function showTab(event) {
+        document.getElementById("custom-view").parentNode.classList.add("invisible")
         var i;
 
         var tabContent = document.getElementsByClassName('tab-content');
@@ -689,10 +684,31 @@
             tabLinks[i].className = tabLinks[i].className.replace(' active', '');
         }
 
-        // Show the current tab, and add an 'active' class to the link that opened the tab error line 653
+        // Show the current tab, and add an 'active' class to the link that opened the tab
 
         document.getElementById(event.target.id + '-tab-content').style.display = 'inline-block';
         event.currentTarget.className += ' active';
+    }
+       function showInvisibleTab(event) {
+           var i;
+
+           var tabContent = document.getElementsByClassName('tab-content');
+           for (i = 0; i < tabContent.length; i++) {
+               tabContent[i].style.display = 'none';
+           }
+
+// Show the current tab, and add an 'active' class to the link that opened the tab
+
+           document.getElementById(event.target.id + '-tab-content').style.display = 'inline-block';
+           event.currentTarget.className += ' active';
+
+// add active for the white tab to show
+        document.getElementById("custom-view").classList.add("active")
+//       remove invisible for the tab content to show
+        document.getElementById("custom-view").parentNode.classList.remove("invisible")
+//           deactivate custom tab
+                   document.getElementById("list").classList.remove("active")
+
 
     }
     function expandDetail(event) {
