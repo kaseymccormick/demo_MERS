@@ -113,6 +113,7 @@
                             </ul>
                         </div>
                         <!--general mortgage info-->
+
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
@@ -131,6 +132,7 @@
                             </div>
                         </div>
                         <!--negative amortization-->
+
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to negative amortization
@@ -367,7 +369,13 @@
                             <ul id="labelsReporting" class="no-list-style report-section__content__column col-1-2">
                             </ul>
                         </div>
+                        <!--FORM START-->
+                        <form  onsubmit="immediateCustomReport(event);" id="myForm" >
+                            <!--FORM START-->
                         <!--general mortgage info-->
+                        <div class="col-1-1">
+                            <input type="checkbox" name="residentialMortgage">residential mortgage
+                        </div>
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
@@ -387,8 +395,11 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--TODO figure out this arrangement-->
+
                         <!--negative amortization-->
+                        <div class="col-1-1">
+                            <input type="checkbox" name="negativeAmortization">negative amortization
+                        </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to negative amortization
@@ -399,6 +410,9 @@
                             </ul>
                         </div>
                         <!--property information-->
+                        <div class="col-1-1">
+                            <input type="checkbox" name="propertyInfo">property info
+                        </div>
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to the property<i
@@ -406,8 +420,11 @@
                             <ul id="labelsProperty" class="no-list-style invisible two-column">
                             </ul>
                         </div>
-                        <!--end TODO-->
+
                         <!--obligor start-->
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">obligor-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -421,6 +438,9 @@
                         </div>
 
                         <!--insurance start-->
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">mortgage insurance-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -432,6 +452,9 @@
                             </ul>
                         </div>
 
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all activity on loan-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -445,6 +468,9 @@
                             </ul>
                         </div>
 
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all servicer-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information
@@ -454,6 +480,9 @@
                             <ul id="labelsServicer" class="no-list-style invisible two-column">
                             </ul>
                         </div>
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all asset demand-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject
@@ -464,6 +493,9 @@
                             </ul>
                         </div>
 
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all charged off-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -474,6 +506,9 @@
                             <ul id="labelsCharged" class="no-list-style invisible two-column">
                             </ul>
                         </div>
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all mitigation type-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
@@ -484,6 +519,9 @@
                             </ul>
 
                         </div>
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all loan modifications-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -494,7 +532,9 @@
                                 class="no-list-style two-column report-section__content__column invisible">
                             </ul>
                         </div>
-
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all loan modifications-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -505,6 +545,9 @@
 
                             </ul>
                         </div>
+                        <!--<div class="col-1-1">-->
+                            <!--<input type="checkbox">all step loans-->
+                        <!--</div>-->
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
@@ -605,10 +648,14 @@
                             </ul>
 
                         </div>
-                        <div class="col-1-1 ">
 
-                            <a class=" float-right button" href="delete_soon/custom_list.html">Run Report</a>
+                        <div class="col-1-1 ">
+                            <input class="float-right button" type="submit" value="submit">
+                            <!--<a class=" float-right button" href="delete_soon/custom_list.html">Run Report</a>-->
                         </div>
+                            <!-- END FORM-->
+                        </form>
+                        <!-- END FORM-->
                     </div>
 
 
@@ -667,7 +714,7 @@
 
 <script>
     function showInfo() {
-
+console.log("here")
     }
     function showTab(event) {
         document.getElementById("custom-view").parentNode.classList.add("invisible")
@@ -789,4 +836,24 @@
         labelInsuranceClaims();
         labelsDelinquent();
     }
+    function immediateCustomReport() {
+        event.preventDefault()
+//        set formElements varibale to the form on the page
+        var formElements=document.getElementById("myForm").elements;
+        //make a hasmap of values entered
+        var postData={};
+        for (var i=0; i<formElements.length; i++)
+            if (formElements[i].type!="submit")//we dont want to include the submit-buttom
+                postData[formElements[i].name]=formElements[i].value;
+        //show the invisible tab
+        // add active for the white tab to show
+        document.getElementById("custom-view").classList.add("active")
+//       remove invisible for the tab content to show
+        document.getElementById("custom-view").parentNode.classList.remove("invisible")
+//           deactivate custom tab
+        document.getElementById("list").classList.remove("active")
+        document.getElementById("view-tab-content").style.display = 'inline-block';
+    }
+
+
 </script>
