@@ -21,6 +21,20 @@ function reportingInformation() {
     }
     document.getElementById("reportingPeriod").innerHTML = out;
 }
+function numberInformationS() {
+    var out = '';
+    for (var i in regABform.assetNumbers) {
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " +regABform.assetNumbers[i] + "</li>"
+    }
+    document.getElementById("assetNumbersS").innerHTML = out;
+}
+function reportingInformationS() {
+    var out = '';
+    for (var i in regABform.reportingPeriod) {
+        out += "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; " + regABform.reportingPeriod[i] + "</li>"
+    }
+    document.getElementById("reportingPeriodS").innerHTML = out;
+}
 function labelsReporting() {
     var out = '';
     for (var i in regABform.reportingPeriod) {
