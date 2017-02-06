@@ -84,10 +84,10 @@
             <div class="page__content__tabs tab-container">
                 <ul class="tab">
                     <li>
-                        <a onclick="showTab(event)" class="tab-links active" id="full">REG AB</a>
+                        <a onclick="showTab(event)" class="tab-links active" id="full">Full REG AB</a>
                     </li>
                     <li>
-                        <a onclick="showTab(event);showOptions()" class="tab-links " id="custom">Custom REG AB</a>
+                        <a onclick="showTab(event);showOptions()" class="tab-links " id="custom">Customize REG AB</a>
                     </li>
                     <li>
                         <a onclick="showTab(event)" class="tab-links" id="list">Custom REG AB's Created</a>
@@ -219,6 +219,18 @@
 
                             </ul>
                         </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information related to loan modifications <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="loanModifications" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+
+
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
@@ -373,9 +385,9 @@
                         <form onsubmit="immediateCustomReport(event);" id="myForm">
                             <!--FORM START-->
                             <!--general mortgage info-->
-                            <!--<div class="col-1-1">-->
-                                <!--<input type="checkbox" name="residentialMortgage">residential mortgage-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                                <input type="checkbox" name="generalInformationS">General Information
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
@@ -442,9 +454,9 @@
                             </div>
 
                             <!--insurance start-->
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">mortgage insurance-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="mortgageInsuranceS" >mortgage insurance
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -457,9 +469,9 @@
                                 </ul>
                             </div>
 
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all activity on loan-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="loanActivityS" >all activity on loan
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -474,9 +486,9 @@
                                 </ul>
                             </div>
 
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all servicer-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="servicerInfromationS">all servicer
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">
@@ -487,9 +499,9 @@
                                 <ul id="labelsServicer" class="no-list-style invisible two-column">
                                 </ul>
                             </div>
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all asset demand-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="assetSubjectToDemandS">all asset demand
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset
@@ -501,9 +513,9 @@
                                 </ul>
                             </div>
 
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all charged off-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="chargedOffInformationS">all charged off
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -515,9 +527,9 @@
                                 <ul id="labelsCharged" class="no-list-style invisible two-column">
                                 </ul>
                             </div>
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all mitigation type-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="lostIndicatorS">all mitigation type
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
@@ -528,9 +540,9 @@
                                 </ul>
 
                             </div>
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all loan modifications-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="loanModificationsInformationS">all loan modifications
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -542,9 +554,9 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
                             </div>
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all loan modifications-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="periodInformationS">all loan modifications
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -556,9 +568,9 @@
 
                                 </ul>
                             </div>
-                            <!--<div class="col-1-1">-->
-                            <!--<input type="checkbox">all step loans-->
-                            <!--</div>-->
+                            <div class="col-1-1">
+                            <input type="checkbox" name="steploansInformationS">all step loans
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -568,6 +580,9 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
 
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="trialModificationInformationS">trial
                             </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
@@ -579,6 +594,9 @@
                                 <ul id="labelsTrial"
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="repaymentPlanInformationS">repayment plan
                             </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
@@ -592,7 +610,9 @@
                                 </ul>
                             </div>
 
-
+                            <div class="col-1-1">
+                                <input type="checkbox" name="shortSalesInformationS">short sales
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -603,6 +623,9 @@
                                 <ul id="labelsShort" class="no-list-style invisible">
                                 </ul>
                             </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="mitigationExitInformationS">mitigation
+                            </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -611,6 +634,9 @@
 
                                 <ul id="labelsMitigation" class="no-list-style invisible two-column">
                                 </ul>
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="foreclosureInformationS">foreclosure
                             </div>
 
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
@@ -625,6 +651,9 @@
                                 </ul>
 
                             </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="relatedToREOInformationS">reo
+                            </div>
                             <div class="grid col-1-1 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
                                     class="collapse-bar report-section__header">Information related to REO <i
@@ -632,6 +661,9 @@
                                 <ul id="labelsRelated"
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="lossesInformationS">loss
                             </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -642,6 +674,9 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
 
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="insuranceClaimsInformationS">insurance
                             </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
 
@@ -655,6 +690,9 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
 
+                            </div>
+                            <div class="col-1-1">
+                                <input type="checkbox" name="delinquentLoansInformationS">delinquent
                             </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20">
 
@@ -701,31 +739,58 @@
                     <div class="page-content__report-section grid grid-pad">
 
                             <!--asset numbers and dates-->
-                            <div class="report-section__content__column grid grid-pad">
+                            <div class="report-section__content__column col-1-2">
                                 <h3>Asset Numbers</h3>
                                 <ul id="assetNumbersS" class="no-list-style  ">
                                 </ul>
                             </div>
 
-                            <div class=" float-left report-section__content__column grid grid-pad">
+                            <div class="report-section__content__column col-1-2">
                                 <h3>Reporting period</h3>
                                 <ul id="reportingPeriodS" class="no-list-style report-section__content__column ">
                                 </ul>
                             </div>
 
+                        <!---->
+                        <!--general mortgage info-->
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
+                                information about the residential
+                                mortgage <i class="fa fa-plus-circle float-right "></i></h4>
+                            <div class="invisible">
+                                <h3>Origination</h3>
+                                <ul id="originationS" class="no-list-style  col-1-2 ">
+                                </ul>
+                                <h3>Information related to junior liens</h3>
+                                <ul id="juniorLiensS" class="no-list-style col-1-2">
+                                </ul>
+                                <h3>Information related to non first mortgages</h3>
+                                <ul id="mortgageInformationS" class="no-list-style col-1-2">
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <!---->
+
+
+
+
                         <!--negative amortization-->
 
-                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad invisible">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
                                 related to negative amortization
                                 <i class="fa fa-plus-circle float-right"></i></h4>
-                            <ul id="amortizationInformationS" class="no-list-style   two-column invisible ">
+                            <ul id="amortizationInformationS" class="no-list-style two-column  invisible">
 
                             </ul>
                         </div>
                         <!--property information-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
                                 related to the property <i class="fa fa-plus-circle float-right"></i></h4>
                             <ul id="propertyInformationS" class="no-list-style invisible two-column">
 
@@ -734,10 +799,197 @@
                         <!--obligor start-->
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
                                 related to the obligor <i class="fa fa-plus-circle float-right "></i></h4>
 
                             <ul id="obligorInformationS" class="no-list-style invisible two-column">
+
+                            </ul>
+
+                        </div>
+                        <!---->
+                        <!--insurance start-->
+                        <div class="col-1-1 margin-bottom-neg30   report-section__content__column grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to mortgage insurance <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul id="mortgageInsuranceS"
+                                class=" invisible no-list-style two-column report-section__content__column">
+
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 grid grid-pad report-section__content__column">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to activity on the loan
+                                <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+
+                            <ul id="loanActivityS" class="invisible no-list-style two-column ">
+
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header invisible">Information
+                                related to servicer <i
+                                        class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul id="servicerInformationS" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Asset subject
+                                to demand <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="assetDemandS" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to loans that have been
+                                charged off <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="chargedOffS" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Lost
+                                mitigation type indicator<i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="lostIndicatorS" class="no-list-style invisible">
+
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to loan modifications<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="loanModificationsInformationS" class="no-list-style two-column invisible">
+
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to loan modifications
+                                involving interest only periods <i class="fa fa-plus-circle float-right "></i></h4>
+                            <ul id="LoanModificationsS" class="no-list-style two-column  invisible">
+
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="stepLoansS" class="no-list-style two-column  invisible">
+
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to forbearance or trial
+                                modification <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="trialModificationInformationS" class="no-list-style two-column invisible">
+
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to repayment plan<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="repaymentPlanInformationS" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+
+
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to short sales <i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="shortSalesInformationS" class="no-list-style invisible">
+
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to loss mitigation exit
+                                <i class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="mitigationExitInformationS" class="no-list-style invisible two-column">
+
+                            </ul>
+                        </div>
+
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad report-section__content__column">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">information
+                                related to loans in the
+                                foreclosure process<i
+                                        class="fa fa-plus-circle float-right "></i></h4>
+
+                            <ul id="foreclosureInformationS" class="no-list-style two-column  invisible">
+
+                            </ul>
+
+                        </div>
+                        <div class="grid col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                            <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
+                                class="collapse-bar report-section__header invisible">Information related to REO <i
+                                    class="fa fa-plus-circle float-right"></i></h4>
+                            <ul id="relatedREOInformationS" class="no-list-style two-column invisible">
+                            </ul>
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to losses <i class="fa fa-plus-circle float-right"></i></h4>
+                            <ul id="lossesInformationS" class="no-list-style two-column  invisible">
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad report-section__content__column">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible">Information
+                                related to mortgage insurance claims <i class="fa fa-plus-circle float-right"></i></h4>
+
+                            <ul id="insuranceClaimsInformationS" class="no-list-style two-column  invisible">
+
+                            </ul>
+
+                        </div>
+                        <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20 report-section__content__column">
+
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header invisible ">Information
+                                related to
+                                delinquent loans <i class="fa fa-plus-circle float-right "></i></h4>
+
+
+                            <ul id="delinquentLoansInformationS" class="no-list-style two-column invisible ">
 
                             </ul>
 
@@ -756,8 +1008,6 @@
 </div>
 
 </body>
-
-<!--TODO Componentize this -->
 <footer>
     <div class="bottom-nav ">
         <ul class="no-list-style">
@@ -879,7 +1129,7 @@
         labelsProperty();
         labelsObligor();
         labelsMortgageInsurance();
-        labalsLoanActivity();
+        labelsLoanActivity();
         labelsServicer();
         labelsAsset();
         labelsCharged();
@@ -894,8 +1144,32 @@
         labelsForeclosure();
         labelsRelated();
         labelsLosses();
-        labelInsuranceClaims();
+        labelsInsuranceClaims();
         labelsDelinquent();
+    }
+    function viewCustomReport(){
+        generalInformationS();
+        amortizationInformationS();
+        propertyInformationS();
+        obligorInformationS();
+        mortgageInsuranceS();
+        loanActivityS();
+        servicerInformationS();
+        assetSubjectToDemandS();
+        chargedOffInformationS();
+        lostIndicatorS();
+        loanModificationsInformationS();
+        periodInformationS();
+        stepLoansInformationS();
+        trialModificationInformationS();
+        repaymentPlanInformationS();
+        shortSalesInformationS();
+        mitigationExitInformationS();
+        foreclosureInformationS();
+        relatedToREOInformationS();
+        lossesInformationS();
+        insuranceClaimsInformationS();
+        delinquentLoansInformationS();
     }
     function immediateCustomReport() {
 //  prevent reloading the screen
@@ -918,8 +1192,8 @@
 //  show view content
         document.getElementById("view-tab-content").style.display = 'inline-block';
 
-            numberInformation();
-            reportingInformation();
+            numberInformationS();
+            reportingInformationS();
 
     }
 
