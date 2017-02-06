@@ -57,6 +57,12 @@ html {
 .col-1-7{
     width: calc((100%/7) - 1%);
 }
+.col-1-16{
+    width: calc((100%/16) - 1%);
+}
+.col-15-16{
+    width: calc(((100%/16)*15) - 1%);
+}
 .col-2-7{
     width: calc(((100%/7)*2) - 1%);
 
@@ -74,7 +80,7 @@ html {
 
 }
 .col-6-7{
-    width: calc(((100%/7)*6) - 2%);
+    width: calc(((100%/7)*6) - 4%);
 
 }
 [class*='col-'] {
@@ -183,3 +189,7 @@ footer a{
     text-transform: capitalize;
 }
 
+.arrange-checkbox{
+    text-align: center;
+    padding: 10px;
+}

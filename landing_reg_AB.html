@@ -370,6 +370,7 @@
 
                     <div class="page-content__report-section grid grid-pad">
                         <!--asset numbers and dates-->
+                        <div class="col-1-1">
                         <div class="col-1-2 report-section__content__column grid grid-pad">
                             <h3>Asset Numbers</h3>
                             <ul id="labelsNumbers" class="no-list-style  col-1-2">
@@ -381,14 +382,16 @@
                             <ul id="labelsReporting" class="no-list-style report-section__content__column col-1-2">
                             </ul>
                         </div>
+                        </div>
                         <!--FORM START-->
                         <form onsubmit="immediateCustomReport(event);" id="myForm">
                             <!--FORM START-->
                             <!--general mortgage info-->
-                            <div class="col-1-1">
-                                <input type="checkbox" name="generalInformationS">General Information
+
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="generalInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
                                     information about the residential
@@ -409,11 +412,12 @@
                                 </div>
                             </div>
 
+
                             <!--negative amortization-->
-                            <div class="col-1-1">
-                                <input type="checkbox" name="amortizationInformationS">negative amortization
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="amortizationInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
                                     related to negative amortization
@@ -424,10 +428,10 @@
                                 </ul>
                             </div>
                             <!--property information-->
-                            <div class="col-1-1">
-                                <input type="checkbox" name="propertyInformationS">property info
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="propertyInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
                                     related to the property<i
@@ -437,10 +441,10 @@
                             </div>
 
                             <!--obligor start-->
-                            <div class="col-1-1">
-                            <input type="checkbox" name="obligorInformationS">obligor
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="obligorInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad ">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -454,10 +458,10 @@
                             </div>
 
                             <!--insurance start-->
-                            <div class="col-1-1">
-                            <input type="checkbox" name="mortgageInsuranceS" >mortgage insurance
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="mortgageInsuranceS" >
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -469,10 +473,10 @@
                                 </ul>
                             </div>
 
-                            <div class="col-1-1">
-                            <input type="checkbox" name="loanActivityS" >all activity on loan
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="loanActivityS" >
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -486,10 +490,10 @@
                                 </ul>
                             </div>
 
-                            <div class="col-1-1">
-                            <input type="checkbox" name="servicerInfromationS">all servicer
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="servicerInfromationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">
                                     Information
@@ -499,10 +503,10 @@
                                 <ul id="labelsServicer" class="no-list-style invisible two-column">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                            <input type="checkbox" name="assetSubjectToDemandS">all asset demand
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="assetSubjectToDemandS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset
                                     subject
@@ -513,10 +517,10 @@
                                 </ul>
                             </div>
 
-                            <div class="col-1-1">
-                            <input type="checkbox" name="chargedOffInformationS">all charged off
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="chargedOffInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -527,10 +531,10 @@
                                 <ul id="labelsCharged" class="no-list-style invisible two-column">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                            <input type="checkbox" name="lostIndicatorS">all mitigation type
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="lostIndicatorS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
                                     mitigation type indicator<i
@@ -540,10 +544,10 @@
                                 </ul>
 
                             </div>
-                            <div class="col-1-1">
-                            <input type="checkbox" name="loanModificationsInformationS">all loan modifications
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="loanModificationsInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -554,10 +558,10 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                            <input type="checkbox" name="periodInformationS">all loan modifications
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="periodInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -568,10 +572,10 @@
 
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                            <input type="checkbox" name="steploansInformationS">all step loans
+                            <div class="col-1-16 arrange-checkbox">
+                            <input type="checkbox" name="steploansInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
                                     related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
@@ -581,10 +585,10 @@
                                 </ul>
 
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="trialModificationInformationS">trial
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="trialModificationInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -595,10 +599,10 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="repaymentPlanInformationS">repayment plan
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="repaymentPlanInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -610,10 +614,10 @@
                                 </ul>
                             </div>
 
-                            <div class="col-1-1">
-                                <input type="checkbox" name="shortSalesInformationS">short sales
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="shortSalesInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -623,10 +627,10 @@
                                 <ul id="labelsShort" class="no-list-style invisible">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="mitigationExitInformationS">mitigation
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="mitigationExitInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column grid grid-pad ">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
                                     related to loss mitigation exit
@@ -635,11 +639,11 @@
                                 <ul id="labelsMitigation" class="no-list-style invisible two-column">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="foreclosureInformationS">foreclosure
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="foreclosureInformationS">
                             </div>
 
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     information
                                     related to loans in the
@@ -651,10 +655,10 @@
                                 </ul>
 
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="relatedToREOInformationS">reo
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="relatedToREOInformationS">
                             </div>
-                            <div class="grid col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="grid col-15-16 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
                                     class="collapse-bar report-section__header">Information related to REO <i
                                         class="fa fa-plus-circle float-right"></i></h4>
@@ -662,10 +666,10 @@
                                     class="no-list-style two-column report-section__content__column invisible">
                                 </ul>
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="lossesInformationS">loss
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="lossesInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
                                     related to losses <i
@@ -675,10 +679,10 @@
                                 </ul>
 
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="insuranceClaimsInformationS">insurance
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="insuranceClaimsInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
                                     Information
@@ -691,10 +695,10 @@
                                 </ul>
 
                             </div>
-                            <div class="col-1-1">
-                                <input type="checkbox" name="delinquentLoansInformationS">delinquent
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="delinquentLoansInformationS">
                             </div>
-                            <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20">
+                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad padding-right-neg20">
 
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">
                                     Information

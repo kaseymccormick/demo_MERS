@@ -13,17 +13,17 @@ const regABform = {
     },
     generalInformation: {
         origination: {
-            OriginalLoanPurpose: '',
-            Originator: '',
-            OriginatorLoanAmount: '',
-            OriginalLoanMaturityDate: '',
+            OriginalLoanPurpose: 'x28261',
+            Originator: 'Freedom LLC',
+            OriginatorLoanAmount: '$20,000',
+            OriginalLoanMaturityDate: '8/12/16',
             OriginalAmortizationTerm: '',
             OriginalInterestRate: '',
-            AccrualType: '',
+            AccrualType: 'x28261',
             OriginalInterestRateType: '',
             OriginalInterestOnlyTerm: '',
             UnderwritingIndicator: '',
-            OriginalLienPosition: ''
+            OriginalLienPosition: 'x28261'
         },
         juniorLiens: {
             mostRecentJuniorLoanBalance: '',
@@ -32,25 +32,48 @@ const regABform = {
         firstMortgages: {
             MostRecentSeniorLoanAmount: '',
             DateOfMostRecentSeniorLoanAmount: '',
-            LoanTypeOfMostSeniorLien: '',
+            LoanTypeOfMostSeniorLien: 'x28261',
             HybridPeriodOfMostSeniorLien: '',
             NegativeAmortizationLimitOfMostSeniorLien: '',
             OriginationDateOfMostSeniorLien: '',
-            PrepaymentPenaltyIndicator: '',
-            NegativeAmortizationIndicator: '',
-            ModificationIndicator: '',
-            NumberOfModifications: '',
-            MortgageInsuranceRequirementIndicator: '',
-            BalloonIndicator: '',
-            CoveredHighCostLoanIndicator: '',
-            ServicerPlacedHazardInsurance: '',
+            PrepaymentPenaltyIndicator: 'yes',
+            NegativeAmortizationIndicator: ''yes,
+            ModificationIndicator: 'no',
+            NumberOfModifications: '2',
+            MortgageInsuranceRequirementIndicator: 'no',
+            BalloonIndicator: 'no',
+            CoveredHighCostLoanIndicator: 'unknown',
+            ServicerPlacedHazardInsurance: 'unknown',
             RefinanceCashOutAmount: '',
-            TotalOriginationAndDiscountPoints: '',
-            Broker: '',
-            Channel: '',
-            NMLSCompanNumber: '',
+            TotalOriginationAndDiscountPoints: '$20,000',
+            Broker: 'yes',
+            Channel: 'x28261',
+            NMLSCompanyNumber: '',
             BuyDownPeriod: '',
-            loanDelinquencyAdvanceDaysCount: ''
+            loanDelinquencyAdvanceDaysCount: '',
+            originalARMIndex:'x28261',
+            armMargin:'',
+            fullyIndextedInterestRate:'',
+            initialFixedRatePeriodForHybridArm:'',
+            initialInterestRateDecrease:'',
+            initialInterestRateIncrease:'',
+            postModificationIndexLookback:'',
+            subsequentInterestRateRestPeriod:'',
+            subsequentPaymentRestPeriod:'',
+            armRoundIndicator:'x28261',
+            armRoundPercentage:'',
+            optionARMIndicator:'',
+            paymentMethodAfterRecast:'x28261',
+            postModificationInitialMinimumPayment:'',
+            convertableIndicator:'yes',
+            hELOCindicator:'yes',
+            hELOCdrawPEriod:'',
+            prepaymentPenaltyCalculation:'x28261',
+            prepaymentPnaltyType:'x28261',
+            prepaymentPenaltyTotalTerm:'',
+            prepaymentPenaltyHardTerm:''
+
+
         }
     },
     negativeAmortization: {
@@ -66,16 +89,17 @@ const regABform = {
         minimumPayment: ' unknown'
     },
     propertyInformation: {
-        geograpicLocation: '',
-        occupancyStatus: '',
-        mostRecentOccupancyStatus: '',
-        propertyType: '',
+        geograpicLocation: '51',
+        occupancyStatus: 'x28261',
+        mostRecentOccupancyStatus: 'x28261',
+        propertyType: 'x28261',
         mostRecentPropertyValue: '$133,000',
-        mostRecentPropertyValuationType: '',
-        mostRecentPropertyValuationDate: '',
-        mostRecentAvmModelName: '',
+        mostRecentPropertyValuationType: 'x28261',
+        mostRecentPropertyValuationDate: '8/12/16',
+        mostRecentAvmModelName: 'x28261',
         mostRecentAVMConfidenceScore: '',
-        originalCombinedLoanToValue: ''
+        originalCombinedLoanToValue: '',
+        originalLoanToValue:''
     },
     obligorInformation: {
         originalNumberOfObligors: '',
@@ -84,29 +108,31 @@ const regABform = {
         mostRecentObligorCreditScore: '',
         mostRecentObligorCreditScoreType: '',
         dateOfMostRecentObligorCreditScore: '',
-        obligorIncomeVerificationLevel: '',
-        fourThousandFiveHundredAndSixTIndicator: '',
+        obligorIncomeVerificationLevel: 'x28261',
+        fourThousandFiveHundredAndSixTIndicator: 'yes',
         originatorFrontEdnDebtToIncome: '',
         orignitaroBackEndDti: '',
-        obligorEmployementVerification: '',
+        obligorEmployementVerification: 'x28261',
         lengthOfEmploymentObligor: '',
-        obligorAssetVerification: '',
-        originalPlegedAssetsqualificationMethod: ''
+        obligorAssetVerification: 'x28261',
+        originalPlegedAssetsqualificationMethod: '',
+        qualificationMethod:'x28261'
     },
     mortgageInsurance: {
         mortgageInsuraceCompanyName: '',
         mortgageInsuranceCoverage: '',
         poolInsuranceCompany: '',
         poolInsuranceStopLossPercent: '',
-        mortgageInsuranceCoveragePlanType: ''
+        mortgageInsuranceCoveragePlanType: 'x28261'
 
     },
     loanActivity: {
+        assetAddedIndicator:'yes',
         remainingTermToMaturity: '',
-        modificationIndicatorReportingPeriod: '',
+        modificationIndicatorReportingPeriod: 'yes',
         nextPaymentDueDate: '',
-        advancingMethod: '',
-        servicingAdvanceMethodology: '',
+        advancingMethod: 'x28261',
+        servicingAdvanceMethodology: 'x28261',
         stopPrincipalAndInterestAdvanceDate: '',
         reportingPeriodBeginingLoanBalance: '',
         reportingPeriodBeginingShceduledLoanBalance: '',
@@ -283,26 +309,26 @@ const regABform = {
         REOExitReason: ''
     },
     lossesInformation: {
-        UPBAtLiquidation: '',
-        servicingFeesClaimed: '',
-        servicerAdvancedAmountsReimbursePrincipal: '',
-        servicerAdvancedAmountsReimbursedInterest: '',
-        servicerAdvancedAmountReimbursedTaxesAndInsurance: '',
-        servicerAdvancedAmountReimbursedCorporate: '',
-        REOManagementFees: '',
-        cashForKeysCashForDeed: '',
-        performanceIncentiveFees: ''
+        UPBAtLiquidation: '$20,000',
+        servicingFeesClaimed: '$20,000',
+        servicerAdvancedAmountsReimbursePrincipal: '$20,000',
+        servicerAdvancedAmountsReimbursedInterest: '3.5%',
+        servicerAdvancedAmountReimbursedTaxesAndInsurance: '$20,000',
+        servicerAdvancedAmountReimbursedCorporate: '$20,000',
+        REOManagementFees: '$20,000',
+        cashForKeysCashForDeed: '$20,000',
+        performanceIncentiveFees: '$20,000'
     },
     insuranceClaimsInformation: {
-        MIClaimFiledDate: '',
-        MIClaimAmount: '',
-        MIClaimPaidDate: '',
-        MIClaimPaidAmount: '',
-        MIClaimDeniedRescindedDate: '',
-        MarketableTitleTransferredDate: ''
+        MIClaimFiledDate: '8/12/16',
+        MIClaimAmount: '$20,000',
+        MIClaimPaidDate: '18/12/16',
+        MIClaimPaidAmount: '$20,000',
+        MIClaimDeniedRescindedDate: '8/12/16',
+        MarketableTitleTransferredDate: '8/12/16'
     },
     delinquentLoansInformation: {
-        nonPayStatus: '',
+        nonPayStatus: 'XZ8261',
         reportingActionCode: 'XZ8261'
     }
 };
