@@ -9,7 +9,7 @@ function hideAndSeek(element, out) {
     var elementChain = document.getElementById(element)
     elementChain.previousElementSibling.classList.remove("invisible");
     elementChain.innerHTML = out;
-    elementChain.classList.remove("invisible")
+    elementChain.classList.add("expanded")
     elementChain.classList.add("margin-bottom-20")
 }
 //---------------------------------------
@@ -412,13 +412,13 @@ function reportingInformationS() {
     document.getElementById("reportingPeriodS").innerHTML = out;
 }
 
-
 function generalInformationS() {
     var out = '';
     for (var i in regABform.generalInformation.origination) {
         out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.generalInformation.origination[i].toLowerCase() + "</li>"
     }
     var element = "originationS";
+    document.getElementById(element).parentNode.classList.add("expanded")
     thisIsaHack();
     thisIsAnotherHack();
     return hideAndSeek(element, out);
