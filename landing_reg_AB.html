@@ -399,7 +399,7 @@
 
                             <!--negative amortization-->
                             <div class="col-1-1">
-                                <input type="checkbox" name="amortizationInformation">negative amortization
+                                <input type="checkbox" name="amortizationInformationS">negative amortization
                             </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -413,7 +413,7 @@
                             </div>
                             <!--property information-->
                             <div class="col-1-1">
-                                <input type="checkbox" name="propertyInformation">property info
+                                <input type="checkbox" name="propertyInformationS">property info
                             </div>
                             <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
@@ -426,7 +426,7 @@
 
                             <!--obligor start-->
                             <div class="col-1-1">
-                            <input type="checkbox" name="obligorInformation">obligor
+                            <input type="checkbox" name="obligorInformationS">obligor
                             </div>
                             <div class="col-1-1 margin-bottom-neg30   grid grid-pad ">
 
@@ -719,7 +719,7 @@
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to negative amortization
                                 <i class="fa fa-plus-circle float-right"></i></h4>
-                            <ul id="amortizationInformation" class="no-list-style   two-column invisible ">
+                            <ul id="amortizationInformationS" class="no-list-style   two-column invisible ">
 
                             </ul>
                         </div>
@@ -727,7 +727,7 @@
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to the property <i class="fa fa-plus-circle float-right"></i></h4>
-                            <ul id="propertyInformation" class="no-list-style invisible two-column">
+                            <ul id="propertyInformationS" class="no-list-style invisible two-column">
 
                             </ul>
                         </div>
@@ -737,7 +737,7 @@
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to the obligor <i class="fa fa-plus-circle float-right "></i></h4>
 
-                            <ul id="obligorInformation" class="no-list-style invisible two-column">
+                            <ul id="obligorInformationS" class="no-list-style invisible two-column">
 
                             </ul>
 
@@ -898,34 +898,28 @@
         labelsDelinquent();
     }
     function immediateCustomReport() {
+//  prevent reloading the screen
         event.preventDefault();
-//  set formElements varibale to the form on the page
+//  set formElements variable to the form on the page
         var formElements = document.getElementById("myForm").elements;
-//  make a array of names with checked status
-        var postData = [];
+//  when form checkboxes are true to be checked, activate the function of the same name of the checkbox name.
         for (var i = 0; i < formElements.length; i++)
             if (formElements[i].checked == true)
-                postData.push(formElements[i].name);
-//  show the invisible tab
+                window[formElements[i].name]();
+
 //  add active for the white tab to show
         document.getElementById("custom-view").classList.add("active");
 //  remove invisible for the tab content to show
         document.getElementById("custom-view").parentNode.classList.remove("invisible");
-//  decativate customREGAB tab
+//  deactivate customREGAB tab
         document.getElementById("custom").classList.remove("active");
 //  remove the content from customREGAB
         document.getElementById("custom-tab-content").style.display = 'none';
 //  show view content
         document.getElementById("view-tab-content").style.display = 'inline-block';
 
-        console.log(postData);
-        numberInformationS();
-        reportingInformationS();
-
-        //could get rid of array if could just use the formElements[i].name add () and ;  and activate the functions
-
-
-
+            numberInformation();
+            reportingInformation();
 
     }
 
