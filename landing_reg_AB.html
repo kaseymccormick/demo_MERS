@@ -728,7 +728,7 @@
                 <div id="list-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad">
                         <ul class="no-list-style">
-                            <li><a onclick="showInvisibleTab(event)" id="view" class="link-text">Custom REG AB for
+                            <li><a onclick="showInvisibleTab(event);viewCustomReport()" id="view" class="link-text">Custom REG AB for
                                 #88716 -
                                 1/30/2017</a>
                             </li>
@@ -758,9 +758,9 @@
                         <!---->
                         <!--general mortgage info-->
 
-                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad invisible">
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
+                            <h4 id="generalHeader" onclick="expandDetail(event)" class="collapse-bar report-section__header invisible"> General
                                 information about the residential
                                 mortgage <i class="fa fa-plus-circle float-right "></i></h4>
                             <div class="invisible">
@@ -1152,28 +1152,12 @@
         labelsDelinquent();
     }
     function viewCustomReport(){
-        generalInformationS();
+        numberInformationS();
+        reportingInformationS();
         amortizationInformationS();
         propertyInformationS();
         obligorInformationS();
         mortgageInsuranceS();
-        loanActivityS();
-        servicerInformationS();
-        assetSubjectToDemandS();
-        chargedOffInformationS();
-        lostIndicatorS();
-        loanModificationsInformationS();
-        periodInformationS();
-        stepLoansInformationS();
-        trialModificationInformationS();
-        repaymentPlanInformationS();
-        shortSalesInformationS();
-        mitigationExitInformationS();
-        foreclosureInformationS();
-        relatedToREOInformationS();
-        lossesInformationS();
-        insuranceClaimsInformationS();
-        delinquentLoansInformationS();
     }
     function immediateCustomReport() {
 //  prevent reloading the screen

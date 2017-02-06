@@ -37,7 +37,7 @@ const regABform = {
             NegativeAmortizationLimitOfMostSeniorLien: '',
             OriginationDateOfMostSeniorLien: '',
             PrepaymentPenaltyIndicator: 'yes',
-            NegativeAmortizationIndicator: ''yes,
+            NegativeAmortizationIndicator: 'yes',
             ModificationIndicator: 'no',
             NumberOfModifications: '2',
             MortgageInsuranceRequirementIndicator: 'no',

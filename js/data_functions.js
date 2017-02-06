@@ -418,7 +418,8 @@ function generalInformationS() {
         out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.generalInformation.origination[i].toLowerCase() + "</li>"
     }
     var element = "originationS";
-    document.getElementById(element).parentNode.classList.add("expanded")
+    document.getElementById("generalHeader").classList.remove("invisible");
+    document.getElementById(element).parentNode.classList.add("expanded");
     thisIsaHack();
     thisIsAnotherHack();
     return hideAndSeek(element, out);
