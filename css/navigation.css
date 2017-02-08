@@ -100,3 +100,11 @@ Bottom/footer
 .bottom-nav{
 
 }
+.navigation-style {
+    float: right;
+}
+.navigation-style li{
+    float: left;
+    padding: 10px;
+
+}

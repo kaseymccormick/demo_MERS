@@ -83,10 +83,10 @@ const regABform = {
         negative: ' unknown',
         fixedPaymentPeriod: ' unknown',
         periodic: ' unknown',
-        paymentCap: ' unknown',
-        resetPeriod: ' unknown',
-        paymentResetPeriod: ' unknown',
-        minimumPayment: ' unknown'
+        paymentCap: ' ',
+        resetPeriod: ' ',
+        paymentResetPeriod: ' ',
+        minimumPayment: ' '
     },
     propertyInformation: {
         geograpicLocation: '51',
