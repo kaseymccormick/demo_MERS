@@ -2,9 +2,6 @@
 // Utility Functions
 //---------------------------------------
 //adds a space between words
-function format(i){
-    return "<li> <span>" + i.replace(/([a-z])([A-Z])/g, "$1 $2") + "</span> &nbsp; "
-}
 function space(i){
     return i.replace(/([a-z])([A-Z])/g, "$1 $2");
 }
@@ -354,25 +351,16 @@ function labelsDelinquent() {
 //---------------------------------------
 
 function numberInformationS() {
-    var out = '';
-    for (var i in regABform.assetNumbers) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " +regABform.assetNumbers[i] + "</li>"
-    }
+    var out = formatData(regABform.assetNumbers);
     document.getElementById("assetNumbersS").innerHTML = out;
 }
 function reportingInformationS() {
-    var out = '';
-    for (var i in regABform.reportingPeriod) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.reportingPeriod[i] + "</li>"
-    }
+    var out = formatData(regABform.reportingPeriod);
     document.getElementById("reportingPeriodS").innerHTML = out;
 }
 
 function generalInformationS() {
-    var out = '';
-    for (var i in regABform.generalInformation.origination) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.generalInformation.origination[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.generalInformation.origination);
     var element = "originationS";
     document.getElementById("generalHeader").classList.remove("invisible");
     document.getElementById(element).parentNode.classList.add("expanded");
@@ -385,6 +373,7 @@ function thisIsaHack() {
     for (var i in regABform.generalInformation.juniorLiens) {
         out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.generalInformation.juniorLiens[i].toLowerCase() + "</li>"
     }
+    var out = formatData(regABform.generalInformation.juniorLiens);
     var element = "juniorLiensS";
     return hideAndSeek(element, out);
 }
@@ -397,179 +386,108 @@ function thisIsaHack() {
     return hideAndSeek(element, out);
 }
 function amortizationInformationS() {
-    var out = '';
-    for (var i in regABform.negativeAmortization) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.negativeAmortization[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.negativeAmortization);
     var element = "amortizationInformationS";
     return hideAndSeek(element, out);
 }
 function propertyInformationS() {
-    var out = '';
-    for (var i in regABform.propertyInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.propertyInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.propertyInformation);
     var element = "propertyInformationS";
     return hideAndSeek(element, out);
 }
 function obligorInformationS() {
-    var out = '';
-    for (var i in regABform.obligorInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.obligorInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.obligorInformation);
     var element = "obligorInformationS";
     return hideAndSeek(element, out);
 
 }
 function mortgageInsuranceS() {
-    var out = '';
-    for (var i in regABform.mortgageInsurance) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.mortgageInsurance[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.mortgageInsurance);
     var element = "mortgageInsuranceS";
     return hideAndSeek(element, out);
 }
 function loanActivityS() {
-    var out = '';
-    for (var i in regABform.loanActivity) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.loanActivity[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.loanActivity);
     var element = "loanActivitiyS";
     return hideAndSeek(element, out);
 }
 function servicerInformationS() {
-    var out = '';
-    for (var i in regABform.servicerInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.servicerInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.servicerInformation);
     var element = "servicerInformationSS";
     return hideAndSeek(element, out);
-
 }
 function assetSubjectToDemandS() {
-    var out = '';
-    for (var i in regABform.assetSubjectToDemand) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.assetSubjectToDemand[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.assetSubjectToDemand);
     var element = "assetDemandS";
     return hideAndSeek(element, out);
-
 }
 function chargedOffInformationS() {
-    var out = '';
-    for (var i in regABform.chargedOffInformaiton) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.chargedOffInformaiton[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.chargedOffInformaiton);
     var element = "chargedOffS";
     return hideAndSeek(element, out);
-
 }
 function lostIndicatorS() {
-    var out = '';
-    for (var i in regABform.lostIndicator) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.lostIndicator[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.lostIndicator);
     var element = "lostIndicatorS";
     return hideAndSeek(element, out);
-
 }
 function loanModificationsInformationS(){
-    var out = '';
-    for (var i in regABform.lostIndicator) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.loanModificationsInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.loanModificationsInformation);
     var element = "loanModificationS";
     return hideAndSeek(element, out);
-
 }
 function periodInformationS() {
-    var out = '';
-    for (var i in regABform.periodInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.periodInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.periodInformation);
     var element = "periodInformationS";
     return hideAndSeek(element, out);
-
 }
 function stepLoansInformationS() {
-    var out = '';
-    for (var i in regABform.stepLoansInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.stepLoansInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.stepLoansInformation);
     var element = "stepLoanS";
     return hideAndSeek(element, out);
-
 }
 function trialModificationInformationS() {
-    var out = '';
-    for (var i in regABform.modificationInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.modificationInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.modificationInformation);
     var element = "trialModifcationInformationS";
     return hideAndSeek(element, out);
 }
 function repaymentPlanInformationS() {
-    var out = '';
-    for (var i in regABform.repaymentPlanInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.repaymentPlanInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.repaymentPlanInformation);
     var element = "repaymentPlanInformationS";
     return hideAndSeek(element, out);
-
 }
 function shortSalesInformationS() {
-    var out = '';
-    for (var i in regABform.shortSalesInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.shortSalesInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.shortSalesInformation);
     var element = "shortSalesInformationS";
     return hideAndSeek(element, out);
 }
 function mitigationExitInformationS() {
-    var out = '';
-    for (var i in regABform.mitigationExitInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.mitigationExitInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.mitigationExitInformation);
     var element = "mitigationExitInformationS";
     return hideAndSeek(element, out);
 }
 function foreclosureInformationS() {
-    var out = '';
-    for (var i in regABform.foreclosureInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.foreclosureInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.foreclosureInformation);
     var element = "foreclosureInformationS";
     return hideAndSeek(element, out);
 }
 function relatedToREOInformationS() {
-    var out = '';
-    for (var i in regABform.relatedToREOInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.relatedToREOInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.relatedToREOInformation);
     var element = "relatedREOInformationS";
     return hideAndSeek(element, out);
 }
 function lossesInformationS() {
-    var out = '';
-    for (var i in regABform.lossesInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.lossesInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.lossesInformation);
     var element = "lossesInfroamtionS";
     return hideAndSeek(element, out);
 }
 function insuranceClaimsInformationS() {
-    var out = '';
-    for (var i in regABform.insuranceClaimsInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.insuranceClaimsInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.insuranceClaimsInformation);
     var element = "insuranceClaimsInformationS";
     return hideAndSeek(element, out);
 }
 function delinquentLoansInformationS() {
-    var out = '';
-    for (var i in regABform.delinquentLoansInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.delinquentLoansInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.delinquentLoansInformation);
     var element = "delinquentLoansInformationS";
     return hideAndSeek(element, out);
 }
