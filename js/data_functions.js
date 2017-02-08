@@ -100,101 +100,59 @@ function assetSubjectToDemand() {
     document.getElementById("assetDemand").innerHTML = out;
 }
 function chargedOffInformation() {
-    var out = '';
-    for (var i in regABform.chargedOffInformaiton) {
-        out += format(i) + regABform.chargedOffInformaiton[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.chargedOffInformaiton);
     document.getElementById("chargedOff").innerHTML = out;
 }
 function loanModificationsInformation(){
-        var out = '';
-        for (var i in regABform.loanModificationsInformation) {
-            out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.loanModificationsInformation[i].toLowerCase() + "</li>"
-        }
-        document.getElementById("loanModifications").innerHTML = out;
+    var out = formatData(regABform.loanModificationsInformation);
+    document.getElementById("loanModifications").innerHTML = out;
     }
 function lostIndicator() {
-    var out = '';
-    for (var i in regABform.lostIndicator) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.lostIndicator[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.lostIndicator);
     document.getElementById("lostIndicator").innerHTML = out;
 }
 function periodInformation() {
-    var out = '';
-    for (var i in regABform.periodInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.periodInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.periodInformation);
     document.getElementById("periodInformation").innerHTML = out;
 }
 function stepLoansInformation() {
-    var out = '';
-    for (var i in regABform.stepLoansInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.stepLoansInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.stepLoansInformation);
     document.getElementById("stepLoans").innerHTML = out;
 }
 function trialModificationInformation() {
-    var out = '';
-    for (var i in regABform.modificationInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.modificationInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.modificationInformation);
     document.getElementById("trialModificationInformation").innerHTML = out;
 }
 function repaymentPlanInformation() {
-    var out = '';
-    for (var i in regABform.repaymentPlanInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.repaymentPlanInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.repaymentPlanInformation);
     document.getElementById("repaymentPlanInformation").innerHTML = out;
 }
 function shortSalesInformation() {
-    var out = '';
-    for (var i in regABform.shortSalesInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.shortSalesInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.shortSalesInformation);
     document.getElementById("shortSalesInformation").innerHTML = out;
 }
 function mitigationExitInformation() {
-    var out = '';
-    for (var i in regABform.mitigationExitInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.mitigationExitInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.mitigationExitInformation);
     document.getElementById("mitigationExitInformation").innerHTML = out;
 }
 function foreclosureInformation() {
-    var out = '';
-    for (var i in regABform.foreclosureInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.foreclosureInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.foreclosureInformation);
     document.getElementById("foreclosureInformation").innerHTML = out;
 }
 function relatedToREOInformation() {
-    var out = '';
-    for (var i in regABform.relatedToREOInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.relatedToREOInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.relatedToREOInformation);
     document.getElementById("relatedREOInformation").innerHTML = out;
 }
 function lossesInformation() {
-    var out = '';
-    for (var i in regABform.lossesInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.lossesInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.lossesInformation);
     document.getElementById("lossesInformation").innerHTML = out;
 }
 function insuranceClaimsInformation() {
-    var out = '';
-    for (var i in regABform.insuranceClaimsInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.insuranceClaimsInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.insuranceClaimsInformation);
     document.getElementById("insuranceClaimsInformation").innerHTML = out;
 }
 function delinquentLoansInformation() {
-    var out = '';
-    for (var i in regABform.delinquentLoansInformation) {
-        out += "<li> <span>" + space(i) + "</span> &nbsp; " + regABform.delinquentLoansInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.delinquentLoansInformation);
     document.getElementById("delinquentLoansInformation").innerHTML = out;
 }
 
