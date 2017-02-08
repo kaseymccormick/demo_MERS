@@ -76,46 +76,27 @@ function amortizationInformation() {
     document.getElementById("amortizationInformation").innerHTML = out;
 }
 function propertyInformation() {
-    var out = '';
-    for (var i in regABform.propertyInformation) {
-        out += format(i) + regABform.propertyInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.propertyInformation);
     document.getElementById("propertyInformation").innerHTML = out;
-
 }
 function obligorInformation() {
-    var out = '';
-    for (var i in regABform.obligorInformation) {
-        out += format(i) + regABform.obligorInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.obligorInformation);
     document.getElementById("obligorInformation").innerHTML = out;
 }
 function mortgageInsurance() {
-    var out = '';
-    for (var i in regABform.mortgageInsurance) {
-        out += format(i) + regABform.mortgageInsurance[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.mortgageInsurance);
     document.getElementById("mortgageInsurance").innerHTML = out;
 }
 function loanActivity() {
-    var out = '';
-    for (var i in regABform.loanActivity) {
-        out += format(i) + regABform.loanActivity[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.loanActivity);
     document.getElementById("loanActivity").innerHTML = out;
 }
 function servicerInformation() {
-    var out = '';
-    for (var i in regABform.servicerInformation) {
-        out += format(i) + regABform.servicerInformation[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.servicerInformation);
     document.getElementById("servicerInformation").innerHTML = out;
 }
 function assetSubjectToDemand() {
-    var out = '';
-    for (var i in regABform.assetSubjectToDemand) {
-        out += format(i) + regABform.assetSubjectToDemand[i].toLowerCase() + "</li>"
-    }
+    var out = formatData(regABform.assetSubjectToDemand);
     document.getElementById("assetDemand").innerHTML = out;
 }
 function chargedOffInformation() {
