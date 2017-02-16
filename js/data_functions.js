@@ -45,7 +45,6 @@ function analizeData(sourceOne, sourceTwo) {
     var differentData = [];
     _.reduce(sourceOne, function (result, value, key) {
         if (_.isEqual(value, sourceTwo[key]) === true) {
-            //put the key in an an array
                 sameData.push(key)
         } else if(_.isEqual(value, sourceTwo[key]) === false) {
             differentData.push(key);
@@ -58,7 +57,7 @@ function formatAllData([differentData, sameData],sourceOne, sourceTwo){
     var out ='';
     for (var i in differentData){
 
-        out += "<li class='descrepancy red-text'> <span>" + differentData[i] + "</span> &nbsp;" + "<em class='tooltip' data-tip='HouseCanary'>" +  sourceOne[differentData[i]] +"</em>" + "&nbsp;&nbsp;|" + "<em class='tooltip' data-tip='LPS'>" + sourceTwo[differentData[i]] + " </em> </li>"
+        out += "<li class='descrepancy red-text'> <span>" + space(differentData[i]) + "</span> &nbsp;" + "<em class='tooltip' data-tip='HouseCanary'>" +  sourceOne[differentData[i]] +"</em>" + "&nbsp;&nbsp;|" + "<em class='tooltip' data-tip='LPS'>" + sourceTwo[differentData[i]] + " </em> </li>"
     }
     for (var i in sameData){
         out += "<li> <span>" + space(sameData[i]) + "</span> &nbsp;" + sourceOne[sameData[i]] + "</li>"
@@ -163,8 +162,8 @@ function assetSubjectToDemandInformation(keyword) {
     }
 }
 function chargedOffInformation(keyword) {
-    var sourceOne = regABform.chargedOffInformaiton;
-    var sourceTwo = regABform2.chargedOffInformaiton;
+    var sourceOne = regABform.chargedOffInformation;
+    var sourceTwo = regABform2.chargedOffInformation;
     if (keyword == 'allData') {
         document.getElementById("chargedOff").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }

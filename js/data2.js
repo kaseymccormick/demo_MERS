@@ -197,8 +197,8 @@ const regABform2 = {
         repurchaser: '',
         repurchaseOrReplacementReason: ''
     },
-    chargedOffInformaiton: {
-        chargedOffPrincipalAmount: ' something new here',
+    chargedOffInformation: {
+        chargedOffPrincipalAmount: 'something new here',
         chargedOffInterestAmount: ''
     },
     lostIndicator: {
