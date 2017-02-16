@@ -193,3 +193,12 @@ footer a{
     text-align: center;
     padding: 10px;
 }
+li.fa{
+    display: block;
+}
+.descrepancy{
+    list-style-image: url("../images/icons/warning.png");
+}
+li.descrepancy.red-text{
+    color: #7B2727; !important;
+}

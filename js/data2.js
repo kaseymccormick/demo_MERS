@@ -1,7 +1,7 @@
 /**
  * Created by kasey.mccormick on 1/30/17.
  */
-const regABform = {
+const regABform2 = {
     assetNumbers: {
         numberType: 'MERS',
         number: '44323',
@@ -77,9 +77,9 @@ const regABform = {
         }
     },
     negativeAmortization: {
-        limit: '$20,000',
-        recastPeriod: 'thing',
-        subsequent: 'sohing',
+        limit: '$20,006',
+        recastPeriod: 'unknown',
+        subsequent: 'something',
         negative: '',
         fixedPaymentPeriod: '',
         periodic: '',
