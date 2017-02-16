@@ -80,7 +80,7 @@ const regABform = {
         limit: '$20,000',
         recastPeriod: 'thing',
         subsequent: 'sohing',
-        negative: '',
+        negative: 'thing',
         fixedPaymentPeriod: '',
         periodic: '',
         paymentCap: '',
@@ -97,7 +97,7 @@ const regABform = {
         mostRecentPropertyValuationType: 'x28261',
         mostRecentPropertyValuationDate: '8/12/16',
         mostRecentAvmModelName: 'x28261',
-        mostRecentAVMConfidenceScore: '',
+        mostRecentAVMConfidenceScore: '8889',
         originalCombinedLoanToValue: '',
         originalLoanToValue:''
     },
@@ -109,7 +109,7 @@ const regABform = {
         mostRecentObligorCreditScoreType: '',
         dateOfMostRecentObligorCreditScore: '',
         obligorIncomeVerificationLevel: 'x28261',
-        fourThousandFiveHundredAndSixTIndicator: 'yes',
+        indicator4506T: 'no',
         originatorFrontEdnDebtToIncome: '',
         orignitaroBackEndDti: '',
         obligorEmployementVerification: 'x28261',
@@ -123,7 +123,7 @@ const regABform = {
         mortgageInsuranceCoverage: '',
         poolInsuranceCompany: '',
         poolInsuranceStopLossPercent: '',
-        mortgageInsuranceCoveragePlanType: 'x28261'
+        mortgageInsuranceCoveragePlanType: 'x28222'
 
     },
     loanActivity: {
@@ -136,7 +136,7 @@ const regABform = {
         stopPrincipalAndInterestAdvanceDate: '',
         reportingPeriodBeginingLoanBalance: '',
         reportingPeriodBeginingShceduledLoanBalance: '',
-        nextReportingPeriodPaymentAmountDue: '',
+        nextReportingPeriodPaymentAmountDue: 'no',
         reportingPeriodInterestRate: '',
         nextInterestRate: '',
         servicingFeePercentage: '',
@@ -183,32 +183,32 @@ const regABform = {
         exercisedArmConversionOptionIndicator: ''
     },
     servicerInformation: {
-        primaryServicer: '',
+        primaryServicer: 'yes',
         mostRecentServicingTransferReceivedDate: '',
         masterServicer: '',
         specialServicer: '',
         subservicer: ''
     },
     assetSubjectToDemand: {
-        indicateSubjectOfDemand: '',
+        indicateSubjectOfDemand: 'yes',
         statusOfAssetSubjectToDemand: '',
         repurchaseAmount: '',
         demandResolutionDate: '',
         repurchaser: '',
         repurchaseOrReplacementReason: ''
     },
-    chargedOffInformaiton: {
-        chargedOffPrincipalAmount: ' something new here',
+    chargedOffInformation: {
+        chargedOffPrincipalAmount: '$30,000',
         chargedOffInterestAmount: ''
     },
     lostIndicator: {
-        indicateTypeOfLossMitigationServicerIsPursuingWithObligator: ''
+        indicateTypeOfLossMitigationServicerIsPursuingWithObligator: 'Yes'
     },
     loanModificationsInformation: {
         mostRecentLoanModificationEventType: '',
         effectiveDateOfTheMostRecentLoanModification: '',
         postModificationMaturityDate: '',
-        postModificationInterestRateType: '',
+        postModificationInterestRateType: 'yes',
         postModificationAmortizationType: '',
         postModificationInterestRate: '',
         postModificationFirstPaymentDate: '',
@@ -252,12 +252,12 @@ const regABform = {
         postModificationArmNegativeAmortization: ''
     },
     periodInformation: {
-        postModificationInterestOnlyTerm: '',
+        postModificationInterestOnlyTerm: 'no',
         postModificationInterestOnlyLastPaymentDate: '',
         postModificationBalloonPaymentAmount: ''
     },
     stepLoansInformation: {
-        postModificationInterestRateStepIndicator: '',
+        postModificationInterestRateStepIndicator: 'no',
         postModificationStepInterestRate: '',
         postModificationStepDate: '',
         postModificationStepPrincipalAndInterest: '',
@@ -273,31 +273,31 @@ const regABform = {
         recoveryOfDeferredInterestAndFeesReportingPeriod: ''
     },
     modificationInformation: {
-        mostRecentForebarancePlanOrTrialModificationStartDate: '',
+        mostRecentForebarancePlanOrTrialModificationStartDate: 'yes',
         mostRecentForbearancePlanOrTrialModificationScheduledEndDate: '',
         mostRecentTrialModificationViolatedDate: ''
     },
     repaymentPlanInformation: {
-        mostRecentRepaymentPlanStartDate: '',
+        mostRecentRepaymentPlanStartDate: 'no',
         mostRecentRepaymentPlanScheduledEndDate: '',
         mostRecentRepaymentPlanViolatedDate: ''
     },
     shortSalesInformation: {
-        shortSaleAcceptedOfferAmount: ''
+        shortSaleAcceptedOfferAmount: 'no'
     },
     mitigationExitInformation: {
-        mostRecentLossMitigationExitDate: '',
+        mostRecentLossMitigationExitDate: 'no',
         mostRecentLossMitigationExitCode: ''
     },
     foreclosureInformation: {
-        AttorneyReferalDate: '',
+        AttorneyReferalDate: 'no',
         foreclosureDelayReason: '',
         foreclosureExitDate: '',
         foreclosureExitReason: '',
         NOIDate: ''
     },
     relatedToREOInformation: {
-        mostRecentAcceptedREOOfferAmount: '',
+        mostRecentAcceptedREOOfferAmount: 'no',
         mostRecentAcceptedREOOfferDate: '',
         grossLiquidationProceeds: '',
         netSalesProceeds: '',
@@ -309,7 +309,7 @@ const regABform = {
         REOExitReason: ''
     },
     lossesInformation: {
-        UPBAtLiquidation: '$20,000',
+        UPBAtLiquidation: '$30,000',
         servicingFeesClaimed: '$20,000',
         servicerAdvancedAmountsReimbursePrincipal: '$20,000',
         servicerAdvancedAmountsReimbursedInterest: '3.5%',
@@ -321,7 +321,7 @@ const regABform = {
     },
     insuranceClaimsInformation: {
         MIClaimFiledDate: '8/12/16',
-        MIClaimAmount: '$20,000',
+        MIClaimAmount: '$30,000',
         MIClaimPaidDate: '18/12/16',
         MIClaimPaidAmount: '$20,000',
         MIClaimDeniedRescindedDate: '8/12/16',
@@ -329,7 +329,7 @@ const regABform = {
     },
     delinquentLoansInformation: {
         nonPayStatus: 'XZ8261',
-        reportingActionCode: 'XZ8261'
+        reportingActionCode: 'XX8261'
     }
 };
 

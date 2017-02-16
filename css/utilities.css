@@ -202,3 +202,31 @@ li.fa{
 li.descrepancy.red-text{
     color: #7B2727; !important;
 }
+
+/*
+*/
+em.tooltip::before {
+    content: attr(data-tip) ;
+    font-size: 12px;
+    position:relative;
+    z-index: 999;
+    white-space:nowrap;
+    bottom:9999px;
+    background:#eaeaea;
+    color:#000;
+    padding:10px 5px;
+    line-height: 24px;
+    height: 24px;
+    opacity: 0;
+    transition:opacity 0.4s ease-out;
+    border-radius: 5px;
+}
+
+em.tooltip:hover::before {
+    opacity: 1;
+    bottom:-35px;
+}
+em.tooltip{
+    font-style: normal;
+    margin-left: -23px;
+}

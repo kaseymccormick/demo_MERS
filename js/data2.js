@@ -80,7 +80,7 @@ const regABform2 = {
         limit: '$20,006',
         recastPeriod: 'unknown',
         subsequent: 'something',
-        negative: '',
+        negative: 'thing',
         fixedPaymentPeriod: '',
         periodic: '',
         paymentCap: '',

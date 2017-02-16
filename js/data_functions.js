@@ -15,7 +15,6 @@ function hideAndSeek(element, out) {
     elementChain.innerHTML = out;
     //add expanded and margin bottom to the class list of the element to show the section and data
     elementChain.classList.add("expanded", "margin-bottom-20");
-
 }
 function formatData(section) {
     var out = '';
@@ -39,8 +38,7 @@ function formatDataOnlyAnswers(section) {
         }
     }
     return out
-}var sourceOne = regABform.negativeAmortization;
-var sourceTwo = regABform2.negativeAmortization;
+}
 
 function analizeData(sourceOne, sourceTwo) {
     var sameData = [];
@@ -56,61 +54,17 @@ function analizeData(sourceOne, sourceTwo) {
     return [differentData, sameData]
 }
 
-function formatAllData([differentData, sameData]){
-    var sourceOne = regABform.negativeAmortization;
-    var sourceTwo = regABform2.negativeAmortization;
+function formatAllData([differentData, sameData],sourceOne, sourceTwo){
     var out ='';
-
     for (var i in differentData){
-        out += "<li class='descrepancy red-text'> <span>" + differentData[i] + "</span> &nbsp;" + sourceOne[differentData[i]] + "&nbsp;| &nbsp;" + sourceTwo[differentData[i]] + "</li>"
+
+        out += "<li class='descrepancy red-text'> <span>" + differentData[i] + "</span> &nbsp;" + "<em class='tooltip' data-tip='HouseCanary'>" +  sourceOne[differentData[i]] +"</em>" + "&nbsp;&nbsp;|" + "<em class='tooltip' data-tip='LPS'>" + sourceTwo[differentData[i]] + " </em> </li>"
     }
     for (var i in sameData){
         out += "<li> <span>" + space(sameData[i]) + "</span> &nbsp;" + sourceOne[sameData[i]] + "</li>"
-
     }
-    document.getElementById("amortizationInformation").innerHTML = out
+    return out
 }
-
-
-function formatAnswersCompare(sourceOne, sourceTwo) {
-    var out ='';
-   if (_.isEqual(sourceOne, sourceTwo)) {
-       for (var i in sourceOne) {
-           if (sourceOne[i].length !== 0) {
-               out += "<li> <span>" + space(i) + "</span> &nbsp; " + sourceOne[i].toLowerCase() + "</li>"
-           }
-       }
-   }
-    var descrepancies = _.reduce(sourceOne, function(result, value, key) {
-          console.log(_.isEqual(value, sourceTwo[key]));
-
-           return _.isEqual(value, sourceTwo[key])?
-               result : result.concat(key);
-       }, []);
-
-       for (var i = 0; i < descrepancies.length; i ++) {
-               out += "<li class='descrepancy red-text'> <span>" + space(descrepancies[i]) + "</span> &nbsp;" + sourceOne[descrepancies[i]] + "&nbsp;| &nbsp;" + sourceTwo[descrepancies[i]] + "</li>"
-       }
-
-return out
-}
-    // var out ='';
-    // for (var i in sourceOne){
-    //
-    //
-    // }
-    // compare source one to source two
-    // if it matches, show source sourceOne
-    // if not matches, class descrepancy show source one
-
-
-function openAllSections() {
-//        get the right elements
-//        remove invisble
-//     console.log(document.getElementsByClassName("section"));
-    console.log("open all sections");
-}
-
 
 function expandAllStandard() {
     var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "loanModifications", "lostIndicator", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
@@ -125,42 +79,232 @@ function contractAllStandard() {
         document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20');
     }
 }
-function compareData() {
 
-}
 //---------------------------------------
 // Trying to consolidate
 //---------------------------------------
 function numberInformation(keyword) {
     var section = regABform.assetNumbers;
-    if (keyword == 'answers') {
+    if (keyword == 'allData') {
         document.getElementById("assetNumbers").innerHTML = formatDataOnlyAnswers(section);
     }
     else if (keyword == 'label') {
         document.getElementById("labelsNumbers").innerHTML = formatLabels(section);
     }
-    else if (keyword == 'discrepancies') {
+}
+function amortizationInformation(keyword) {
+    var sourceOne = regABform.negativeAmortization;
+    var sourceTwo = regABform2.negativeAmortization;
+    if (keyword == 'allData') {
+        document.getElementById("amortizationInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
-    else {
-        document.getElementById("assetNumbers").innerHTML = formatData(section);
+    else if (keyword == 'label') {
+        document.getElementById("labelsAmortization").innerHTML = formatLabels(sourceOne);
     }
 }
-// function amortizationInformation(keyword) {
-//     var sourceOne = regABform.negativeAmortization;
-//     var sourceTwo = regABform2.negativeAmortization;
-//     if (keyword == 'answers') {
-//         // document.getElementById("amortizationInformation").innerHTML = formatDataOnlyAnswers(section);
-//         document.getElementById("amortizationInformation").innerHTML = formatAnswersCompare(sourceOne, sourceTwo);
-//     }
-//     else if (keyword == 'label') {
-//         document.getElementById("labelsAmortization").innerHTML = formatLabels(section);
-//     }
-//     else if (keyword == 'discrepancies') {
-//     }
-//     else {
-//         document.getElementById("amortizationInformation").innerHTML = formatData(section);
-//     }
-// }
+function propertyInformation(keyword) {
+    var sourceOne = regABform.propertyInformation;
+    var sourceTwo = regABform2.propertyInformation;
+    if (keyword == 'allData') {
+        document.getElementById("propertyInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsProperty").innerHTML = formatLabels(sourceOne);
+    }
+}
+function obligorInformation(keyword) {
+    var sourceOne = regABform.obligorInformation;
+    var sourceTwo = regABform2.obligorInformation;
+    if (keyword == 'allData') {
+        document.getElementById("obligorInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsObligor").innerHTML = formatLabels(sourceOne);
+    }
+}
+function mortgageInsuranceInformation(keyword) {
+    var sourceOne = regABform.mortgageInsurance;
+    var sourceTwo = regABform2.mortgageInsurance;
+    if (keyword == 'allData') {
+        document.getElementById("mortgageInsurance").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsMortgageInsurance").innerHTML = formatLabels(sourceOne);
+    }
+}
+function loanActivityInformation(keyword) {
+    var sourceOne = regABform.loanActivity;
+    var sourceTwo = regABform2.loanActivity;
+    if (keyword == 'allData') {
+        document.getElementById("loanActivity").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsLoanActivity").innerHTML = formatLabels(sourceOne);
+    }
+}
+function servicerInformation(keyword) {
+    var sourceOne = regABform.servicerInformation;
+    var sourceTwo = regABform2.servicerInformation;
+    if (keyword == 'allData') {
+        document.getElementById("servicerInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsServicer").innerHTML = formatLabels(sourceOne);
+    }
+}
+function assetSubjectToDemandInformation(keyword) {
+    var sourceOne = regABform.assetSubjectToDemand;
+    var sourceTwo = regABform2.assetSubjectToDemand;
+    if (keyword == 'allData') {
+        document.getElementById("assetDemand").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsAsset").innerHTML = formatLabels(sourceOne);
+    }
+}
+function chargedOffInformation(keyword) {
+    var sourceOne = regABform.chargedOffInformaiton;
+    var sourceTwo = regABform2.chargedOffInformaiton;
+    if (keyword == 'allData') {
+        document.getElementById("chargedOff").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsCharged").innerHTML = formatLabels(sourceOne);
+    }
+}
+function lostIndicatorInformation(keyword) {
+    var sourceOne = regABform.lostIndicator;
+    var sourceTwo = regABform2.lostIndicator;
+    if (keyword == 'allData') {
+        document.getElementById("lostIndicator").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsLost").innerHTML = formatLabels(sourceOne);
+    }
+}
+function loanModificationsInformation(keyword) {
+    var sourceOne = regABform.loanModificationsInformation;
+    var sourceTwo = regABform2.loanModificationsInformation;
+    if (keyword == 'allData') {
+        document.getElementById("loanModificationsInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsLoanModifications").innerHTML = formatLabels(sourceOne);
+    }
+}
+function periodInformation(keyword) {
+    var sourceOne = regABform.periodInformation;
+    var sourceTwo = regABform2.periodInformation;
+    if (keyword == 'allData') {
+        document.getElementById("periodInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsPeriod").innerHTML = formatLabels(sourceOne);
+    }
+}
+function stepLoansInformation(keyword) {
+    var sourceOne = regABform.stepLoansInformation;
+    var sourceTwo = regABform2.stepLoansInformation;
+    if (keyword == 'allData') {
+        document.getElementById("stepLoans").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsStepLoans").innerHTML = formatLabels(sourceOne);
+    }
+}
+function trialModificationInformation(keyword) {
+    var sourceOne = regABform.modificationInformation;
+    var sourceTwo = regABform2.modificationInformation;
+    if (keyword == 'allData') {
+        document.getElementById("trialModificationInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsTrial").innerHTML = formatLabels(sourceOne);
+    }
+}
+function repaymentPlanInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("repaymentPlanInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsRepayment").innerHTML = formatLabels(sourceOne);
+    }
+}
+function shortSalesInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("shortSalesInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsShort").innerHTML = formatLabels(sourceOne);
+    }
+}
+function mitigationExitInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("mitigationExitInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsMitigation").innerHTML = formatLabels(sourceOne);
+    }
+}
+function foreclosureInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("foreclosureInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsForeclosure").innerHTML = formatLabels(sourceOne);
+    }
+}
+function relatedToREOInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("relatedREOInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsRelated").innerHTML = formatLabels(sourceOne);
+    }
+}
+function lossesInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("lossesInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsLosses").innerHTML = formatLabels(sourceOne);
+    }
+}
+function insuranceClaimsInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("insuranceClaimsInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsInsuranceClaims").innerHTML = formatLabels(sourceOne);
+    }
+}
+function delinquentLoansInformation(keyword) {
+    var sourceOne = regABform.repaymentPlanInformation;
+    var sourceTwo = regABform2.repaymentPlanInformation;
+    if (keyword == 'allData') {
+        document.getElementById("delinquentLoansInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsDelinquent").innerHTML = formatLabels(sourceOne);
+    }
+}
+
+
+
 //TODO consolidate the rest of the default + labels
 
 //---------------------------------------
@@ -178,85 +322,9 @@ function juniorLienInformation() {
 function mortgageInformation() {
     document.getElementById("mortgageInformation").innerHTML = formatData(regABform.generalInformation.firstMortgages);
 }
-function propertyInformation() {
-    document.getElementById("propertyInformation").innerHTML = formatData(regABform.propertyInformation);
-}
-function obligorInformation() {
-    document.getElementById("obligorInformation").innerHTML = formatData(regABform.obligorInformation);
-}
-function mortgageInsurance() {
-    document.getElementById("mortgageInsurance").innerHTML = formatData(regABform.mortgageInsurance);
-}
-function loanActivity() {
-    document.getElementById("loanActivity").innerHTML = formatData(regABform.loanActivity);
-}
-function servicerInformation() {
-    document.getElementById("servicerInformation").innerHTML = formatData(regABform.servicerInformation);
-}
-function assetSubjectToDemand() {
-    document.getElementById("assetDemand").innerHTML = formatData(regABform.assetSubjectToDemand);
-}
-function chargedOffInformation() {
-    document.getElementById("chargedOff").innerHTML = formatData(regABform.chargedOffInformaiton);
-}
-function loanModificationsInformation() {
-    document.getElementById("loanModifications").innerHTML = formatData(regABform.loanModificationsInformation);
-}
-function lostIndicator() {
-    document.getElementById("lostIndicator").innerHTML = formatData(regABform.lostIndicator);
-}
-function periodInformation() {
-    document.getElementById("periodInformation").innerHTML = formatData(regABform.periodInformation);
-}
-function stepLoansInformation() {
-    document.getElementById("stepLoans").innerHTML = formatData(regABform.stepLoansInformation);
-}
-function trialModificationInformation() {
-    document.getElementById("trialModificationInformation").innerHTML = formatData(regABform.modificationInformation);
-}
-function repaymentPlanInformation() {
-    document.getElementById("repaymentPlanInformation").innerHTML = formatData(regABform.repaymentPlanInformation);
-}
-function shortSalesInformation() {
-    document.getElementById("shortSalesInformation").innerHTML = formatData(regABform.shortSalesInformation);
-}
-function mitigationExitInformation() {
-    document.getElementById("mitigationExitInformation").innerHTML = formatData(regABform.mitigationExitInformation);
-}
-function foreclosureInformation() {
-    document.getElementById("foreclosureInformation").innerHTML = formatData(regABform.foreclosureInformation);
-}
-function relatedToREOInformation() {
-    document.getElementById("relatedREOInformation").innerHTML = formatData(regABform.relatedToREOInformation);
-}
-function lossesInformation() {
-    document.getElementById("lossesInformation").innerHTML = formatData(regABform.lossesInformation);
-}
-function insuranceClaimsInformation() {
-    document.getElementById("insuranceClaimsInformation").innerHTML = formatData(regABform.insuranceClaimsInformation);
-}
-function delinquentLoansInformation() {
-    document.getElementById("delinquentLoansInformation").innerHTML = formatData(regABform.delinquentLoansInformation);
-}
 //---------------------------------------
 // Label Functions
 //---------------------------------------
-//     function labelsNumbers() {
-//         var out = '';
-//         for (var i in regABform.assetNumbers) {
-//             out += "<li>" + space(i) + "</li>"
-//         }
-//         document.getElementById("labelsNumbers").innerHTML = out;
-//     }
-
-function labelsReporting() {
-    var out = '';
-    for (var i in regABform.reportingPeriod) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsReporting").innerHTML = out;
-}
-
 function labelsOrigination() {
     var out = '';
     for (var i in regABform.generalInformation.origination) {
@@ -264,7 +332,6 @@ function labelsOrigination() {
     }
     document.getElementById("labelsOrigination").innerHTML = out;
 }
-
 function labelsJuniorLien() {
     var out = '';
     for (var i in regABform.generalInformation.juniorLiens) {
@@ -272,7 +339,6 @@ function labelsJuniorLien() {
     }
     document.getElementById("labelsJuniorLien").innerHTML = out;
 }
-
 function labelsMortgage() {
     var out = '';
     for (var i in regABform.generalInformation.firstMortgages) {
@@ -280,177 +346,6 @@ function labelsMortgage() {
     }
     document.getElementById("labelsMortgage").innerHTML = out;
 }
-
-// function labelsAmortization() {
-//     var out = '';
-//     for (var i in regABform.negativeAmortization) {
-//         out += "<li>" + space(i) + "</li>"
-//     }
-//     document.getElementById("labelsAmortization").innerHTML = out;
-// }
-
-function labelsProperty() {
-    var out = '';
-    for (var i in regABform.propertyInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsProperty").innerHTML = out;
-
-}
-
-function labelsObligor() {
-    var out = '';
-    for (var i in regABform.obligorInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsObligor").innerHTML = out;
-}
-
-function labelsMortgageInsurance() {
-    var out = '';
-    for (var i in regABform.mortgageInsurance) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsMortgageInsurance").innerHTML = out;
-}
-
-function labelsLoanActivity() {
-    var out = '';
-    for (var i in regABform.loanActivity) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsLoanActivity").innerHTML = out;
-}
-
-function labelsServicer() {
-    var out = '';
-    for (var i in regABform.servicerInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsServicer").innerHTML = out;
-}
-
-function labelsAsset() {
-    var out = '';
-    for (var i in regABform.assetSubjectToDemand) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsAsset").innerHTML = out;
-}
-
-function labelsCharged() {
-    var out = '';
-    for (var i in regABform.chargedOffInformaiton) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsCharged").innerHTML = out;
-}
-
-function labelsLost() {
-    var out = '';
-    for (var i in regABform.lostIndicator) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsLost").innerHTML = out;
-}
-
-function labelsLoanModifications() {
-    var out = '';
-    for (var i in regABform.loanModificationsInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsLoanModifications").innerHTML = out;
-
-}
-
-function labelsPeriod() {
-    var out = '';
-    for (var i in regABform.periodInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsPeriod").innerHTML = out;
-}
-
-function labelsStepLoans() {
-    var out = '';
-    for (var i in regABform.stepLoansInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsStepLoans").innerHTML = out;
-}
-
-function labelsTrial() {
-    var out = '';
-    for (var i in regABform.modificationInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsTrial").innerHTML = out;
-}
-
-function labelsRepayment() {
-    var out = '';
-    for (var i in regABform.repaymentPlanInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsRepayment").innerHTML = out;
-}
-
-function labelsShort() {
-    var out = '';
-    for (var i in regABform.shortSalesInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsShort").innerHTML = out;
-}
-
-function labelsMitigation() {
-    var out = '';
-    for (var i in regABform.mitigationExitInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsMitigation").innerHTML = out;
-}
-
-function labelsForeclosure() {
-    var out = '';
-    for (var i in regABform.foreclosureInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsForeclosure").innerHTML = out;
-}
-
-function labelsRelated() {
-    var out = '';
-    for (var i in regABform.relatedToREOInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsRelated").innerHTML = out;
-}
-
-function labelsLosses() {
-    var out = '';
-    for (var i in regABform.lossesInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsLosses").innerHTML = out;
-}
-
-function labelsInsuranceClaims() {
-    var out = '';
-    for (var i in regABform.insuranceClaimsInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsInsuranceClaims").innerHTML = out;
-}
-
-function labelsDelinquent() {
-    var out = '';
-    for (var i in regABform.delinquentLoansInformation) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsDelinquent").innerHTML = out;
-}
-
 
 //---------------------------------------
 // Custom generated Report Functions Custom Checkbox name functions
