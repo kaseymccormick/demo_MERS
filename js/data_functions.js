@@ -6,6 +6,7 @@
 function space(x) {
     return x.replace(/([a-z])([A-Z])/g, "$1 $2");
 }
+//used to show an hide child sections
 function hideAndSeek(element, out) {
     //set element chain variable to the selector using passed in id dtat
     var elementChain = document.getElementById(element);
@@ -34,53 +35,55 @@ function formatDataOnlyAnswers(section) {
     var out = '';
     for (var i in section) {
         if (section[i].length !== 0) {
-            out += "<li> <span>" + i.space + "</span> &nbsp; " + section[i].toLowerCase() + "</li>"
+            out += "<li> <span>" + space(i) + "</span> &nbsp; " + section[i].toLowerCase() + "</li>"
         }
     }
     return out
 }
-
+//go through data1.section and data2.section and put keys in the right arrays
 function analizeData(sourceOne, sourceTwo) {
     var sameData = [];
     var differentData = [];
     _.reduce(sourceOne, function (result, value, key) {
+        //if the attributes are the exact same put in same data array
         if (_.isEqual(value, sourceTwo[key]) === true) {
                 sameData.push(key)
+            //if the attributes are the different put in different data array
         } else if(_.isEqual(value, sourceTwo[key]) === false) {
             differentData.push(key);
         }
     }, []);
     return [differentData, sameData]
 }
-
+//take the array differentData, sameData and object sourceOne sourceTwo to go through and show key and value to the user
 function formatAllData([differentData, sameData],sourceOne, sourceTwo){
     var out ='';
     for (var i in differentData){
 
-        out += "<li class='descrepancy red-text'> <span>" + space(differentData[i]) + "</span> &nbsp;" + "<em class='tooltip' data-tip='HouseCanary'>" +  sourceOne[differentData[i]] +"</em>" + "&nbsp;&nbsp;|" + "<em class='tooltip' data-tip='LPS'>" + sourceTwo[differentData[i]] + " </em> </li>"
+        out += "<li class='descrepancy-data red-text'> <span>" + space(differentData[i]) + "</span> &nbsp;" + "<em class='tooltip' data-tip='HouseCanary'>" +  sourceOne[differentData[i]] +"</em>" + "&nbsp;&nbsp;|" + "<em class='tooltip' data-tip='LPS'>" + sourceTwo[differentData[i]] + " </em> </li>"
     }
     for (var i in sameData){
-        out += "<li> <span>" + space(sameData[i]) + "</span> &nbsp;" + sourceOne[sameData[i]] + "</li>"
+        out += "<li class='consensus-data'> <span>" + space(sameData[i]) + "</span> &nbsp;" + sourceOne[sameData[i]] + "</li>"
     }
     return out
 }
 
 function expandAllStandard() {
-    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "loanModifications", "lostIndicator", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
     for (var i in ids) {
         document.getElementById(ids[i]).classList.add('expanded', 'margin-bottom-20');
     }
 }
 function contractAllStandard() {
     event.preventDefault();
-    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "loanModifications", "lostIndicator", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
     for (var i in ids) {
         document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20');
     }
 }
 
 //---------------------------------------
-// Trying to consolidate
+// Labels only (label) and Labels with analyzed content (all data)
 //---------------------------------------
 function numberInformation(keyword) {
     var section = regABform.assetNumbers;
@@ -89,6 +92,10 @@ function numberInformation(keyword) {
     }
     else if (keyword == 'label') {
         document.getElementById("labelsNumbers").innerHTML = formatLabels(section);
+    }
+    else{
+        document.getElementById("assetNumbers").innerHTML = formatData(section);
+
     }
 }
 function amortizationInformation(keyword) {
@@ -99,6 +106,9 @@ function amortizationInformation(keyword) {
     }
     else if (keyword == 'label') {
         document.getElementById("labelsAmortization").innerHTML = formatLabels(sourceOne);
+    }
+    else if (keyword == 'dataOnly'){
+        document.getElementById("amortizationInformation").innerHTML = formatDataOnlyAnswers(sourceOne);
     }
 }
 function propertyInformation(keyword) {
@@ -232,8 +242,8 @@ function repaymentPlanInformation(keyword) {
     }
 }
 function shortSalesInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.shortSalesInformation;
+    var sourceTwo = regABform2.shortSalesInformation;
     if (keyword == 'allData') {
         document.getElementById("shortSalesInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -242,8 +252,8 @@ function shortSalesInformation(keyword) {
     }
 }
 function mitigationExitInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.mitigationExitInformation;
+    var sourceTwo = regABform2.mitigationExitInformation;
     if (keyword == 'allData') {
         document.getElementById("mitigationExitInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -252,8 +262,8 @@ function mitigationExitInformation(keyword) {
     }
 }
 function foreclosureInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.foreclosureInformation;
+    var sourceTwo = regABform2.foreclosureInformation;
     if (keyword == 'allData') {
         document.getElementById("foreclosureInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -262,8 +272,8 @@ function foreclosureInformation(keyword) {
     }
 }
 function relatedToREOInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.relatedToREOInformation;
+    var sourceTwo = regABform2.relatedToREOInformation;
     if (keyword == 'allData') {
         document.getElementById("relatedREOInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -272,8 +282,8 @@ function relatedToREOInformation(keyword) {
     }
 }
 function lossesInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.lossesInformation;
+    var sourceTwo = regABform2.lossesInformation;
     if (keyword == 'allData') {
         document.getElementById("lossesInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -282,8 +292,8 @@ function lossesInformation(keyword) {
     }
 }
 function insuranceClaimsInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.insuranceClaimsInformation;
+    var sourceTwo = regABform2.insuranceClaimsInformation;
     if (keyword == 'allData') {
         document.getElementById("insuranceClaimsInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -292,8 +302,8 @@ function insuranceClaimsInformation(keyword) {
     }
 }
 function delinquentLoansInformation(keyword) {
-    var sourceOne = regABform.repaymentPlanInformation;
-    var sourceTwo = regABform2.repaymentPlanInformation;
+    var sourceOne = regABform.delinquentLoansInformation;
+    var sourceTwo = regABform2.delinquentLoansInformation;
     if (keyword == 'allData') {
         document.getElementById("delinquentLoansInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
@@ -302,7 +312,13 @@ function delinquentLoansInformation(keyword) {
     }
 }
 
+function descrepanciesOnly(){
+    var myElements = document.querySelectorAll(".consensus-data");
 
+    for (var i = 0; i < myElements.length; i++) {
+        myElements[i].style.display = "none";
+    }
+}
 
 //TODO consolidate the rest of the default + labels
 

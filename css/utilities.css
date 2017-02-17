@@ -196,13 +196,19 @@ footer a{
 li.fa{
     display: block;
 }
-.descrepancy{
+.descrepancy-data{
     list-style-image: url("../images/icons/warning.png");
 }
-li.descrepancy.red-text{
+li.descrepancy-data.red-text{
     color: #7B2727; !important;
 }
-
+.consensus-data{
+display: block;
+;
+}
+li.consensus-data{
+    color: blue;
+}
 /*
 */
 em.tooltip::before {
