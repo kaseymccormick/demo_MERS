@@ -106,9 +106,9 @@
                 <div id="full-tab-content" class="tab-content grid grid-pad">
                     <div class="page-content__report-section grid grid-pad" >
                         <!--asset numbers and dates-->
-                        <!--<div class="col-1-1 print-button">-->
-                            <!--<a href="" class="float-right button" onclick="openAllSections();window.print()"><i class="fa fa-print"></i>  print</a>-->
-                        <!--</div>-->
+                        <div class="col-1-1 print-button">
+                            <a href="" class="float-right button" onclick="window.print()"><i class="fa fa-print"></i>  print</a>
+                        </div>
                         <div class="col-1-2 grid report-section__content__column grid-pad">
                             <h3>Asset Numbers</h3>
                             <ul id="assetNumbers" class="no-list-style  col-1-2">
@@ -125,7 +125,6 @@
                             <ul class="no-list-style navigation-style">
                                 <li><a onclick="expandAllStandard()" class="green-text">Expand All Sections</a></li>
                                 <li><a onclick="descrepanciesOnly(event)" class="green-text">Show Only Descrepancies</a></li>
-                                <li><a onclick="showAll(event)" class="green-text">Show All Line Items</a></li>
                             </ul>
                         </div>
 
@@ -1076,6 +1075,18 @@
 
 
     }
+    function countDescrepancy(selector){
+        var childNodes = document.getElementById(selector).childNodes;
+        var count = 0;
+        console.log(childNodes.length);
+        for (var i = 0; i < childNodes.length; i++){
+            if (childNodes[i].className.indexOf('descrepancy-data') == 0 )
+                    count++;
+            console.log(count);
+        }
+    }
+
+
     function expandDetail(event) {
         let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
         let timesCircleClass = 'fa fa-times-circle float-right padding-right-20px';

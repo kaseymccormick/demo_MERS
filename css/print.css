@@ -2,13 +2,33 @@
     footer, .left-navigation, .header, .print-button, .tab {
         display: none;
     }
+
     h1, h2, h3, h4 {
         page-break-after: avoid;
     }
+
     ul {
         page-break-inside: avoid;
     }
-.col-6-7{
-    width: 100%;
-}
+
+    .col-6-7 {
+        width: 100%;
+    }
+    .filter-bar{
+        display: none;
+    }
+    .grid{
+        font-size: 12px;
+    }
+    .collapse-bar{
+        border:1px #cccccc solid;
+    }
+    .page__content__title{
+        margin-top: -50px;
+        margin-bottom:-50px;
+    }
+    .page__content__title h2{
+        color: #616161;
+
+    }
 }
