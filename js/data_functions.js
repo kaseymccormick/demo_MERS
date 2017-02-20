@@ -73,6 +73,8 @@ function expandAllStandard() {
     for (var i in ids) {
         document.getElementById(ids[i]).classList.add('expanded', 'margin-bottom-20');
     }
+    event.target.parentElement.innerHTML = "<a onclick='contractAllStandard()' class='green-text'>Contract All Sections</a>";
+
 }
 function contractAllStandard() {
     event.preventDefault();
@@ -80,6 +82,8 @@ function contractAllStandard() {
     for (var i in ids) {
         document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20');
     }
+    event.target.parentElement.innerHTML = "<a onclick='expandAllStandard()' class='green-text'>Expand All Sections</a>";
+
 }
 
 //---------------------------------------
@@ -312,12 +316,26 @@ function delinquentLoansInformation(keyword) {
     }
 }
 
-function descrepanciesOnly(){
+function descrepanciesOnly(event){
     var myElements = document.querySelectorAll(".consensus-data");
 
     for (var i = 0; i < myElements.length; i++) {
         myElements[i].style.display = "none";
     }
+//    also go into the inner html of the link clicked and change it to say show all and have a function of showAll
+
+    event.target.parentElement.innerHTML = "<a onclick='showAll(event)' class='green-text'>Show All Datapoints</a>";
+
+
+
+}
+function showAll(event){
+    var myElements = document.querySelectorAll(".consensus-data");
+
+    for (var i = 0; i < myElements.length; i++) {
+        myElements[i].style.display = "block";
+    }
+    event.target.parentElement.innerHTML = "<a onclick='descrepanciesOnly(event)' class='green-text'>Show Descrepancies Only</a>";
 }
 
 //TODO consolidate the rest of the default + labels
