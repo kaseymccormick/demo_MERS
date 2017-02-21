@@ -121,6 +121,7 @@
                         </div>
                         <div id="standard_ab_content">
                         <!--general mortgage info-->
+
                         <div class="col-1-1 filter-bar">
                             <ul class="no-list-style navigation-style">
                                 <li><a onclick="expandAllStandard()" class="green-text">Expand All Sections</a></li>
@@ -128,6 +129,11 @@
                             </ul>
                         </div>
 
+<div class="grid grid-pad">
+                            <div class="col-1-20 descrepancies invisible" id="generalInformationDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">4</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
@@ -145,17 +151,28 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--negative amortization-->
+                            </div>
+    <div class="clear"></div>
 
+    <!--negative amortization-->
+<div class="col-1-20 descrepancies " id="amortizationDescrepancies">
+    <img src="images/icons/warning.png" alt=""><em class="red-text">4</em>
+</div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad  ">
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
-                                related to negative amortization
+                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                                Information related to negative amortization
                                 <i class="fa fa-plus-circle float-right"></i></h4>
-                            <ul id="amortizationInformation" class="no-list-style   two-column invisible  ">
-
+                                <ul id="amortizationInformation" class="no-list-style   two-column invisible  ">
                             </ul>
                         </div>
+                            </div>
+    <div class="clear"></div>
                         <!--property information-->
+                            <div class="col-1-20 descrepancies invisible" id="propertyDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to the property <i class="fa fa-plus-circle float-right"></i></h4>
@@ -163,7 +180,14 @@
 
                             </ul>
                         </div>
-                        <!--obligor start-->
+                            </div>
+    <div class="clear"></div>
+
+    <!--obligor start-->
+                            <div class="col-1-20 descrepancies invisible" id="obligorDescrepancies">
+                            <img src="images/icons/warning.png" alt=""><em class="red-text">4</em>
+                        </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -174,8 +198,14 @@
                             </ul>
 
                         </div>
+                            </div>
+    <div class="clear"></div>
 
                         <!--insurance start-->
+                            <div class="col-1-20 descrepancies invisible" id="insuranceDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30   report-section__content__column grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -187,7 +217,14 @@
 
                             </ul>
                         </div>
+                            </div>
+    <div class="clear"></div>
 
+    <!--loan activity-->
+                            <div class="col-1-20 descrepancies invisible" id="loanDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 grid grid-pad report-section__content__column">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -200,7 +237,14 @@
 
                             </ul>
                         </div>
+                            </div>
+    <div class="clear"></div>
 
+                            <!--servicer information-->
+                            <div class="col-1-20 descrepancies invisible" id="servicerDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class=" collapse-bar report-section__header">Information
@@ -211,6 +255,14 @@
 
                             </ul>
                         </div>
+                                </div>
+    <div class="clear"></div>
+
+    <!--asset subject to demand information-->
+                            <div class="col-1-20 descrepancies invisible" id="subjectDemandDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Asset subject
@@ -221,7 +273,14 @@
 
                             </ul>
                         </div>
+                                </div>
+    <div class="clear"></div>
 
+    <!--charged off loans-->
+                            <div class="col-1-20 descrepancies invisible" id="chargedOffDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -232,8 +291,16 @@
                             <ul id="chargedOff" class="no-list-style invisible two-column">
 
                             </ul>
+                            </div>
                         </div>
-                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+    <div class="clear"></div>
+
+    <!--lost mitigation-->
+                            <div class="col-1-20 descrepancies invisible" id="lostMitigationDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
+                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Lost
                                 mitigation type indicator<i class="fa fa-plus-circle float-right "></i></h4>
@@ -243,6 +310,14 @@
                             </ul>
 
                         </div>
+                                </div>
+    <div class="clear"></div>
+
+                            <!--information loan modifications-->
+                            <div class="col-1-20 descrepancies invisible" id="modificationDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -253,7 +328,14 @@
 
                             </ul>
                         </div>
+                                </div>
+    <div class="clear"></div>
 
+    <!--loan modification interest periods-->
+                            <div class="col-1-20 descrepancies invisible" id="periodDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -263,6 +345,16 @@
 
                             </ul>
                         </div>
+                                </div>
+    <div class="clear"></div>
+
+                            <!-- step loans-->
+
+                            <div class="col-1-20 descrepancies invisible " id="stepLoansDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
+
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to step loans <i class="fa fa-plus-circle float-right "></i></h4>
@@ -272,6 +364,12 @@
                             </ul>
 
                         </div>
+                            </div>
+                            <!--forbearance modification-->
+                                <div class="col-1-20 descrepancies invisible" id="forebearanceDescrepancies">
+                                    <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                                </div>
+                                <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -282,6 +380,13 @@
 
                             </ul>
                         </div>
+                                    </div>
+
+                            <!--payment plan-->
+                            <div class="col-1-20 descrepancies invisible" id="repaymentDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -292,7 +397,12 @@
 
                             </ul>
                         </div>
-
+</div>
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="shortSalesDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
 
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
 
@@ -304,6 +414,13 @@
 
                             </ul>
                         </div>
+                                </div>
+
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="lossMitigationDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad ">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to loss mitigation exit
@@ -313,7 +430,12 @@
 
                             </ul>
                         </div>
-
+                                </div>
+<!---->
+                            <div class="col-1-20 descrepancies invisible" id="foreclosureDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad report-section__content__column">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">information
                                 related to loans in the
@@ -325,6 +447,12 @@
                             </ul>
 
                         </div>
+                                </div>
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="reoDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="grid col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
                             <h4 onclick="expandDetail(event)" onclick="expandDetail(event)"
                                 class="collapse-bar report-section__header">Information related to REO <i
@@ -332,6 +460,12 @@
                             <ul id="relatedREOInformation" class="no-list-style two-column invisible">
                             </ul>
                         </div>
+                                </div>
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="lossesDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
                                 related to losses <i class="fa fa-plus-circle float-right"></i></h4>
@@ -339,6 +473,12 @@
                             </ul>
 
                         </div>
+                                </div>
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="mortgageInsuranceDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad report-section__content__column">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">Information
@@ -349,6 +489,12 @@
                             </ul>
 
                         </div>
+                                </div>
+                            <!---->
+                            <div class="col-1-20 descrepancies invisible" id="delinquentDescrepancies">
+                                <img src="images/icons/warning.png" alt=""><em class="red-text">3</em>
+                            </div>
+                            <div class="col-19-20">
                         <div class="col-1-1 margin-bottom-neg30   grid grid-pad padding-right-neg20 report-section__content__column">
 
                             <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header ">Information
@@ -361,6 +507,8 @@
                             </ul>
 
                         </div>
+                            </div>
+                                </div>
                         </div>
                     </div>
 
@@ -1067,23 +1215,13 @@
         event.currentTarget.className += ' active';
 
 // add active for the white tab to show
-        document.getElementById("custom-view").classList.add("active")
+        document.getElementById("custom-view").classList.add("active");
 //       remove invisible for the tab content to show
-        document.getElementById("custom-view").parentNode.classList.remove("invisible")
+        document.getElementById("custom-view").parentNode.classList.remove("invisible");
 //           deactivate custom tab
-        document.getElementById("list").classList.remove("active")
+        document.getElementById("list").classList.remove("active");
 
 
-    }
-    function countDescrepancy(selector){
-        var childNodes = document.getElementById(selector).childNodes;
-        var count = 0;
-        console.log(childNodes.length);
-        for (var i = 0; i < childNodes.length; i++){
-            if (childNodes[i].className.indexOf('descrepancy-data') == 0 )
-                    count++;
-            console.log(count);
-        }
     }
 
 

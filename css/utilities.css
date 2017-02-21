@@ -63,6 +63,12 @@ html {
 .col-15-16{
     width: calc(((100%/16)*15) - 1%);
 }
+.col-1-20{
+    width: calc(((100%/20)*1) - 1%);
+}
+.col-19-20{
+    width: calc(((100%/20)*19) - 1%);
+}
 .col-2-7{
     width: calc(((100%/7)*2) - 1%);
 
@@ -202,6 +208,9 @@ li.fa{
 li.descrepancy-data.red-text{
     color: #7B2727; !important;
 }
+.red-text{
+    color: #7B2727; !important;
+}
 .consensus-data{
 display: block;
 ;
@@ -227,7 +236,6 @@ em.tooltip::before {
     transition:opacity 0.4s ease-out;
     border-radius: 5px;
 }
-
 em.tooltip:hover::before {
     opacity: 1;
     bottom:-35px;
@@ -235,4 +243,11 @@ em.tooltip:hover::before {
 em.tooltip{
     font-style: normal;
     margin-left: -23px;
+}
+
+.descrepancies img{
+    padding-top:10px;
+}
+.clear{
+    clear: both;
 }

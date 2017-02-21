@@ -1,4 +1,5 @@
-
+var ids = [ "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+// "generalInformation",
 // /---------------------------------------
 // Utility Functions
 //---------------------------------------
@@ -69,7 +70,6 @@ function formatAllData([differentData, sameData],sourceOne, sourceTwo){
 }
 
 function expandAllStandard() {
-    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
     for (var i in ids) {
         document.getElementById(ids[i]).classList.add('expanded', 'margin-bottom-20');
     }
@@ -78,13 +78,53 @@ function expandAllStandard() {
 }
 function contractAllStandard() {
     event.preventDefault();
-    var ids = ["generalInformation", "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
     for (var i in ids) {
         document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20');
     }
     event.target.parentElement.innerHTML = "<a onclick='expandAllStandard()' class='green-text'>Expand All Sections</a>";
 
 }
+
+//---------------------------------------
+// Showing Descrepancies to Users
+//---------------------------------------
+
+function countDescrepancy(section){
+    var childNodes = document.getElementById(section).childNodes;
+    var count = 0;
+    for (var i = 0; i < childNodes.length; i++){
+        if (childNodes[i].className.indexOf('descrepancy-data') == 0 )
+            count++;
+    }
+    return count
+}
+function whichSectionsHaveDescrepancies(){
+    var sectionDescrepancies = {};
+    for(i in ids){
+        var section = ids[i];
+        sectionDescrepancies[section] = countDescrepancy(section);
+    }
+    return sectionDescrepancies
+}
+function showDescrepancyCount(){
+    document.getElementById("amortizationDescrepancies").innerHTML = countDescrepancy("amortizationInformation")
+
+
+}
+//get element by id, look at child nodes, select the second one and change the inner html to the number countDescrepancy returns
+// document.getElementById("amortizationDescrepancies").childNodes[2].innerHTML = countDescrepancy("amortizationInformation")
+
+// find all the divs with descrepancies
+// var divDescrepancies = document.getElementsByClassName("descrepancies");
+// //take each node and see if descrepancies is a class of it
+// divDescrepancies[7].className.indexOf('descrepancies');
+// //get the id of the parent node who's children have descrepancies as class
+// document.getElementsByClassName("descrepancies")[7].parentNode.id
+//
+// // if the div has descrepancies class then do..
+// if(divDescrepancies[7].className.indexOf('descrepancies') >= 0){
+//     divDescrepancies[7].classList.remove("invisible");
+// }
 
 //---------------------------------------
 // Labels only (label) and Labels with analyzed content (all data)
