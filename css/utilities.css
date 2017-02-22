@@ -207,6 +207,7 @@ li.fa{
 }
 li.descrepancy-data.red-text{
     color: #7B2727; !important;
+    margin-left: 25px;
 }
 .red-text{
     color: #7B2727; !important;
@@ -244,7 +245,9 @@ em.tooltip{
     font-style: normal;
     margin-left: -23px;
 }
-
+.descrepancies{
+height: 40px;
+}
 .descrepancies img{
     padding-top:10px;
 }

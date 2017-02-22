@@ -191,11 +191,11 @@ const regABform = {
     },
     assetSubjectToDemand: {
         indicateSubjectOfDemand: 'yes',
-        statusOfAssetSubjectToDemand: '',
-        repurchaseAmount: '',
-        demandResolutionDate: '',
-        repurchaser: '',
-        repurchaseOrReplacementReason: ''
+        statusOfAssetSubjectToDemand: 'no',
+        repurchaseAmount: 'no',
+        demandResolutionDate: 'no',
+        repurchaser: 'no',
+        repurchaseOrReplacementReason: 'no'
     },
     chargedOffInformation: {
         chargedOffPrincipalAmount: '$30,000',
