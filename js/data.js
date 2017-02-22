@@ -252,12 +252,12 @@ const regABform = {
         postModificationArmNegativeAmortization: ''
     },
     periodInformation: {
-        postModificationInterestOnlyTerm: 'no',
+        postModificationInterestOnlyTerm: '',
         postModificationInterestOnlyLastPaymentDate: '',
         postModificationBalloonPaymentAmount: ''
     },
     stepLoansInformation: {
-        postModificationInterestRateStepIndicator: 'no',
+        postModificationInterestRateStepIndicator: '',
         postModificationStepInterestRate: '',
         postModificationStepDate: '',
         postModificationStepPrincipalAndInterest: '',
@@ -283,14 +283,14 @@ const regABform = {
         mostRecentRepaymentPlanViolatedDate: ''
     },
     shortSalesInformation: {
-        shortSaleAcceptedOfferAmount: 'no'
+        shortSaleAcceptedOfferAmount: ''
     },
     mitigationExitInformation: {
-        mostRecentLossMitigationExitDate: 'no',
+        mostRecentLossMitigationExitDate: '',
         mostRecentLossMitigationExitCode: ''
     },
     foreclosureInformation: {
-        AttorneyReferalDate: 'no',
+        AttorneyReferalDate: '',
         foreclosureDelayReason: '',
         foreclosureExitDate: '',
         foreclosureExitReason: '',

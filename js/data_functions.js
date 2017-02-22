@@ -1,4 +1,4 @@
-var ids = [ "amortizationInformation", "mortgageInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+var ids = [ "amortizationInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
 // "generalInformation",
 // /---------------------------------------
 // Utility Functions
@@ -48,7 +48,7 @@ function analizeData(sourceOne, sourceTwo) {
     _.reduce(sourceOne, function (result, value, key) {
         //if the attributes are the exact same put in same data array
         if (_.isEqual(value, sourceTwo[key]) === true) {
-                sameData.push(key)
+                sameData.push(key);
             //if the attributes are the different put in different data array
         } else if(_.isEqual(value, sourceTwo[key]) === false) {
             differentData.push(key);
@@ -89,6 +89,17 @@ function contractAllStandard() {
 // Showing Descrepancies to Users
 //---------------------------------------
 
+function whichSectionsHaveDescrepancies(){
+    var sectionDescrepancies = {};
+    for(i in ids){
+        var section = ids[i];
+        sectionDescrepancies[section] = countDescrepancy(section);
+    }
+    //returns object below
+    console.log(sectionDescrepancies);
+    //pass the sectionDescrepancies to show desc count
+    return showDescrepancyCount(sectionDescrepancies);
+}
 function countDescrepancy(section){
     var childNodes = document.getElementById(section).childNodes;
     var count = 0;
@@ -98,33 +109,20 @@ function countDescrepancy(section){
     }
     return count
 }
-function whichSectionsHaveDescrepancies(){
-    var sectionDescrepancies = {};
-    for(i in ids){
-        var section = ids[i];
-        sectionDescrepancies[section] = countDescrepancy(section);
-    }
-    return sectionDescrepancies
+function showDescrepancyCount(sectionDescrepancies) {
+// loop through and get the key
+    for (var key in sectionDescrepancies){
+// with the key select the correct div to modify
+    var selector = document.getElementById(key).parentNode.parentNode.previousSibling.previousSibling;
+//remove invisible class so warnings are visible
+        selector.classList.remove("invisible");
+        if(sectionDescrepancies[key] > 0) {
+
+// insert the count value into the innerhtml of the correct div ^
+            selector.innerHTML = '<img src=\'images/icons/warning.png\'> <em class=\'red-text\'>' + sectionDescrepancies[key] + '<em>';
+        }
 }
-function showDescrepancyCount(){
-    document.getElementById("amortizationDescrepancies").innerHTML = countDescrepancy("amortizationInformation")
-
-
 }
-//get element by id, look at child nodes, select the second one and change the inner html to the number countDescrepancy returns
-// document.getElementById("amortizationDescrepancies").childNodes[2].innerHTML = countDescrepancy("amortizationInformation")
-
-// find all the divs with descrepancies
-// var divDescrepancies = document.getElementsByClassName("descrepancies");
-// //take each node and see if descrepancies is a class of it
-// divDescrepancies[7].className.indexOf('descrepancies');
-// //get the id of the parent node who's children have descrepancies as class
-// document.getElementsByClassName("descrepancies")[7].parentNode.id
-//
-// // if the div has descrepancies class then do..
-// if(divDescrepancies[7].className.indexOf('descrepancies') >= 0){
-//     divDescrepancies[7].classList.remove("invisible");
-// }
 
 //---------------------------------------
 // Labels only (label) and Labels with analyzed content (all data)
