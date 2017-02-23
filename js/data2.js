@@ -13,7 +13,7 @@ const regABform2 = {
     },
     generalInformation: {
         origination: {
-            OriginalLoanPurpose: 'x28261',
+            OriginalLoanPurpose: 'x88261',
             Originator: 'Freedom LLC',
             OriginatorLoanAmount: '$20,000',
             OriginalLoanMaturityDate: '8/12/16',

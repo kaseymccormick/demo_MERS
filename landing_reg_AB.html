@@ -120,7 +120,7 @@
                             </ul>
                         </div>
                         <div id="standard_ab_content">
-                        <!--general mortgage info-->
+
 
                         <div class="col-1-1 filter-bar">
                             <ul class="no-list-style navigation-style">
@@ -130,27 +130,45 @@
                         </div>
 
 <div class="grid grid-pad">
+    <!--originaiton information-->
                             <div class="col-1-20 descrepancies invisible" >
                             </div>
-                            <div class="col-19-20">
-                        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                        <div class="col-19-20">
+                            <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+                                <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                                    Origination Information
+                                    <i class="fa fa-plus-circle float-right"></i></h4>
+                                <ul id="originationInformation" class="no-list-style   two-column invisible  ">
+                                </ul>
+                            </div>
+                         </div>
+    <div class="clear"></div>
+<!-- junior liens-->
+    <div class="col-1-20 descrepancies invisible" >
+    </div>
+    <div class="col-19-20">
+        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                Information related to junior liens
+                <i class="fa fa-plus-circle float-right"></i></h4>
+            <ul id="juniorLienInformation" class="no-list-style   two-column invisible  ">
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!-- first Mortgages-->
+    <div class="col-1-20 descrepancies invisible" >
+    </div>
+    <div class="col-19-20">
+        <div class="col-1-1 margin-bottom-neg30 report-section__content__column grid grid-pad">
+            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                Information related to non first mortgages
+                <i class="fa fa-plus-circle float-right"></i></h4>
+            <ul id="firstMortgageInformation" class="no-list-style   two-column invisible  ">
+            </ul>
+        </div>
+    </div>
 
-                            <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
-                                information about the residential
-                                mortgage <i class="fa fa-plus-circle float-right "></i></h4>
-                            <div class="invisible" id="generalInformation">
-                                <h3>Origination</h3>
-                                <ul id="origination" class="no-list-style  col-1-2 ">
-                                </ul>
-                                <h3>Information related to junior liens</h3>
-                                <ul id="juniorLiens" class="no-list-style col-1-2">
-                                </ul>
-                                <h3>Information related to non first mortgages</h3>
-                                <ul id="mortgageInformation" class="no-list-style col-1-2">
-                                </ul>
-                            </div>
-                        </div>
-                            </div>
     <div class="clear"></div>
 
     <!--negative amortization-->
@@ -524,31 +542,46 @@
                         <!--FORM START-->
                         <form onsubmit="immediateCustomReport(event);" id="myForm">
                             <!--FORM START-->
-                            <!--general mortgage info-->
-
+                            <!--Origination-->
                             <div class="col-1-16 arrange-checkbox">
-                                <input type="checkbox" name="generalInformationS">
+                                <input type="checkbox" name="originationInformationS">
                             </div>
-                            <div class="col-15-16 margin-bottom-neg30   grid grid-pad">
-
-                                <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header"> General
-                                    information about the residential
-                                    mortgage <i class="fa fa-plus-circle float-right "></i></h4>
-                                <div class="invisible">
-                                    <h3>Origination</h3>
-                                    <ul id="labelsOrigination"
-                                        class="no-list-style col-1-2 report-section__content__column">
-                                    </ul>
-                                    <h3>Information related to junior liens</h3>
-                                    <ul id="labelsJuniorLien" class="no-list-style report-section__content__column">
-                                    </ul>
-                                    <h3>Information related to non first mortgages</h3>
-
-                                    <ul id="labelsMortgage"
-                                        class="no-list-style col-1-2 report-section__content__column">
-                                    </ul>
-                                </div>
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                                <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                                    Information related to Origination
+                                    <i class="fa fa-plus-circle float-right"></i></h4>
+                                <ul id="labelsOrigination"
+                                    class="no-list-style report-section__content__column  two-column invisible ">
+                                </ul>
                             </div>
+
+                            <!--junior liens-->
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="juniorLeinInformationS">
+                            </div>
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                                <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                                    Information related to junior liens
+                                    <i class="fa fa-plus-circle float-right"></i></h4>
+                                <ul id="labelsJuniorLien"
+                                    class="no-list-style report-section__content__column  two-column invisible ">
+                                </ul>
+                            </div>
+
+                            <!-- non first mortgages-->
+                            <div class="col-1-16 arrange-checkbox">
+                                <input type="checkbox" name="firstMortgagesInformationS">
+                            </div>
+                            <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
+                                <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
+                                    Information related to non first mortgages
+                                    <i class="fa fa-plus-circle float-right"></i></h4>
+                                <ul id="labelsfirstMortgage"
+                                    class="no-list-style report-section__content__column  two-column invisible ">
+                                </ul>
+                            </div>
+
+
 
 
                             <!--negative amortization-->
@@ -557,10 +590,8 @@
                             </div>
                             <div class="col-15-16 margin-bottom-neg30 report-section__content__column   grid grid-pad">
                                 <h4 onclick="expandDetail(event)" class="collapse-bar report-section__header">
-                                    Information
-                                    related to negative amortization
-                                    <i
-                                            class="fa fa-plus-circle float-right"></i></h4>
+                                    Information related to negative amortization
+                                    <i class="fa fa-plus-circle float-right"></i></h4>
                                 <ul id="labelsAmortization"
                                     class="no-list-style report-section__content__column  two-column invisible ">
                                 </ul>
@@ -915,11 +946,6 @@
                         </div>
 
 
-                        <!---->
-
-
-
-
                         <!--negative amortization-->
 
                         <div class="col-1-1 margin-bottom-neg30 report-section__content__column   grid grid-pad invisible">
@@ -1238,10 +1264,10 @@
     window.onload = function () {
 
         numberInformation('allData');
-        reportingInformation();
-        originationInformation();
-        juniorLienInformation();
-        mortgageInformation();
+        reportingInformation('allData');
+        originationInformation('allData');
+        juniorLienInformation('allData');
+        mortgageInformation('allData');
         amortizationInformation('allData');
         propertyInformation('allData');
         obligorInformation('allData');
@@ -1294,10 +1320,10 @@
     }
     function showOptions() {
         numberInformation('label');
-        reportingInformation();
-        labelsOrigination();
-        labelsJuniorLien();
-        labelsMortgage();
+        reportingInformation('label');
+        originationInformation('label');
+        juniorLienInformation('label');
+        mortgageInformation('label');
         amortizationInformation('label');
         propertyInformation('label');
         obligorInformation('label');

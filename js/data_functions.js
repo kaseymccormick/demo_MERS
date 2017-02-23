@@ -1,4 +1,4 @@
-var ids = [ "amortizationInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+var ids = [ "originationInformation", "juniorLienInformation", "firstMortgageInformation", "amortizationInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
 // "generalInformation",
 // /---------------------------------------
 // Utility Functions
@@ -45,13 +45,16 @@ function formatDataOnlyAnswers(section) {
 function analizeData(sourceOne, sourceTwo) {
     var sameData = [];
     var differentData = [];
+
     _.reduce(sourceOne, function (result, value, key) {
         //if the attributes are the exact same put in same data array
         if (_.isEqual(value, sourceTwo[key]) === true) {
                 sameData.push(key);
+
             //if the attributes are the different put in different data array
         } else if(_.isEqual(value, sourceTwo[key]) === false) {
             differentData.push(key);
+
         }
     }, []);
     return [differentData, sameData]
@@ -93,10 +96,8 @@ function whichSectionsHaveDescrepancies(){
     var sectionDescrepancies = {};
     for(i in ids){
         var section = ids[i];
-        sectionDescrepancies[section] = countDescrepancy(section);
+            sectionDescrepancies[section] = countDescrepancy(section);
     }
-    //returns object below
-    console.log(sectionDescrepancies);
     //pass the sectionDescrepancies to show desc count
     return showDescrepancyCount(sectionDescrepancies);
 }
@@ -138,6 +139,69 @@ function numberInformation(keyword) {
     else{
         document.getElementById("assetNumbers").innerHTML = formatData(section);
 
+    }
+}
+function reportingInformation(keyword) {
+    var sourceOne = regABform.reportingPeriod;
+        var sourceTwo = regABform2.reportingPeriod;
+    if (keyword == 'allData') {
+        document.getElementById("reportingPeriod").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsReporting").innerHTML = formatLabels(sourceOne);
+    }
+    else if (keyword == 'dataOnly'){
+        document.getElementById("reportingPeriod").innerHTML = formatDataOnlyAnswers(sourceOne);
+    }
+
+
+}
+
+
+// function labelsMortgage() {
+//     var out = '';
+//     for (var i in regABform.generalInformation.firstMortgages) {
+//         out += "<li>" + space(i) + "</li>"
+//     }
+//     document.getElementById("labelsMortgage").innerHTML = out;
+// }
+function originationInformation(keyword) {
+    var sourceOne = regABform.generalInformation.origination;
+    var sourceTwo = regABform2.generalInformation.origination;
+    if (keyword == 'allData') {
+        document.getElementById("originationInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsOrigination").innerHTML = formatLabels(sourceOne);
+    }
+    else if (keyword == 'dataOnly'){
+        document.getElementById("originationInformation").innerHTML = formatDataOnlyAnswers(sourceOne);
+    }
+}
+function juniorLienInformation(keyword) {
+    var sourceOne = regABform.generalInformation.juniorLiens;
+    var sourceTwo = regABform2.generalInformation.juniorLiens;
+    if (keyword == 'allData') {
+        document.getElementById("juniorLienInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsJuniorLien").innerHTML = formatLabels(sourceOne);
+    }
+    else if (keyword == 'dataOnly'){
+        document.getElementById("juniorLienInformation").innerHTML = formatDataOnlyAnswers(sourceOne);
+    }
+}
+function mortgageInformation(keyword) {
+    var sourceOne = regABform.generalInformation.firstMortgages;
+    var sourceTwo = regABform2.generalInformation.firstMortgages;
+    if (keyword == 'allData') {
+        document.getElementById("firstMortgageInformation").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
+    }
+    else if (keyword == 'label') {
+        document.getElementById("labelsfirstMortgage").innerHTML = formatLabels(sourceOne);
+    }
+    else if (keyword == 'dataOnly'){
+        document.getElementById("firstMortgageInformation").innerHTML = formatDataOnlyAnswers(sourceOne);
     }
 }
 function amortizationInformation(keyword) {
@@ -374,48 +438,6 @@ function showAll(event){
         myElements[i].style.display = "block";
     }
     event.target.parentElement.innerHTML = "<a onclick='descrepanciesOnly(event)' class='green-text'>Show Descrepancies Only</a>";
-}
-
-//TODO consolidate the rest of the default + labels
-
-//---------------------------------------
-// Default Report Functions
-//---------------------------------------
-function reportingInformation() {
-    document.getElementById("reportingPeriod").innerHTML = formatData(regABform.reportingPeriod);
-}
-function originationInformation() {
-    document.getElementById("origination").innerHTML = formatData(regABform.generalInformation.origination);
-}
-function juniorLienInformation() {
-    document.getElementById("juniorLiens").innerHTML = formatData(regABform.generalInformation.juniorLiens);
-}
-function mortgageInformation() {
-    document.getElementById("mortgageInformation").innerHTML = formatData(regABform.generalInformation.firstMortgages);
-}
-//---------------------------------------
-// Label Functions
-//---------------------------------------
-function labelsOrigination() {
-    var out = '';
-    for (var i in regABform.generalInformation.origination) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsOrigination").innerHTML = out;
-}
-function labelsJuniorLien() {
-    var out = '';
-    for (var i in regABform.generalInformation.juniorLiens) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsJuniorLien").innerHTML = out;
-}
-function labelsMortgage() {
-    var out = '';
-    for (var i in regABform.generalInformation.firstMortgages) {
-        out += "<li>" + space(i) + "</li>"
-    }
-    document.getElementById("labelsMortgage").innerHTML = out;
 }
 
 //---------------------------------------
