@@ -1,4 +1,6 @@
 var ids = [ "originationInformation", "juniorLienInformation", "firstMortgageInformation", "amortizationInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff",  "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+var customIds = [ "originationInformationS", "juniorLienInformationS", "firstMortgageInformationS", "amortizationInformationS", "propertyInformationS", "obligorInformationS", "mortgageInsuranceS", "loanActivityS", "servicerInformationS", "assetDemandS", "chargedOffS",  "lostIndicatorS", "loanModificationsInformationS", "periodInformationS", "stepLoansS", "trialModificationInformationS", "repaymentPlanInformationS", "shortSalesInformationS", "mitigationExitInformationS", "foreclosureInformationS", "relatedREOInformationS", "lossesInformationS", "insuranceClaimsInformationS", "delinquentLoansInformationS"];
+var labelIds = ["labelsOrigination", "labelsJuniorLien", "labelsfirstMortgage", "labelsAmortization", "labelsProperty","labelsObligor", "labelsMortgageInsurance", "labelsLoanActivity", "labelsServicer","labelsAsset","labelsCharged","labelsLost","labelsLoanModifications","labelsPeriod","labelsStepLoans","labelsTrial","labelsRepayment","labelsShort","labelsMitigation","labelsForeclosure","labelsRelated","labelsLosses", "labelsInsuranceClaims", "labelsDelinquent"];
 // "generalInformation",
 // /---------------------------------------
 // Utility Functions
@@ -11,6 +13,7 @@ function space(x) {
 function hideAndSeek(element, out) {
     //set element chain variable to the selector using passed in id dtat
     var elementChain = document.getElementById(element);
+
     //select the previous sibling and remove invisible from class list
     elementChain.previousElementSibling.classList.remove("invisible");
     //change innerhtml to content of out passed in
@@ -79,12 +82,40 @@ function expandAllStandard() {
     event.target.parentElement.innerHTML = "<a onclick='contractAllStandard()' class='green-text'>Contract All Sections</a>";
 
 }
+function expandAllCustom() {
+    for (var i in customIds) {
+        debugger;
+        document.getElementById(customIds[i]).classList.add('expanded', 'margin-bottom-20');
+    }
+    event.target.parentElement.innerHTML = "<a onclick='contractAllStandard()' class='green-text'>Contract All Sections</a>";
+
+}
+function expandAllCustomize() {
+    for (var i in labelIds) {
+        document.getElementById(labelIds[i]).classList.add('expanded', 'margin-bottom-20');
+    }
+    event.target.parentElement.innerHTML = "<a onclick='contractAllCustomize()' class='green-text'>Contract All Sections</a>";
+
+}
 function contractAllStandard() {
     event.preventDefault();
     for (var i in ids) {
-        document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20');
+
+        document.getElementById(ids[i]).classList.remove('expanded', 'margin-bottom-20' );
+        document.getElementById(ids[i]).parentNode.classList.remove('padding-bottom-30');
     }
     event.target.parentElement.innerHTML = "<a onclick='expandAllStandard()' class='green-text'>Expand All Sections</a>";
+
+}
+
+function contractAllCustomize() {
+    event.preventDefault();
+    for (var i in labelIds) {
+
+        document.getElementById(labelIds[i]).classList.remove('expanded', 'margin-bottom-20' );
+        // document.getElementById(labelIds[i]).parentNode.classList.remove('padding-bottom-30');
+    }
+    event.target.parentElement.innerHTML = "<a onclick='expandAllCustomize()' class='green-text'>Expand All Sections</a>";
 
 }
 
@@ -95,6 +126,7 @@ function contractAllStandard() {
 function whichSectionsHaveDescrepancies(){
     var sectionDescrepancies = {};
     for(i in ids){
+
         var section = ids[i];
             sectionDescrepancies[section] = countDescrepancy(section);
     }
@@ -129,42 +161,32 @@ function showDescrepancyCount(sectionDescrepancies) {
 // Labels only (label) and Labels with analyzed content (all data)
 //---------------------------------------
 function numberInformation(keyword) {
-    var section = regABform.assetNumbers;
+    var sourceOne = regABform.assetNumbers;
+    var sourceTwo = regABform2.assetNumbers;
     if (keyword == 'allData') {
-        document.getElementById("assetNumbers").innerHTML = formatDataOnlyAnswers(section);
+        document.getElementById("assetNumbers").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
     else if (keyword == 'label') {
-        document.getElementById("labelsNumbers").innerHTML = formatLabels(section);
+        document.getElementById("labelsNumbers").innerHTML = formatLabels(sourceOne);
     }
     else{
-        document.getElementById("assetNumbers").innerHTML = formatData(section);
+        document.getElementById("assetNumbers").innerHTML = formatDataOnlyAnswers(sourceOne);
 
     }
 }
 function reportingInformation(keyword) {
     var sourceOne = regABform.reportingPeriod;
-        var sourceTwo = regABform2.reportingPeriod;
+    var sourceTwo = regABform2.reportingPeriod;
     if (keyword == 'allData') {
         document.getElementById("reportingPeriod").innerHTML = formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     }
     else if (keyword == 'label') {
         document.getElementById("labelsReporting").innerHTML = formatLabels(sourceOne);
     }
-    else if (keyword == 'dataOnly'){
+    else if (keyword == 'dataOnly') {
         document.getElementById("reportingPeriod").innerHTML = formatDataOnlyAnswers(sourceOne);
     }
-
-
 }
-
-
-// function labelsMortgage() {
-//     var out = '';
-//     for (var i in regABform.generalInformation.firstMortgages) {
-//         out += "<li>" + space(i) + "</li>"
-//     }
-//     document.getElementById("labelsMortgage").innerHTML = out;
-// }
 function originationInformation(keyword) {
     var sourceOne = regABform.generalInformation.origination;
     var sourceTwo = regABform2.generalInformation.origination;
@@ -419,17 +441,18 @@ function delinquentLoansInformation(keyword) {
 }
 
 function descrepanciesOnly(event){
+    //shows only descrepancies to the user if it's not Asset Number or Reporting Period information
     var myElements = document.querySelectorAll(".consensus-data");
 
     for (var i = 0; i < myElements.length; i++) {
+if (myElements[i].parentElement.id != "assetNumbers")
+    if (myElements[i].parentElement.id != "reportingPeriod")
+        //for one reason or another cant get the != to be one line with OR operator
         myElements[i].style.display = "none";
     }
 //    also go into the inner html of the link clicked and change it to say show all and have a function of showAll
 
     event.target.parentElement.innerHTML = "<a onclick='showAll(event)' class='green-text'>Show All Datapoints</a>";
-
-
-
 }
 function showAll(event){
     var myElements = document.querySelectorAll(".consensus-data");
@@ -449,25 +472,46 @@ function numberInformationS() {
 function reportingInformationS() {
     document.getElementById("reportingPeriodS").innerHTML = formatData(regABform.reportingPeriod);
 }
-function generalInformationS() {
-    var out = formatData(regABform.generalInformation.origination);
-    var element = "originationS";
-    document.getElementById("generalHeader").classList.remove("invisible");
-    document.getElementById(element).parentNode.classList.add("expanded");
-    thisIsaHack();
-    thisIsAnotherHack();
+// //out of date need to update START
+// function generalInformationS() {
+//     var out = formatData(regABform.generalInformation.origination);
+//     var element = "originationS";
+//     document.getElementById("generalHeader").classList.remove("invisible");
+//     document.getElementById(element).parentNode.classList.add("expanded");
+//     thisIsaHack();
+//     thisIsAnotherHack();
+//     return hideAndSeek(element, out);
+// }
+// function thisIsaHack() {
+//     var out = formatData(regABform.generalInformation.juniorLiens);
+//     var element = "juniorLiensS";
+//     return hideAndSeek(element, out);
+// }
+// function thisIsAnotherHack() {
+//     var out = formatData(regABform.generalInformation.firstMortgages);
+//     var element = "mortgageInformationS";
+//     return hideAndSeek(element, out);
+// }
+// // out of date updating ^ END
+
+
+function originationInformationS(){
+  var out = formatData(regABform.generalInformation.origination);
+    var element ="originationInformationS";
+    debugger;
     return hideAndSeek(element, out);
 }
-function thisIsaHack() {
+function juniorLeinInformationS(){
     var out = formatData(regABform.generalInformation.juniorLiens);
-    var element = "juniorLiensS";
+    var element ="juniorLeinInformationS";
     return hideAndSeek(element, out);
 }
-function thisIsAnotherHack() {
+function firstMortgagesInformationS(){
     var out = formatData(regABform.generalInformation.firstMortgages);
-    var element = "mortgageInformationS";
+    var element ="firstMortgagesInformationS";
     return hideAndSeek(element, out);
 }
+
 function amortizationInformationS() {
     var out = formatData(regABform.negativeAmortization);
     var element = "amortizationInformationS";
@@ -495,17 +539,17 @@ function loanActivityS() {
 }
 function servicerInformationS() {
     var out = formatData(regABform.servicerInformation);
-    var element = "servicerInformationSS";
+    var element = "servicerInformationS";
     return hideAndSeek(element, out);
 }
 function assetSubjectToDemandS() {
     var out = formatData(regABform.assetSubjectToDemand);
-    var element = "assetDemandS";
+    var element = "assetSubjectToDemandS";
     return hideAndSeek(element, out);
 }
 function chargedOffInformationS() {
-    var out = formatData(regABform.chargedOffInformaiton);
-    var element = "chargedOffS";
+    var out = formatData(regABform.chargedOffInformation);
+    var element = "chargedOffInformationS";
     return hideAndSeek(element, out);
 }
 function lostIndicatorS() {
@@ -515,7 +559,7 @@ function lostIndicatorS() {
 }
 function loanModificationsInformationS() {
     var out = formatData(regABform.loanModificationsInformation);
-    var element = "loanModificationS";
+    var element = "loanModificationsInformationS";
     return hideAndSeek(element, out);
 }
 function periodInformationS() {
@@ -525,12 +569,12 @@ function periodInformationS() {
 }
 function stepLoansInformationS() {
     var out = formatData(regABform.stepLoansInformation);
-    var element = "stepLoanS";
+    var element = "stepLoansInformationS";
     return hideAndSeek(element, out);
 }
 function trialModificationInformationS() {
     var out = formatData(regABform.modificationInformation);
-    var element = "trialModifcationInformationS";
+    var element = "trialModificationInformationS";
     return hideAndSeek(element, out);
 }
 function repaymentPlanInformationS() {
@@ -555,21 +599,25 @@ function foreclosureInformationS() {
 }
 function relatedToREOInformationS() {
     var out = formatData(regABform.relatedToREOInformation);
-    var element = "relatedREOInformationS";
+    var element = "relatedToREOInformationS";
     return hideAndSeek(element, out);
 }
 function lossesInformationS() {
     var out = formatData(regABform.lossesInformation);
-    var element = "lossesInfroamtionS";
+    var element = "lossesInformationS";
     return hideAndSeek(element, out);
 }
 function insuranceClaimsInformationS() {
-    var out = formatData(regABform.insuranceClaimsInformation);
+    var sourceOne = regABform.insuranceClaimsInformation;
+    var sourceTwo = regABform2.insuranceClaimsInformation;
+    var out =  formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     var element = "insuranceClaimsInformationS";
     return hideAndSeek(element, out);
 }
 function delinquentLoansInformationS() {
-    var out = formatData(regABform.delinquentLoansInformation);
+    var sourceOne = regABform.delinquentLoansInformation;
+    var sourceTwo = regABform2.delinquentLoansInformation;
+    var out =  formatAllData(analizeData(sourceOne, sourceTwo), sourceOne, sourceTwo);
     var element = "delinquentLoansInformationS";
     return hideAndSeek(element, out);
 }

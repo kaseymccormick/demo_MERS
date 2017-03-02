@@ -4,12 +4,12 @@
 const regABform2 = {
     assetNumbers: {
         numberType: 'MERS',
-        number: '44323',
+        number: '44523',
         groupNumber: '4419873'
     },
     reportingPeriod: {
         begin: '09/26/2017',
-        end: '11/31/2017'
+        end: '12/01/2017'
     },
     generalInformation: {
         origination: {

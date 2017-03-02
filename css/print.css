@@ -2,17 +2,12 @@
     footer, .left-navigation, .header, .print-button, .tab {
         display: none;
     }
-    .descrepancies{
-
-    }
     h1, h2, h3, h4 {
         page-break-after: avoid;
     }
-
     ul {
         page-break-inside: avoid;
     }
-
     .col-6-7 {
         width: 100%;
     }
@@ -31,6 +26,30 @@
     }
     .page__content__title h2{
         color: #616161;
-
+    }
+    .col-19-20{
+        width:620px;
+        padding-bottom: 10px;
+    }
+    .print-only{
+        display: inline;
+    }
+    img#smallLogo {
+        width: 80px;
+        display: inline-block;
+        padding-top: 10px;
+    }
+    p{
+        font-size: 10px;
+        color: #cccccc;
+    }
+    .print-only{
+        display: inline;
+    }
+    .col-1-16{
+        display: none;
+    }
+    .col-15-16{
+        width:700px;
     }
 }
