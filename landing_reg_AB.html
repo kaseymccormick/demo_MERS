@@ -93,7 +93,7 @@
                         <a onclick="showTab(event)" class="tab-links active" id="full">Full REG AB</a>
                     </li>
                     <li>
-                        <a onclick="showTab(event);showOptions()" class="tab-links " id="custom">Customize REG AB</a>
+                        <a onclick="showTab(event);showSectionOptions()" class="tab-links " id="custom">Customize REG AB</a>
                     </li>
                     <li>
                         <a onclick="showTab(event)" class="tab-links" id="list">Custom REG AB's Created</a>
@@ -1437,6 +1437,7 @@
 </html>
 
 <script>
+    //deselect the tab currently in view and show the tab selected
     function showTab(event) {
         document.getElementById("custom-view").parentNode.classList.add("invisible");
         var i;
@@ -1455,6 +1456,7 @@
         document.getElementById(event.target.id + '-tab-content').style.display = 'block';
         event.currentTarget.className += ' active';
     }
+    //when the invisible tab is needed, show appropriate divs
     function showInvisibleTab(event) {
         var i;
         var tabContent = document.getElementsByClassName('tab-content');
@@ -1476,8 +1478,7 @@
 
 
     }
-
-
+    //expand the section below what's selected and change the icon appropriately
     function expandDetail(event) {
         let plusCircleClass = 'fa fa-plus-circle float-right padding-right-20px';
         let timesCircleClass = 'fa fa-times-circle float-right padding-right-20px';
@@ -1500,6 +1501,7 @@
         }
 
     }
+    // on load of page show all of the sections with all of the data and show descrepancies
     window.onload = function () {
 
         numberInformation('allData');
@@ -1528,36 +1530,10 @@
         lossesInformation('allData');
         insuranceClaimsInformation('allData');
         delinquentLoansInformation('allData');
-
         whichSectionsHaveDescrepancies();
-
     };
-    function onlyData() {
-        numberInformation('dataOnly');
-//
-        amortizationInformation('dataOnly');
-//        propertyInformation('dataOnly');
-//        obligorInformation('dataOnly');
-//        mortgageInsuranceInformation('dataOnly');
-//        loanActivityInformation('dataOnly');
-//        servicerInformation('dataOnly');
-//        assetSubjectToDemandInformation('dataOnly');
-//        chargedOffInformation('dataOnly');
-//        lostIndicatorInformation('dataOnly');
-//        loanModificationsInformation('dataOnly');
-//        periodInformation('dataOnly');
-//        stepLoansInformation('dataOnly');
-//        trialModificationInformation('dataOnly');
-//        repaymentPlanInformation('dataOnly');
-//        shortSalesInformation('dataOnly');
-//        mitigationExitInformation('dataOnly');
-//        foreclosureInformation('dataOnly');
-//        relatedToREOInformation('dataOnly');
-//        lossesInformation('dataOnly');
-//        insuranceClaimsInformation('dataOnly');
-//        delinquentLoansInformation('dataOnly');
-    }
-    function showOptions() {
+    //show section labels
+    function showSectionOptions() {
         numberInformation('label');
         reportingInformation('label');
         originationInformation('label');
@@ -1585,6 +1561,7 @@
         insuranceClaimsInformation('label');
         delinquentLoansInformation('label');
     }
+    //show a pre selected custom report
     function viewCustomReport() {
         numberInformationS();
         reportingInformationS();
@@ -1593,6 +1570,7 @@
         whichCustomSectionsHaveDescrepancies();
 
     }
+    // create custom report with the selected input names show descrepancies as well
     function immediateCustomReport(event) {
 //  prevent reloading the screen
         event.preventDefault();
@@ -1617,7 +1595,6 @@
         document.getElementById("view-tab-content").style.display = 'block';
         for (var i = 0; i < formElements.length - 1; i++)
             if (formElements[i].checked == false) {
-//                console.log("not checked " + formElements[i].name);
                 window[formElements[i].name]();
                document.getElementById(formElements[i].name).parentNode.style.display = 'none';
                 document.getElementById(formElements[i].name).parentNode.parentNode.previousElementSibling.style.display = 'none'

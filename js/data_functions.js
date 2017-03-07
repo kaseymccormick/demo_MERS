@@ -1,7 +1,10 @@
+//all of the section id's for standard report
 var ids = ["originationInformation", "juniorLienInformation", "firstMortgageInformation", "amortizationInformation", "propertyInformation", "obligorInformation", "mortgageInsurance", "loanActivity", "servicerInformation", "assetDemand", "chargedOff", "lostIndicator", "loanModificationsInformation", "periodInformation", "stepLoans", "trialModificationInformation", "repaymentPlanInformation", "shortSalesInformation", "mitigationExitInformation", "foreclosureInformation", "relatedREOInformation", "lossesInformation", "insuranceClaimsInformation", "delinquentLoansInformation"];
+// all of the section id's for selecting custom sections and showing them
 var customIds = ["originationInformationS", "juniorLeinInformationS", "firstMortgagesInformationS", "amortizationInformationS", "propertyInformationS", "obligorInformationS", "mortgageInsuranceS", "loanActivityS", "servicerInformationS", "assetSubjectToDemandS", "chargedOffInformationS", "lostIndicatorS", "loanModificationsInformationS", "periodInformationS", "stepLoansInformationS", "trialModificationInformationS", "repaymentPlanInformationS", "shortSalesInformationS", "mitigationExitInformationS", "foreclosureInformationS", "relatedToREOInformationS", "lossesInformationS", "insuranceClaimsInformationS", "delinquentLoansInformationS"];
+// all of the section id's for labels only, used on customization page
 var labelIds = ["labelsOrigination", "labelsJuniorLien", "labelsfirstMortgage", "labelsAmortization", "labelsProperty", "labelsObligor", "labelsMortgageInsurance", "labelsLoanActivity", "labelsServicer", "labelsAsset", "labelsCharged", "labelsLost", "labelsLoanModifications", "labelsPeriod", "labelsStepLoans", "labelsTrial", "labelsRepayment", "labelsShort", "labelsMitigation", "labelsForeclosure", "labelsRelated", "labelsLosses", "labelsInsuranceClaims", "labelsDelinquent"];
-// "generalInformation",
+
 // /---------------------------------------
 // Utility Functions
 //---------------------------------------
@@ -21,13 +24,7 @@ function hideAndSeek(element, out) {
     //add expanded and margin bottom to the class list of the element to show the section and data
     elementChain.classList.add("expanded", "margin-bottom-20");
 }
-function formatData(section) {
-    var out = '';
-    for (var i in section) {
-        out += "<li class='no-list-style'> <span>" + space(i) + "</span> &nbsp; " + section[i].toLowerCase() + "</li>"
-    }
-    return out
-}
+//put label information in list elements
 function formatLabels(section) {
     var out = '';
     for (var i in section) {
@@ -35,6 +32,7 @@ function formatLabels(section) {
     }
     return out
 }
+// formatting for else conditional, having the label and answer in list elements
 function formatDataOnlyAnswers(section) {
     var out = '';
     for (var i in section) {
@@ -44,7 +42,7 @@ function formatDataOnlyAnswers(section) {
     }
     return out
 }
-//go through data1.section and data2.section and put keys in the right arrays
+//go through data1.section and data2.section and put keys in either same or different data arrays
 function analizeData(sourceOne, sourceTwo) {
     var sameData = [];
     var differentData = [];
@@ -76,6 +74,32 @@ function formatAllData([differentData, sameData], sourceOne, sourceTwo) {
 }
 
 //---------------------------------------
+// Checkbox selection
+//---------------------------------------
+//get all elements with tag name input and put status of checked to true
+function selectAllCheckboxes(event) {
+    inputs = document.getElementsByTagName("input");
+    //since inputs include the submit button at the bottom, subtracting one from length
+    for (var i = 0; i < inputs.length - 1; i++) {
+        inputs[i].checked = true;
+    }
+    //change type say deselect all
+    event.target.parentElement.innerHTML = "<a onclick='deselectAllCheckboxes(event)' class='blue-text'>Unselect All</a>";
+}
+//get all elements with tag name input and put status of checked to false
+function deselectAllCheckboxes(event) {
+    inputs = document.getElementsByTagName("input");
+    //since inputs include the submit button at the bottom, subtracting one from length
+
+    for (var i = 0; i < inputs.length - 1; i++) {
+        inputs[i].checked = false;
+    }
+    //change type to say select all
+    event.target.parentElement.innerHTML = "<a onclick='selectAllCheckboxes(event)' class='blue-text'>Select All</a>";
+
+}
+
+//---------------------------------------
 // Showing Descrepancies to Users
 //---------------------------------------
 //find which sections have Descrepancies
@@ -93,9 +117,9 @@ function whichSectionsHaveDescrepancies() {
     //pass the sectionDescrepancies to show desc count
     return showDescrepancyCount(sectionDescrepancies);
 }
+//find which sections in custom report have descrepancies
 function whichCustomSectionsHaveDescrepancies() {
     //create empty object
-    console.log("customdesc");
     var sectionDescrepancies = {};
     //check each of the id's
     for (i in customIds) {
@@ -108,8 +132,6 @@ function whichCustomSectionsHaveDescrepancies() {
     //pass the sectionDescrepancies to show desc count
     return showDescrepancyCount(sectionDescrepancies);
 }
-
-
 //count how many descrepancies in each section
 function countDescrepancy(section) {
     //get the child nodes
@@ -143,37 +165,13 @@ function showDescrepancyCount(sectionDescrepancies) {
 }
 
 //---------------------------------------
-// Checkboxes
-//---------------------------------------
-function selectAllCheckboxes(event) {
-    inputs = document.getElementsByTagName("input");
-    //since inputs include the submit button at the bottom, subtracting one from length
-    for (var i = 0; i < inputs.length - 1; i++) {
-        inputs[i].checked = true;
-    }
-    //change type say deselect all
-    event.target.parentElement.innerHTML = "<a onclick='deselectAllCheckboxes(event)' class='blue-text'>Unselect All</a>";
-}
-function deselectAllCheckboxes(event) {
-    inputs = document.getElementsByTagName("input");
-    //since inputs include the submit button at the bottom, subtracting one from length
-
-    for (var i = 0; i < inputs.length - 1; i++) {
-        inputs[i].checked = false;
-    }
-    //change type to say select all
-    event.target.parentElement.innerHTML = "<a onclick='selectAllCheckboxes(event)' class='blue-text'>Select All</a>";
-
-}
-
-//---------------------------------------
 // filter(s) descrepancies or expanding
 //---------------------------------------
 function descrepanciesOnly(event) {
     //shows only descrepancies to the user if it's not Asset Number or Reporting Period information
     var myElements = document.querySelectorAll(".consensus-data");
-
     for (var i = 0; i < myElements.length; i++) {
+        debugger;
         if (myElements[i].parentElement.id != "assetNumbers")
             if (myElements[i].parentElement.id != "reportingPeriod")
             //for one reason or another cant get the != to be one line with OR operator
@@ -242,7 +240,7 @@ function contractAllCustom() {
 }
 
 //---------------------------------------
-// Labels only (label) and Labels with analyzed content (all data)
+// Conditionals to show labels or data under analyzation of consensus
 //---------------------------------------
 function numberInformation(keyword) {
     var sourceOne = regABform.assetNumbers;
