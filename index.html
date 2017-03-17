@@ -26,37 +26,74 @@
         <li><img alt="" src="images/icons/grid_home.png" width="40px"></li>
     </ul>
 </div>
+<div class="live-area grid">
 
-<div class="page">
-    <div class="search">
-        <input type="text">
-        <button class="margin-left-10">Find Someone</button>
-    </div>
-    <div class="cards">
-        <ul class="no-list-style">
-            <li class="cards__card"><a href=""><img src="images/cards/home_network.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_profile.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_documents.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_payments.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_organizations.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_messages.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_calendar.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_pictures.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_notes.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_bookmarks.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_interests.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_id.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_help.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_tour_guide.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_statistics.png" alt=""></a></li>
-            <li class="cards__card"><a href="reportsLanding.html"><img src="images/cards/home_reports.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_notifications.png" alt=""></a></li>
-            <li class="cards__card"><a href=""><img src="images/cards/home_settings.png" alt=""></a></li>
-            <!--<li class="cards__card"><a href=""><img src="images/cards/home_admin.png" alt=""></a></li>-->
-        </ul>
-        <p class="center-text-align"><i class="fa fa-exclamation-circle"> Drag tiles over one another to rearrange this screen</i></p>
+    <div class="page col-1-1 margin-left-30">
+        <div class="page__content grid">
+
+            <div class="page__content__tabs tab-container page-landing">
+                <ul class="tab landing">
+                    <li class="tab-outline">
+                        <a onclick="showTab(event)" class="tab-links gray-text active" id="home">Home</a>
+                    </li>
+                    <li class="tab-outline ">
+                        <a onclick="showTab(event)" class="tab-links gray-text" id="dashboard">Dashboard</a>
+                    </li>
+                </ul>
+                <!--START Home content-->
+                <div id="home-tab-content" class="tab-content grid grid-pad visible">
+                    <div class="page-content__report-section grid grid-pad">
+                        <div class="search">
+                            <input type="text">
+                            <button class="margin-left-10">Find Someone</button>
+                        </div>
+                        <div class="cards">
+                            <ul class="no-list-style">
+                                <li class="cards__card"><a href=""><img src="images/cards/home_network.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_profile.png" alt=""></a></li>
+                                <li class="cards__card"><a href="reportsLanding.html"><img src="images/cards/home_reports.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_documents.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_payments.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_organizations.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_messages.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_calendar.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_pictures.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_notes.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_bookmarks.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_interests.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_id.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_help.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_tour_guide.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_statistics.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_notifications.png" alt=""></a></li>
+                                <li class="cards__card"><a href=""><img src="images/cards/home_settings.png" alt=""></a></li>
+                                <!--<li class="cards__card"><a href=""><img src="images/cards/home_admin.png" alt=""></a></li>-->
+                            </ul>
+                            <p class="center-text-align"><i class="fa fa-exclamation-circle"> Drag tiles over one another to rearrange this screen</i></p>
+                        </div>
+
+                    </div>
+                </div>
+                <!--END -->
+
+                <!-- START Dashboard Content-->
+                <div id="dashboard-tab-content" class="tab-content grid grid-pad">
+
+                    <div class="page-content__report-section grid grid-pad">
+
+
+                    </div>
+
+
+                </div>
+                <!--END -->
+
+            </div>
+        </div>
     </div>
 </div>
+</div>
+
 </body>
 
 <!--TODO Componentize this -->
@@ -74,3 +111,23 @@
 </footer>
 
 </html>
+
+<script>
+    function showTab(event) {
+        var i;
+        var tabContent = document.getElementsByClassName('tab-content');
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = 'none';
+        }
+
+        // Get all elements with class='tab-links' and remove the class 'active'
+        var tabLinks = document.getElementsByClassName('tab-links');
+        for (i = 0; i < tabLinks.length; i++) {
+            tabLinks[i].className = tabLinks[i].className.replace(' active', '');
+        }
+        // Show the current tab, and add an 'active' class to the link that opened the tab
+
+        document.getElementById(event.target.id + '-tab-content').style.display = 'block';
+        event.currentTarget.className += ' active';
+    }
+</script>

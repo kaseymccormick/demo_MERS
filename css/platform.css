@@ -63,7 +63,7 @@ other little
 card Layout
 ---------------------------*/
 .cards{
-    max-width: 70%;
+    max-width: 90%;
     margin:0 auto;
 }
 .cards__card{
@@ -85,6 +85,9 @@ card Layout
     margin: 0;
     overflow: hidden;
     padding: 0 0 0 30px;
+}
+.landing{
+    background-color: #f5f5f5;
 }
 .tab-container {
     opacity: .9;
@@ -115,6 +118,8 @@ card Layout
     background-color: #fff;
     color: black !important;
 }
+
+
 /*needed to mainly overwrite shared layout*/
 #full-tab-content {
     background-color: #fff;
@@ -176,4 +181,18 @@ h4{
 }
 .space-adjust {
     margin-left: -18px;
+}
+.page-landing{
+    opacity: .9;
+    width: 80%;
+    background-color: #ffffff;
+    margin: 0px auto;
+}
+.page-landing > .tab-content{
+    border: 1px solid #ccc;
+    border-radius:5px;
+
+}
+.tab > li .gray-text{
+    color: #616161;
 }

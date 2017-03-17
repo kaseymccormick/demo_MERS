@@ -273,3 +273,22 @@ display: none;
 .blue-text{
     color:#4378CC;
 }
+.margin-left-30{
+    margin-left:30px;
+}
+.tab-outline{
+    border:1px solid #cccccc;
+    border-radius: 5px;
+    border-bottom:none;
+}
+ul.tab.landing {
+    z-index: 100;
+    margin-bottom: -1px;
+}
+/*.active{*/
+    /*background-color: #fff;*/
+    /*color: black !important;*/
+ /*}*/
+.visible{
+    display: block;
+}
