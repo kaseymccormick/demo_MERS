@@ -321,10 +321,11 @@ ul.tab.landing {
 .loan-info li{
     color: #939393;
 }
-h3 span{
+h3 span, .editableFactor{
     float: right;
     color: #339933;
 }
+
 .widget p {
     font-size: 2em;
     text-align:center;
@@ -336,4 +337,13 @@ h3 span{
     padding-left: 20px;
     padding-bottom: 10px;
     margin-top: -20px;
+}
+.left-border{
+    border-left:1px solid #cccccc;
+}
+.padding-left-10{
+    padding-left:10px;
+}
+.small-text{
+    font-size: 10px;
 }
