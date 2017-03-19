@@ -37,7 +37,7 @@
                         <a onclick="showTab(event)" class="tab-links gray-text active" id="home">Home</a>
                     </li>
                     <li class="tab-outline ">
-                        <a onclick="showTab(event)" class="tab-links gray-text" id="dashboard">Dashboard</a>
+                        <a onclick="showTab(event)" class="tab-links gray-text" id="dashboard">Loan Quick View Dashboard</a>
                     </li>
                 </ul>
                 <!--START Home content-->
@@ -100,96 +100,79 @@
                     <div class="page-content__report-section ">
                         <div class="widgets grid grid-pad">
                             <div class="col-1-1 pool">
-
-                                <ul class="no-list-style loan-info"> <h3>Loan Information</h3>
-                                    <li><span>Loan Pool Number</span>
+                                <h2><b>Loan Quick View</b></h2>
+                                <ul class="no-list-style loan-info three-column">
+                                    <li> <span>Loan Pool Number</span>
                                         <select name="poolNumber" width="1000px">
-                                            <option value="F54321">F54321</option>
-                                            <option value="F64321">F64321</option>
-
-                                        </select></li>
+                                        <option value="F54321">F54321</option>
+                                        <option value="F64321">F64321</option>
+                                    </select></li></li>
                                     <li> <span>Number of Loans In Pool</span> 315</li>
+                                    <li><span>Loan ID: </span>889321</li>
                                 </ul>
                             </div>
                             <div class="col-1-3 widget">
                                 <h3 class="widget-header">Loan Size</h3>
-                                <p>300/315 <span class="small-text">Qualified Mortgages</span></p>
+                                <p>$501,253</p>
+                            </div>
+                            <div class="col-1-3 widget">
+                                <h3 class="widget-header">Qualified Mortgages In pool</h3>
+                                <p>80% </p>
                             </div>
                             <div class="col-1-3 widget">
                                 <h3 class="widget-header">Collateral</h3>
-                                <p>Collateral - SF, Condo Price</p>
-
+                                <p>Single Family</p>
                             </div>
                             <div class="col-1-3 widget">
                                 <h3 class="widget-header">Market Conditions</h3>
 
-                                <p>Market Conditions --- Up, Down, Flat</p>
+                                <p>Flat</p>
                             </div>
-                            <div class="col-2-3 widget">
-                                <h3 class="widget-header">Supply Chain Verification <span contenteditable="true" > 80%</span></h3>
+                            <div class="col-1-3 widget">
+                                <h3 class="widget-header">Supply Chain Verification</h3>
 
-                                <p> 310/315 <img src="images/icons/verified.png" alt=""><span class='tooltip' data-tip='ATS Verified'</span></p>
-                                <ul class="sub-information no-list-style"> <b>ATS Verification</b>
-                                    <li>Time and date stamps on everything</li>
-                                    <li>People are who they say they are</li>
-                                </ul>
+                                <p> Yes <img src="images/icons/verified.png" alt="" class='tooltip' data-tip='ATS Verified'></p>
+
                             </div>
                             <div class="col-1-3 widget">
                                 <h3 class="widget-header">Appraisal Quality</h3>
 
-                                <p> -- +-</p>
-                            </div>
-                            <div class="col-1-1 widget grid">
-                                <h3 class="widget-header">Credit Quality – Conforming Metrics</h3>
-                                <div class="col-1-3  padding-left-10"> FICO <span class="editableFactor" contenteditable="true"> > 720 </span>
-                                <p>220/315</p>
-                                </div>
-                                <div class="col-1-3 left-border padding-left-10">DTI <span class="editableFactor" contenteditable="true"> <36% </span>
-                                    <p>298/315</p>
-                                </div>
-                                <div class="col-1-3 left-border padding-left-10">LTV <span class="editableFactor" contenteditable="true"> <81% </span>
-                                <p>302/315</p></div>
-
+                                <p> 5%</p>
                             </div>
                             <div class="col-1-3 widget">
-                                <h3 class="widget-header">Fit for Sale Metric <span contenteditable="true"> > 60</span></h3>
-                                <p>270/315</p>
-                                <ul class="sub-information no-list-style"> <b>Breakdown</b>
-                                    <li>80% or above <b>101 loans</b> </li>
-                                    <li>60% - 79% <b>169 loans</b></li>
-                                    <li>59% below <b>45 loans</b></li>
-                                </ul>
-
+                                <h3 class="widget-header">Conforming/Reference Credit</h3>
+                                <p>59/24</p>
                             </div>
                             <div class="col-1-3 widget">
-                                <h3 class="widget-header">Income Stability<span contenteditable="true" > 2/3</span></h3>
-                                <p>305/315 stable</p>
-                                <ul class="sub-information no-list-style"> <b>Checking for</b>
-                                    <li> <i class="fa fa-check green-text"></i>Gaps in Employment</li>
-                                    <li><i class="fa fa-check green-text"></i>At least 2 years employed at same place</li>
-                                    <li>Probability of continued employment</li>
+                                <h3 class="widget-header">FICO</h3>
+
+                                <p> 750</p>
+                            </div>
+                            <div class="col-1-3 widget">
+                                <h3 class="widget-header">LTV</h3>
+                                <p>83</p>
+                            </div>
+
+                            <div class="col-1-3 widget">
+                                <h3 class="widget-header">Fit for Sale Metric</h3>
+                                <p>90</p>
+                            </div>
+                            <div class="col-1-3 widget">
+                                <h3 class="widget-header">Income Stability</h3>
+                                <ul class="no-list-style margin-left-30 ">
+                                    <li>Local Economy <b>Up</b></li>
+                                    <li>Employment <b>Up</b></li>
+                                    <li>Job Type <b>Stable</b></li>
                                 </ul>
                             </div>
                             <div class="col-1-3 widget">
-                                <h3 class="widget-header">Walkscore <span contenteditable="true"> > 60</span></h3>
+                                <h3 class="widget-header">Walkscore </h3>
 
-                            <p>301/315</p>
-                                <ul class="sub-information no-list-style"> <b>Breakdown</b>
-                                    <li>80 or above walkscore: <b>190 loans</b> </li>
-                                    <li>60-79 walkscore: <b>111 loans</b></li>
-                                    <li>59 below walkscore: <b>14 loans</b></li>
-                                </ul>
+                            <p>55</p>
+
                             </div>
 
                         </div>
-
-                        <div><h1>visuals</h1>
-                            <input type="range" id="myRange" value="90"></div>
-                        source <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_range_get">here</a>
-                    </div>
-                    <div contenteditable="true">
-                        This text can be edited by the user.
-                    </div>
 
 
                 </div>

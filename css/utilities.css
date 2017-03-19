@@ -298,15 +298,12 @@ ul.tab.landing {
 .visible{
     display: block;
 }
-.pool ul li > select{
-    width:80%;
-    font-size: 14px;
-    display: inline;
-}
+
 .widget {
     border: .5px solid #616161;
     border-radius: 5px;
     margin-top: 10px;
+    min-height: 127px;
 }
 .widget-header{
     color: #000;
@@ -321,14 +318,15 @@ ul.tab.landing {
 .loan-info li{
     color: #939393;
 }
-h3 span, .editableFactor{
-    float: right;
-    color: #339933;
+.loan-info{
+    font-size: 18px;
 }
 
+
 .widget p {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align:center;
+    padding:0;
 }
 .sub-information{
     color: #616161;
@@ -346,4 +344,7 @@ h3 span, .editableFactor{
 }
 .small-text{
     font-size: 10px;
+}
+.three-column{
+    column-count: 3;
 }
