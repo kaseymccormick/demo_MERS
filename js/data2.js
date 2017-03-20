@@ -13,7 +13,7 @@ const regABform2 = {
     },
     generalInformation: {
         origination: {
-            OriginalLoanPurpose: 'x88261',
+            OriginalLoanPurpose: '5413',
             Originator: 'Freedom LLC',
             OriginatorLoanAmount: '$20,000',
             OriginalLoanMaturityDate: '8/12/16',
@@ -78,15 +78,15 @@ const regABform2 = {
     },
     negativeAmortization: {
         limit: '$20,006',
-        recastPeriod: 'unknown',
-        subsequent: 'something',
-        negative: 'thing',
+        recastPeriod: '',
+        subsequent: '',
+        negative: '',
         fixedPaymentPeriod: '',
         periodic: '',
         paymentCap: '',
         resetPeriod: '',
         paymentResetPeriod: '',
-        minimumPayment: '',
+        minimumPayment: ''
     },
     propertyInformation: {
         geograpicLocation: '51',
@@ -103,8 +103,8 @@ const regABform2 = {
     },
     obligorInformation: {
         originalNumberOfObligors: '',
-        originalObligorCreditScore: '',
-        originalObligorCreditScoreType: '',
+        originalObligorCreditScore: '620',
+        originalObligorCreditScoreType: 'FICO',
         mostRecentObligorCreditScore: '',
         mostRecentObligorCreditScoreType: '',
         dateOfMostRecentObligorCreditScore: '',
